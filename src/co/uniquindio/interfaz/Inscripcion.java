@@ -19,6 +19,10 @@ import java.awt.Font;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
+import javax.swing.border.TitledBorder;
+import co.uniquindio.mundo.NivelEstudio;
+import co.uniquindio.mundo.EstadoCivil;
+import co.uniquindio.mundo.Genero;
 
 public class Inscripcion extends JFrame implements ActionListener {
 
@@ -36,21 +40,25 @@ public class Inscripcion extends JFrame implements ActionListener {
 	private JTextField txtAnio;
 	private JTextField txtMail;
 	private JButton btnAgregar;
-	private JButton btnCancelar;
+	private JButton btnVolver;
 	private Home home;
 	private JComboBox cbEstrato;
 	private JComboBox cbNivelEstudio;
+	private JComboBox cbEstadoCivil;
+	private JComboBox cbGenero;
 
 	/**
 	 * Create the frame.
 	 */
 	public Inscripcion(Home home) {
+		setBackground(Color.LIGHT_GRAY);
 
 		this.home = home;
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 466);
+		setBounds(100, 100, 450, 413);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -155,13 +163,13 @@ public class Inscripcion extends JFrame implements ActionListener {
 		contentPane.add(txtMail);
 		txtMail.setColumns(10);
 
-		btnCancelar = new JButton("CANCELAR");
-		btnCancelar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCancelar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnCancelar.setBounds(300, 424, 112, 31);
-		btnCancelar.addActionListener(this);
-		contentPane.add(btnCancelar);
+		btnVolver = new JButton("VOLVER");
+		btnVolver.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVolver.setBounds(301, 357, 112, 31);
+		btnVolver.addActionListener(this);
+		contentPane.add(btnVolver);
 
 		btnAgregar = new JButton("AGERGAR");
 		btnAgregar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -169,28 +177,47 @@ public class Inscripcion extends JFrame implements ActionListener {
 		btnAgregar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		btnAgregar.setActionCommand("AGREGAR");
 		btnAgregar.addActionListener(this);
-		btnAgregar.setBounds(180, 424, 118, 31);
+		btnAgregar.setBounds(173, 357, 118, 31);
 		contentPane.add(btnAgregar);
 
 		cbEstrato = new JComboBox();
-		cbEstrato.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		cbEstrato.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cbEstrato.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstrato.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		cbEstrato.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3" }));
 		cbEstrato.setBounds(161, 208, 137, 20);
 		contentPane.add(cbEstrato);
 		
 		cbNivelEstudio = new JComboBox();
+		cbNivelEstudio.setModel(new DefaultComboBoxModel(NivelEstudio.values()));
+		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbNivelEstudio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		cbNivelEstudio.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbNivelEstudio.setBounds(161, 245, 137, 20);
 		contentPane.add(cbNivelEstudio);
+		
+		cbEstadoCivil = new JComboBox();
+		cbEstadoCivil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
+		cbEstadoCivil.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		cbEstadoCivil.setBounds(161, 280, 137, 20);
+		contentPane.add(cbEstadoCivil);
+		
+		cbGenero = new JComboBox();
+		cbGenero.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
+		cbGenero.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		cbGenero.setBounds(161, 319, 137, 20);
+		contentPane.add(cbGenero);
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource() == btnCancelar) {
+		if (e.getSource() == btnVolver) {
 
 			this.dispose();
 			home.setLocationRelativeTo(null);

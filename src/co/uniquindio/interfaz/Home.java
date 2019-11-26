@@ -130,6 +130,15 @@ public class Home extends JFrame implements ActionListener {
 			inscripcion.setVisible(true);
 		}
 
+		if (e.getSource() == btnIngresar) {
+
+			this.dispose();
+			Ingresar ingresar = new Ingresar(this);
+			ingresar.setLocationRelativeTo(null);
+			ingresar.setVisible(true);
+
+		}
+
 	}
 
 	public void agregarClientes(Cliente cliente) {
