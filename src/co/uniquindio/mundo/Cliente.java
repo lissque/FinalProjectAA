@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.util.ArrayList;
+
 public class Cliente {
 	
 	private String id, nombre, apellido, direccion, email;
@@ -9,9 +11,10 @@ public class Cliente {
 	private EstadoCivil estadoCivil;
 	private Genero genero;
 	private Tarjeta miTarjeta;
+	private ArrayList<Respuesta> respuestas;
 	
 	public Cliente(String id, String nombre, String apellido, String direccion, String email, Fecha fechaNacimiento,
-			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta) {
+			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta, ArrayList<Respuesta> respuestas) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -24,6 +27,7 @@ public class Cliente {
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
 		this.miTarjeta = miTarjeta;
+		this.respuestas=respuestas;
 	}
 	
 	public Cliente() {}
@@ -114,6 +118,14 @@ public class Cliente {
 
 	public void setMiTarjeta(Tarjeta miTarjeta) {
 		this.miTarjeta = miTarjeta;
+	}
+
+	public ArrayList<Respuesta> getRespuestas() {
+		return respuestas;
+	}
+
+	public void setRespuestas(ArrayList<Respuesta> respuestas) {
+		this.respuestas = respuestas;
 	}
 	
 	

@@ -179,7 +179,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 
 			try {
 				int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
-				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato, null, null, null, null);
+				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato, null, null, null, null, null);
 				home.agregarClientes(miCliente);
 
 				
