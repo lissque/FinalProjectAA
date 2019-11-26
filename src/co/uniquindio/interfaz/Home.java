@@ -34,7 +34,7 @@ public class Home extends JFrame implements ActionListener {
 	private JButton btnIngresar;
 	private JButton btnX;
 	private JButton btnAdministrador;
-
+	private Admin ventanaAdmin;
 	private Evento miEvento;
 
 	/**
@@ -54,6 +54,14 @@ public class Home extends JFrame implements ActionListener {
 		});
 	}
 
+	public Evento getMiEvento() {
+		return miEvento;
+	}
+
+	public void setMiEvento(Evento miEvento) {
+		this.miEvento = miEvento;
+	}
+
 	/**
 	 * Create the frame.
 	 */
@@ -61,7 +69,7 @@ public class Home extends JFrame implements ActionListener {
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 
 		miEvento = new Evento();
-
+		setLocationRelativeTo(null);
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -104,6 +112,7 @@ public class Home extends JFrame implements ActionListener {
 		btnIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		btnIngresar.setBounds(201, 207, 138, 37);
 		contentPane.add(btnIngresar);
+		btnIngresar.addActionListener(this);
 
 		btnAdministrador = new JButton("ADMINISTRADOR");
 		btnAdministrador.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -111,7 +120,7 @@ public class Home extends JFrame implements ActionListener {
 		btnAdministrador.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAdministrador.setBounds(201, 159, 138, 37);
 		contentPane.add(btnAdministrador);
-		btnIngresar.addActionListener(this);
+		btnAdministrador.addActionListener(this);
 	}
 
 	@Override
@@ -128,6 +137,12 @@ public class Home extends JFrame implements ActionListener {
 			Inscripcion inscripcion = new Inscripcion(this);
 			inscripcion.setLocationRelativeTo(null);
 			inscripcion.setVisible(true);
+		}
+		
+		if (e.getSource() == btnAdministrador) {
+			this.dispose();
+			ventanaAdmin = new  Admin(this);
+			ventanaAdmin.setVisible(true);
 		}
 
 		if (e.getSource() == btnIngresar) {
