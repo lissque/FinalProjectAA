@@ -15,6 +15,13 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Component;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.SoftBevelBorder;
+import java.awt.Cursor;
+import java.awt.Dialog.ModalExclusionType;
 
 public class Home extends JFrame implements ActionListener {
 
@@ -39,6 +46,7 @@ public class Home extends JFrame implements ActionListener {
 				try {
 					Home frame = new Home();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,42 +58,58 @@ public class Home extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Home() {
+		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 
 		miEvento = new Evento();
 
-		setLocationRelativeTo(null);
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 350);
+		setBounds(100, 100, 572, 304);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblGestionDeEspectaculos = new JLabel("Gestion de Espectaculos");
-		lblGestionDeEspectaculos.setFont(new Font("Yu Gothic UI Light", Font.BOLD | Font.ITALIC, 35));
+		JLabel lblGestionDeEspectaculos = new JLabel("GESTIÓN DE ESPECTÁCULOS");
+		lblGestionDeEspectaculos.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		lblGestionDeEspectaculos.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblGestionDeEspectaculos.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 28));
 		lblGestionDeEspectaculos.setForeground(Color.WHITE);
-		lblGestionDeEspectaculos.setBounds(43, 27, 447, 73);
+		lblGestionDeEspectaculos.setBounds(65, 27, 421, 73);
 		contentPane.add(lblGestionDeEspectaculos);
 
 		btnX = new JButton("X");
-		btnX.setBounds(443, 11, 47, 37);
+		btnX.setForeground(Color.BLACK);
+		btnX.setBackground(Color.RED);
+		btnX.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnX.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 12));
+		btnX.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnX.setBounds(532, 11, 30, 26);
 		contentPane.add(btnX);
 		btnX.addActionListener(this);
 
-		btnInscribirse = new JButton("Inscribirse");
-		btnInscribirse.setBounds(88, 213, 89, 23);
+		btnInscribirse = new JButton("INSCRIBIRSE");
+		btnInscribirse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnInscribirse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnInscribirse.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnInscribirse.setBounds(201, 111, 138, 37);
 		contentPane.add(btnInscribirse);
 		btnInscribirse.addActionListener(this);
 
-		btnIngresar = new JButton("Ingresar");
-		btnIngresar.setBounds(313, 213, 89, 23);
+		btnIngresar = new JButton("INGRESAR");
+		btnIngresar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnIngresar.setBounds(201, 207, 138, 37);
 		contentPane.add(btnIngresar);
 
-		btnAdministrador = new JButton("Administrador");
-		btnAdministrador.setBounds(194, 268, 104, 23);
+		btnAdministrador = new JButton("ADMINISTRADOR");
+		btnAdministrador.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnAdministrador.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnAdministrador.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAdministrador.setBounds(201, 159, 138, 37);
 		contentPane.add(btnAdministrador);
 		btnIngresar.addActionListener(this);
 	}
