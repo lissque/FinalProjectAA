@@ -3,12 +3,13 @@ package co.uniquindio.interfaz;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -19,13 +20,12 @@ import java.awt.Cursor;
 public class Ingresar extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtIngreso;
 	private JLabel lblIngresar;
 	private JButton btnAcceder;
 	private JButton btnVolver;
 
 	private Home home;
-	
 
 	/**
 	 * Create the frame.
@@ -49,12 +49,12 @@ public class Ingresar extends JFrame implements ActionListener {
 		lblIngresarId.setBounds(35, 103, 97, 14);
 		contentPane.add(lblIngresarId);
 
-		textField = new JTextField();
-		textField.setToolTipText("HOLA");
-		textField.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		textField.setBounds(142, 101, 243, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtIngreso = new JTextField();
+		txtIngreso.setToolTipText("");
+		txtIngreso.setFont(new Font("Times New Roman", Font.ITALIC, 11));
+		txtIngreso.setBounds(142, 101, 243, 20);
+		contentPane.add(txtIngreso);
+		txtIngreso.setColumns(10);
 
 		btnAcceder = new JButton("\u221A");
 		btnAcceder.addActionListener(this);
@@ -72,12 +72,12 @@ public class Ingresar extends JFrame implements ActionListener {
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnVolver.setBounds(345, 163, 112, 31);
 		contentPane.add(btnVolver);
-		
+
 		lblIngresar = new JLabel("INGRESAR");
 		lblIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
 		lblIngresar.setBounds(32, 35, 248, 36);
 		contentPane.add(lblIngresar);
-	}	
+	}
 
 	public Home getHome() {
 		return home;
@@ -87,12 +87,38 @@ public class Ingresar extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == btnAcceder) {
-			this.dispose();
-			Secciones ventanaMatrices = new Secciones(this);
-			ventanaMatrices.setLocationRelativeTo(null);
-			ventanaMatrices.setVisible(true);
+
+			String ingreso = txtIngreso.getText().toUpperCase();
+
+			if (ingreso != null) {
+
+				if (home.getMiEvento().getMisClientes().size() != 0) {
+
+					for (int i = 0; i < home.getMiEvento().getMisClientes().size(); i++) {
+
+						String cliente = home.getMiEvento().getMisClientes().get(i).getId().toUpperCase();
+
+						if (ingreso.equals(cliente)) {
+
+							this.dispose();
+							Secciones ventanaMatrices = new Secciones(this);
+							ventanaMatrices.setLocationRelativeTo(null);
+							ventanaMatrices.setVisible(true);
+
+						} else {
+							JOptionPane.showMessageDialog(null, "NO ESTA REGISTRADO", "ADVERTENCIA!",
+									JOptionPane.WARNING_MESSAGE, null);
+						}
+					}
+				} else {
+					JOptionPane.showMessageDialog(null, "NO HAY CLIENTES REGISTRADOS", "ADVERTENCIA!",
+							JOptionPane.WARNING_MESSAGE, null);
+				}
+			} else {
+				JOptionPane.showMessageDialog(null, "CAMPO VACÍO", "ADVERTENCIA!", JOptionPane.WARNING_MESSAGE, null);
+			}
 		}
-		
+
 		if (e.getSource() == btnVolver) {
 
 			this.dispose();

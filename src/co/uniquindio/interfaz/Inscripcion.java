@@ -268,7 +268,6 @@ public class Inscripcion extends JFrame implements ActionListener {
 				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, diaN, mesN, anioN, estrato,
 						nivelEstudio, estadoCivil, genero, null);
 
-				System.err.println(miCliente.getApellido());
 				home.agregarClientes(miCliente);
 
 				JOptionPane.showMessageDialog(null,
