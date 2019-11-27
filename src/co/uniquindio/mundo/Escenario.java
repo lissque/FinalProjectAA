@@ -14,11 +14,6 @@ public class Escenario {
 	public Escenario() {
 	}
 
-<<<<<<< Updated upstream
-	public void agregarSeccion(TipoSeccion tipo) {
-		Seccion seccion = new Seccion(tipo);
-		seccion.llenarMatriz();
-=======
 	public void crearClubFans() {
 		Seccion nuevaSeccion = new Seccion(TipoSeccion.CLUB_FANS);
 	}
@@ -37,7 +32,6 @@ public class Escenario {
 
 	public void crearSegundoPiso2() {
 
->>>>>>> Stashed changes
 	}
 
 	public ArrayList<Seccion> getSecciones() {
