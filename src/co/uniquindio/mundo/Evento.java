@@ -5,21 +5,27 @@ import java.util.ArrayList;
 public class Evento {
 
 	private ArrayList<Cliente> misClientes;
-	private ArrayList<Registro> misRegistros;
+	private Registro registro;
 	private Administrador admin;
+	private Escenario escenario;
 
 	public Evento() {
 		misClientes = new ArrayList<Cliente>();
-		misRegistros = new ArrayList<Registro>();
+		registro = new Registro();
 		admin = new Administrador();
+		escenario = new Escenario();
+	}
+
+	public Escenario getEscenario() {
+		return escenario;
+	}
+
+	public void setEscenario(Escenario escenario) {
+		this.escenario = escenario;
 	}
 
 	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
-	}
-
-	public void agregarRegistro(Registro miR) {
-		misRegistros.add(miR);
 	}
 
 	public ArrayList<Cliente> getMisClientes() {
@@ -30,12 +36,12 @@ public class Evento {
 		this.misClientes = misClientes;
 	}
 
-	public ArrayList<Registro> getMisRegistros() {
-		return misRegistros;
+	public Registro getRegistro() {
+		return registro;
 	}
 
-	public void setMisRegistros(ArrayList<Registro> misRegistros) {
-		this.misRegistros = misRegistros;
+	public void setRegistro(Registro registro) {
+		this.registro = registro;
 	}
 
 	public Administrador getAdmin() {

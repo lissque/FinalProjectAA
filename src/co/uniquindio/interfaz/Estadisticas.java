@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.TreeMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,13 +14,16 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.border.SoftBevelBorder;
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 import co.uniquindio.mundo.Cliente;
+import co.uniquindio.mundo.Puesto;
 import co.uniquindio.mundo.Registro;
 
 import javax.swing.border.BevelBorder;
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Estadisticas extends JFrame implements ActionListener {
 
@@ -91,21 +96,47 @@ public class Estadisticas extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if (e.getSource()==btnListadoDeAsistentes) {
+
+		if (e.getSource() == btnListadoDeAsistentes) {
 			String salida = "Listado de asistentes: \n";
-			for (Registro miRegistro : home.getMiEvento().getMisRegistros()) {
-				
+			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
+				salida += miCliente.toString();
+				salida += "\n";
 			}
+			JOptionPane.showMessageDialog(null, salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
 		}
-		if (e.getSource()==btnListadoOrdenadoDe) {
-			
+		if (e.getSource() == btnListadoOrdenadoDe) {
+			TreeMap<String, String> ordenado = new TreeMap<String, String>();
+			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
+				ordenado.put(miCliente.getNombre() + miCliente.getApellido(), miCliente.getId());
+
+			}
+			JOptionPane.showMessageDialog(null, ordenado.values(), "Informacion*", JOptionPane.INFORMATION_MESSAGE);
+
 		}
-		if (e.getSource()==btnListadoDeAsistentesEstrato) {
-			
+		if (e.getSource() == btnListadoDeAsistentesEstrato) {
+			String estrato1 = "Listado de asistentes por estrato 1: \n";
+			String estrato2 = "Listado de asistentes por estrato 2: \n";
+			String estrato3 = "Listado de asistentes por estrato 3: \n";
+			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
+				if (miCliente.getEstrato() == 1) {
+					estrato1 += miCliente.toString();
+				}
+				if (miCliente.getEstrato() == 2) {
+					estrato2 += miCliente.toString();
+				}
+				if (miCliente.getEstrato() == 3) {
+					estrato3 += miCliente.toString();
+				}
+				estrato1 += "\n";
+				estrato2 += "\n";
+				estrato3 += "\n";
+			}
+			JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3, "Informacion*",
+					JOptionPane.INFORMATION_MESSAGE);
 		}
-		if (e.getSource()==btnListadoDePuestos) {
-			
+		if (e.getSource() == btnListadoDePuestos) {
+			String puestos = "Listado de puestos no ";
 		}
 		if (e.getSource() == btnVolver) {
 

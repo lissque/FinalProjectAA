@@ -122,4 +122,8 @@ public class Cliente {
 		this.miTarjeta = miTarjeta;
 	}
 
+	@Override
+	public String toString() {
+		return " Nombre completo: " + nombre + apellido +"\nId:" + id;
+	}
 }

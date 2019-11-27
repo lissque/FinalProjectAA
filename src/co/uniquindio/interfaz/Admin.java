@@ -105,21 +105,16 @@ public class Admin extends JFrame implements ActionListener {
 		String pass = password.getText();
 
 		if (e.getSource() == btnIngresar) {
-
 			if (home.getMiEvento().getAdmin().getId().equals(id)
 					&& home.getMiEvento().getAdmin().getContraseña().equals(pass)) {
-
 				this.dispose();
 				Estadisticas estadisticas = new Estadisticas(home);
 				estadisticas.setVisible(true);
 				estadisticas.setLocationRelativeTo(null);
-
 			} else {
-
 				JOptionPane.showMessageDialog(null, "ID O CONTRASEÑA INCORRECTA, INTÉNTELO DE NUEVO.", "ADVERTENCIA!",
 						JOptionPane.WARNING_MESSAGE, null);
 			}
-
 		}
 
 		if (e.getSource() == btnVolver) {
