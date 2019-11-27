@@ -114,9 +114,11 @@ public class Estadisticas extends JFrame implements ActionListener {
 
 		}
 		if (e.getSource() == btnListadoDeAsistentesEstrato) {
+			
 			String estrato1 = "Listado de asistentes por estrato 1: \n";
 			String estrato2 = "Listado de asistentes por estrato 2: \n";
 			String estrato3 = "Listado de asistentes por estrato 3: \n";
+			
 			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
 				if (miCliente.getEstrato() == 1) {
 					estrato1 += miCliente.toString();
@@ -131,10 +133,13 @@ public class Estadisticas extends JFrame implements ActionListener {
 				estrato2 += "\n";
 				estrato3 += "\n";
 			}
+			
 			JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3, "Informacion*",
 					JOptionPane.INFORMATION_MESSAGE);
+			
 		}
 		if (e.getSource() == btnListadoDePuestos) {
+			
 			String puestos = "Listado de puestos libres \n";
 			for (Seccion seccion : home.getMiEvento().getEscenario().getSecciones()) {
 				puestos+=seccion;
