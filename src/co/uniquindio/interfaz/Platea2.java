@@ -3,108 +3,116 @@ package co.uniquindio.interfaz;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
+import co.uniquindio.mundo.Escenario;
+
+import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class Platea2 extends JFrame implements ActionListener{
+public class Platea2 extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private Secciones inicio;
 	private JButton btnVolver;
+	private Escenario escenario;
+	private JButton[][] matriz;
+	private JButton btnComprar;
+	private JPanel panel;
 
 	/**
 	 * Create the frame.
 	 */
-	public Platea2(Secciones inicio) {
+	public Platea2(Escenario escenario) {
+
 		setUndecorated(true);
 		setResizable(false);
-		
-		this.inicio = inicio;
+
+		matriz = new JButton[5][5];
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 320, 200);
+		setBounds(100, 100, 403, 336);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JButton btn04 = new JButton("04");
-		btn04.setBounds(255, 11, 53, 23);
-		contentPane.add(btn04);
-		
-		JButton btn13 = new JButton("13");
-		btn13.setBounds(193, 45, 52, 23);
-		contentPane.add(btn13);
-		
-		JButton btn14 = new JButton("14");
-		btn14.setBounds(255, 45, 53, 23);
-		contentPane.add(btn14);
-		
-		JButton btn22 = new JButton("22");
-		btn22.setBounds(130, 79, 53, 23);
-		contentPane.add(btn22);
-		
-		JButton btn23 = new JButton("23");
-		btn23.setBounds(193, 79, 52, 23);
-		contentPane.add(btn23);
-		
-		JButton btn24 = new JButton("24");
-		btn24.setBounds(255, 79, 53, 23);
-		contentPane.add(btn24);
-		
-		JButton btn31 = new JButton("31");
-		btn31.setBounds(67, 113, 53, 23);
-		contentPane.add(btn31);
-		
-		JButton btn32 = new JButton("32");
-		btn32.setBounds(130, 113, 53, 23);
-		contentPane.add(btn32);
-		
-		JButton btn33 = new JButton("33");
-		btn33.setBounds(193, 113, 52, 23);
-		contentPane.add(btn33);
-		
-		JButton btn34 = new JButton("34");
-		btn34.setBounds(255, 113, 53, 23);
-		contentPane.add(btn34);
-		
-		JButton btn40 = new JButton("40");
-		btn40.setBounds(10, 147, 53, 23);
-		contentPane.add(btn40);
-		
-		JButton btn41 = new JButton("41");
-		btn41.setBounds(67, 147, 53, 23);
-		contentPane.add(btn41);
-		
-		JButton btn42 = new JButton("42");
-		btn42.setBounds(130, 147, 53, 23);
-		contentPane.add(btn42);
-		
-		JButton btn43 = new JButton("43");
-		btn43.setBounds(193, 147, 52, 23);
-		contentPane.add(btn43);
-		
-		JButton btn44 = new JButton("44");
-		btn44.setBounds(255, 147, 53, 23);
-		contentPane.add(btn44);
-		
+
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz.length; j++) {
+				JButton newBtn = new JButton();
+
+				newBtn.setSize(53, 23);			
+				matriz[i][j] = newBtn;
+				matriz[i][j].addActionListener(this);
+			}
+		}
+	
 		btnVolver = new JButton("\u21A7");
-		btnVolver.setBounds(10, 11, 48, 23);
+		btnVolver.setBounds(342, 11, 48, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
+		
+		panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBounds(10, 45, 380, 253);
+		panel.setLayout(new GridLayout(5, 5));
+		contentPane.add(panel);
+		
+		btnComprar = new JButton("Comprar");
+		btnComprar.setBounds(152, 302, 89, 23);
+		btnComprar.addActionListener(this);
+		contentPane.add(btnComprar);
+		
+		crearPuestos();
+
+	}
+
+	private void crearPuestos() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz.length; j++) {
+
+				JButton newBtn = new JButton();
+
+				newBtn.setBounds(i + 10, j + 10, 50, 50);
+				// newBtn.setToolTipText(Integer.toString(i) + "," + Integer.toString(j));
+				matriz[i][j] = newBtn;
+				matriz[i][j].addActionListener(this);
+				panel.add(matriz[i][j]);
+				dibujar();
+
+				if (i + j < matriz.length-1) {
+					matriz[i][j].setVisible(false);
+				}
+			}
+		}		
+	}
+	
+	private void dibujar() {
+
+		panel.validate();
+		panel.repaint();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 		if (e.getSource() == btnVolver) {
 			this.dispose();
 		}
 		
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz.length; j++) {
+				if (e.getSource() == matriz[i][j]) {
+					
+				}
+			}
+		}
 	}
 }
