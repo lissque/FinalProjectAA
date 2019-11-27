@@ -3,27 +3,23 @@ package co.uniquindio.mundo;
 import java.util.ArrayList;
 
 public class Evento {
-	
+
 	private ArrayList<Cliente> misClientes;
 	private ArrayList<Registro> misRegistros;
-	private ArrayList<Administrador> misUsuarios;
-	
+	private Administrador admin;
+
 	public Evento() {
-		misClientes =  new ArrayList<Cliente>();
+		misClientes = new ArrayList<Cliente>();
 		misRegistros = new ArrayList<Registro>();
-		misUsuarios = new ArrayList<Administrador>();
+		admin = new Administrador();
 	}
-	
-	public void agregarCliente (Cliente miC) {
+
+	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
 	}
-	
-	public void agregarRegistro (Registro miR) {
+
+	public void agregarRegistro(Registro miR) {
 		misRegistros.add(miR);
-	}
-	
-	public void agregarUsuario (Administrador miU) {
-		misUsuarios.add(miU);
 	}
 
 	public ArrayList<Cliente> getMisClientes() {
@@ -42,12 +38,12 @@ public class Evento {
 		this.misRegistros = misRegistros;
 	}
 
-	public ArrayList<Administrador> getMisUsuarios() {
-		return misUsuarios;
+	public Administrador getAdmin() {
+		return admin;
 	}
 
-	public void setMisUsuarios(ArrayList<Administrador> misUsuarios) {
-		this.misUsuarios = misUsuarios;
+	public void setAdmin(Administrador admin) {
+		this.admin = admin;
 	}
-	
+
 }

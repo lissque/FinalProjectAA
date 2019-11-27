@@ -3,13 +3,11 @@ package co.uniquindio.mundo;
 public class Administrador {
 	private String id;
 	private String contraseña;
-	
-	public Administrador (String id, String contraseña) {
-		this.id = id;
-		this.contraseña = contraseña;
+
+	public Administrador() {
+		id = "admin";
+		contraseña = "1234567";
 	}
-	
-	public Administrador () {}
 
 	public String getId() {
 		return id;

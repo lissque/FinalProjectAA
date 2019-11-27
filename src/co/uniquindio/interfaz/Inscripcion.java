@@ -46,6 +46,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 	private JComboBox cbNivelEstudio;
 	private JComboBox cbEstadoCivil;
 	private JComboBox cbGenero;
+	private JLabel lblRegistrarse;
 
 	/**
 	 * Create the frame.
@@ -56,7 +57,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		this.home = home;
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 413);
+		setBounds(100, 100, 450, 482);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
@@ -65,101 +66,109 @@ public class Inscripcion extends JFrame implements ActionListener {
 
 		JLabel lblNombre = new JLabel("NOMBRE:");
 		lblNombre.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblNombre.setBounds(20, 23, 112, 14);
+		lblNombre.setBounds(20, 109, 112, 14);
 		contentPane.add(lblNombre);
 
 		JLabel lblApellido = new JLabel("APELLIDO:");
 		lblApellido.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblApellido.setBounds(20, 54, 112, 14);
+		lblApellido.setBounds(20, 134, 112, 14);
 		contentPane.add(lblApellido);
 
 		JLabel lblId = new JLabel("ID:");
 		lblId.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblId.setBounds(20, 85, 112, 14);
+		lblId.setBounds(20, 159, 112, 14);
 		contentPane.add(lblId);
 
 		JLabel lblDireccin = new JLabel("DIRECCI\u00D3N:");
 		lblDireccin.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblDireccin.setBounds(20, 110, 112, 14);
+		lblDireccin.setBounds(20, 184, 112, 14);
 		contentPane.add(lblDireccin);
 
 		JLabel lblFechaNacimiento = new JLabel("FECHA NACIMIENTO:");
 		lblFechaNacimiento.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblFechaNacimiento.setBounds(20, 142, 131, 14);
+		lblFechaNacimiento.setBounds(20, 209, 131, 14);
 		contentPane.add(lblFechaNacimiento);
 
 		JLabel lblEmail = new JLabel("E-MAIL:");
 		lblEmail.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblEmail.setBounds(20, 176, 112, 14);
+		lblEmail.setBounds(20, 234, 112, 14);
 		contentPane.add(lblEmail);
 
 		JLabel lblEstrato = new JLabel("ESTRATO:");
 		lblEstrato.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblEstrato.setBounds(20, 211, 112, 14);
+		lblEstrato.setBounds(20, 259, 112, 14);
 		contentPane.add(lblEstrato);
 
 		JLabel lblNivelEstudio = new JLabel("NIVEL ESTUDIO:");
 		lblNivelEstudio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblNivelEstudio.setBounds(20, 248, 118, 14);
+		lblNivelEstudio.setBounds(20, 284, 112, 14);
 		contentPane.add(lblNivelEstudio);
 
 		JLabel lblEstadoCivil = new JLabel("ESTADO CIVIL:");
 		lblEstadoCivil.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblEstadoCivil.setBounds(20, 283, 118, 14);
+		lblEstadoCivil.setBounds(20, 309, 118, 14);
 		contentPane.add(lblEstadoCivil);
 
 		JLabel lblGenero = new JLabel("GENERO:");
 		lblGenero.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblGenero.setBounds(20, 322, 112, 14);
+		lblGenero.setBounds(20, 334, 112, 14);
 		contentPane.add(lblGenero);
 
 		txtNombre = new JTextField();
+		txtNombre.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtNombre.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtNombre.setBounds(161, 20, 137, 20);
+		txtNombre.setBounds(161, 103, 137, 20);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 
 		txtApellido = new JTextField();
+		txtApellido.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtApellido.setFont(new Font("Times New Roman", Font.ITALIC, 11));
 		txtApellido.setText("");
-		txtApellido.setBounds(161, 51, 137, 20);
+		txtApellido.setBounds(161, 132, 137, 20);
 		contentPane.add(txtApellido);
 		txtApellido.setColumns(10);
 
 		txtId = new JTextField();
+		txtId.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtId.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtId.setBounds(161, 82, 137, 20);
+		txtId.setBounds(161, 157, 137, 20);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
 
 		txtDireccion = new JTextField();
+		txtDireccion.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtDireccion.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtDireccion.setBounds(161, 107, 137, 20);
+		txtDireccion.setBounds(161, 182, 137, 20);
 		contentPane.add(txtDireccion);
 		txtDireccion.setColumns(10);
 
 		txtDia = new JTextField();
+		txtDia.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtDia.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtDia.setBounds(161, 139, 46, 20);
+		txtDia.setBounds(161, 207, 46, 20);
 		contentPane.add(txtDia);
 		txtDia.setColumns(10);
 
 		txtMes = new JTextField();
+		txtMes.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtMes.setFont(new Font("Times New Roman", Font.ITALIC, 11));
 		txtMes.setText("");
-		txtMes.setBounds(217, 139, 46, 20);
+		txtMes.setBounds(217, 207, 46, 20);
 		contentPane.add(txtMes);
 		txtMes.setColumns(10);
 
 		txtAnio = new JTextField();
+		txtAnio.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtAnio.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtAnio.setBounds(273, 139, 46, 20);
+		txtAnio.setBounds(273, 207, 46, 20);
 		contentPane.add(txtAnio);
 		txtAnio.setColumns(10);
 
 		txtMail = new JTextField();
+		txtMail.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtMail.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtMail.setBounds(161, 173, 137, 20);
+		txtMail.setBounds(161, 232, 137, 20);
 		contentPane.add(txtMail);
 		txtMail.setColumns(10);
 
@@ -167,7 +176,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		btnVolver.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVolver.setBounds(301, 357, 112, 31);
+		btnVolver.setBounds(308, 393, 112, 31);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
 
@@ -177,7 +186,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		btnAgregar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		btnAgregar.setActionCommand("AGREGAR");
 		btnAgregar.addActionListener(this);
-		btnAgregar.setBounds(173, 357, 118, 31);
+		btnAgregar.setBounds(180, 393, 118, 31);
 		contentPane.add(btnAgregar);
 
 		cbEstrato = new JComboBox();
@@ -185,7 +194,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstrato.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstrato.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		cbEstrato.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3" }));
-		cbEstrato.setBounds(161, 208, 137, 20);
+		cbEstrato.setBounds(161, 257, 137, 20);
 		contentPane.add(cbEstrato);
 		
 		cbNivelEstudio = new JComboBox();
@@ -193,7 +202,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbNivelEstudio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbNivelEstudio.setBounds(161, 245, 137, 20);
+		cbNivelEstudio.setBounds(161, 282, 137, 20);
 		contentPane.add(cbNivelEstudio);
 		
 		cbEstadoCivil = new JComboBox();
@@ -201,7 +210,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
 		cbEstadoCivil.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbEstadoCivil.setBounds(161, 280, 137, 20);
+		cbEstadoCivil.setBounds(161, 307, 137, 20);
 		contentPane.add(cbEstadoCivil);
 		
 		cbGenero = new JComboBox();
@@ -209,8 +218,13 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
 		cbGenero.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbGenero.setBounds(161, 319, 137, 20);
+		cbGenero.setBounds(161, 332, 137, 20);
 		contentPane.add(cbGenero);
+		
+		lblRegistrarse = new JLabel("REGISTRARSE");
+		lblRegistrarse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
+		lblRegistrarse.setBounds(30, 30, 257, 20);
+		contentPane.add(lblRegistrarse);
 
 	}
 

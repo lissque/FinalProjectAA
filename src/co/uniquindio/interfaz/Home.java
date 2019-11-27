@@ -30,11 +30,10 @@ public class Home extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JButton btnInscribirse;
+	private JButton btnRegistrarse;
 	private JButton btnIngresar;
 	private JButton btnX;
 	private JButton btnAdministrador;
-	private Admin ventanaAdmin;
 	private Evento miEvento;
 
 	/**
@@ -98,13 +97,13 @@ public class Home extends JFrame implements ActionListener {
 		contentPane.add(btnX);
 		btnX.addActionListener(this);
 
-		btnInscribirse = new JButton("INSCRIBIRSE");
-		btnInscribirse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		btnInscribirse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnInscribirse.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnInscribirse.setBounds(201, 111, 138, 37);
-		contentPane.add(btnInscribirse);
-		btnInscribirse.addActionListener(this);
+		btnRegistrarse = new JButton("REGISTRARSE");
+		btnRegistrarse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnRegistrarse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRegistrarse.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnRegistrarse.setBounds(201, 111, 138, 37);
+		contentPane.add(btnRegistrarse);
+		btnRegistrarse.addActionListener(this);
 
 		btnIngresar = new JButton("INGRESAR");
 		btnIngresar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -131,18 +130,20 @@ public class Home extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 
-		if (e.getSource() == btnInscribirse) {
+		if (e.getSource() == btnRegistrarse) {
 
 			this.dispose();
 			Inscripcion inscripcion = new Inscripcion(this);
 			inscripcion.setLocationRelativeTo(null);
 			inscripcion.setVisible(true);
 		}
-		
+
 		if (e.getSource() == btnAdministrador) {
+
 			this.dispose();
-			ventanaAdmin = new  Admin(this);
-			ventanaAdmin.setVisible(true);
+			Admin admin = new Admin(this);
+			admin.setLocationRelativeTo(null);
+			admin.setVisible(true);
 		}
 
 		if (e.getSource() == btnIngresar) {
