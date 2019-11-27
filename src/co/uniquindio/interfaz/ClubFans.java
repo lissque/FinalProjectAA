@@ -12,13 +12,13 @@ import javax.swing.JButton;
 public class ClubFans extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-	private Matrices inicio;
+	private Secciones inicio;
 	private JButton btnVolver;
 
 	/**
 	 * Create the frame.
 	 */
-	public ClubFans(Matrices inicio) {
+	public ClubFans(Secciones inicio) {
 		setUndecorated(true);
 		setResizable(false);
 		

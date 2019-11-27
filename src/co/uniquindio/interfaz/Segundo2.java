@@ -13,13 +13,13 @@ import javax.swing.JButton;
 public class Segundo2 extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-	private Matrices inicio;
+	private Secciones inicio;
 	private JButton btnVolver;
 
 	/**
 	 * Create the frame.
 	 */
-	public Segundo2(Matrices inicio) {
+	public Segundo2(Secciones inicio) {
 		setUndecorated(true);
 		setResizable(false);
 		

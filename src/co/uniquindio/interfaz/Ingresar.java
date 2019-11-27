@@ -87,7 +87,7 @@ public class Ingresar extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnAcceder) {
 			this.dispose();
-			Matrices ventanaMatrices = new Matrices(home);
+			Secciones ventanaMatrices = new Secciones(home);
 			ventanaMatrices.setLocationRelativeTo(null);
 			ventanaMatrices.setVisible(true);
 		}

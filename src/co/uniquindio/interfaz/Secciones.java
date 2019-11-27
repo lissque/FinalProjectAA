@@ -1,21 +1,22 @@
 package co.uniquindio.interfaz;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
+
+import co.uniquindio.mundo.Escenario;
+
 import java.awt.Color;
 import java.awt.Cursor;
 
-public class Matrices extends JFrame implements ActionListener {
+public class Secciones extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JButton btnM1;
@@ -24,16 +25,18 @@ public class Matrices extends JFrame implements ActionListener {
 	private JButton btnM5;
 	private JButton btnM3;
 	private JButton btnVolver;	
-	private Home home;
+	private Home home;	
+	private Escenario escenario;
 
 	/**
 	 * Create the frame.
 	 */
-	public Matrices(Home home) {
+	public Secciones(Home home) {
 		setUndecorated(true);
 		setResizable(false);
 		
 		this.home= home;
+		escenario = new Escenario();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 409, 200);
@@ -95,8 +98,8 @@ public class Matrices extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnM1) {
 
-			//this.dispose();
-			Platea1 m1 = new Platea1();
+			this.dispose();
+			Platea1 m1 = new Platea1(escenario);
 			m1.setVisible(true);
 
 		}
