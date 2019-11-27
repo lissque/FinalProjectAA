@@ -17,6 +17,7 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
 import co.uniquindio.mundo.Cliente;
+import co.uniquindio.mundo.EstadoPuesto;
 import co.uniquindio.mundo.Puesto;
 import co.uniquindio.mundo.Registro;
 import co.uniquindio.mundo.Seccion;
@@ -137,10 +138,23 @@ public class Estadisticas extends JFrame implements ActionListener {
 					JOptionPane.INFORMATION_MESSAGE);
 		}
 		if (e.getSource() == btnListadoDePuestos) {
-			String puestos = "Listado de puestos no \n";
+			String puestos = "Listado de puestos libres \n";
 			for (Seccion seccion : home.getMiEvento().getEscenario().getSecciones()) {
-				
+				puestos+=seccion;
+				for (int i = 0; i < seccion.getPuestos().length; i++) {
+					for (int j = 0; j < seccion.getPuestos()[i].length; j++) {
+						Puesto miP = seccion.getPuestos()[i][j];
+						if (miP.getEstado()==EstadoPuesto.LIBRE) {
+							puestos+=miP.getEstado();
+						}
+					}
+					puestos+="\n";
+				}
+				puestos+="\n";
+
 			}
+			JOptionPane.showMessageDialog(null, puestos, "Informacion*",
+					JOptionPane.INFORMATION_MESSAGE);
 		}
 		if (e.getSource() == btnVolver) {
 
