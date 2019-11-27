@@ -19,6 +19,7 @@ import javax.swing.text.html.HTMLDocument.Iterator;
 import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Puesto;
 import co.uniquindio.mundo.Registro;
+import co.uniquindio.mundo.Seccion;
 
 import javax.swing.border.BevelBorder;
 import java.awt.Font;
@@ -136,7 +137,10 @@ public class Estadisticas extends JFrame implements ActionListener {
 					JOptionPane.INFORMATION_MESSAGE);
 		}
 		if (e.getSource() == btnListadoDePuestos) {
-			String puestos = "Listado de puestos no ";
+			String puestos = "Listado de puestos no \n";
+			for (Seccion seccion : home.getMiEvento().getEscenario().getSecciones()) {
+				
+			}
 		}
 		if (e.getSource() == btnVolver) {
 
