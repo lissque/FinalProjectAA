@@ -85,6 +85,13 @@ public class Ingresar extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+		if (e.getSource() == btnAcceder) {
+			this.dispose();
+			Matrices ventanaMatrices = new Matrices(home);
+			ventanaMatrices.setLocationRelativeTo(null);
+			ventanaMatrices.setVisible(true);
+		}
+		
 		if (e.getSource() == btnVolver) {
 
 			this.dispose();
