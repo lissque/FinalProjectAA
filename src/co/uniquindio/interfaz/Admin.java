@@ -110,6 +110,9 @@ public class Admin extends JFrame implements ActionListener {
 					&& home.getMiEvento().getAdmin().getContraseña().equals(pass)) {
 
 				this.dispose();
+				Estadisticas estadisticas = new Estadisticas(home);
+				estadisticas.setVisible(true);
+				estadisticas.setLocationRelativeTo(null);
 
 			} else {
 
