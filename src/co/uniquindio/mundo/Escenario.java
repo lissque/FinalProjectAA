@@ -14,26 +14,9 @@ public class Escenario {
 	public Escenario() {
 	}
 
-	public void crearClubFans() {
-
-		Seccion nuevaSeccion = new Seccion(TipoSeccion.CLUB_FANS);
-
-	}
-
-	public void crearPlatea1() {
-
-	}
-
-	public void crearPlatea2() {
-
-	}
-
-	public void crearSegundoPiso1() {
-
-	}
-
-	public void crearSegundoPiso2() {
-
+	public void agregarSeccion(TipoSeccion tipo) {
+		Seccion seccion = new Seccion(tipo);
+		seccion.llenarMatriz();
 	}
 
 	public ArrayList<TipoSeccion> getSecciones() {
