@@ -125,6 +125,7 @@ public class Admin extends JFrame implements ActionListener {
 		if (e.getSource() == btnVolver) {
 			this.dispose();
 			home.setVisible(true);
+			home.setLocationRelativeTo(null);
 		}
 	}
 }
