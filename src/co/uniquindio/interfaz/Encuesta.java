@@ -30,7 +30,7 @@ public class Encuesta extends JFrame implements ActionListener{
 	private JComboBox cbPregunta4;
 	private JComboBox cbPregunta3;
 	private JButton btnOk;
-
+   
 	/**
 	 * Create the frame.
 	 */
