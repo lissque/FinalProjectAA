@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -21,14 +22,12 @@ import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 import javax.swing.border.TitledBorder;
 import co.uniquindio.mundo.NivelEstudio;
+import co.uniquindio.mundo.Respuesta;
 import co.uniquindio.mundo.EstadoCivil;
 import co.uniquindio.mundo.Genero;
 
 public class Inscripcion extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNombre;
@@ -196,7 +195,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstrato.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3" }));
 		cbEstrato.setBounds(161, 257, 137, 20);
 		contentPane.add(cbEstrato);
-		
+
 		cbNivelEstudio = new JComboBox();
 		cbNivelEstudio.setModel(new DefaultComboBoxModel(NivelEstudio.values()));
 		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -204,7 +203,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbNivelEstudio.setBounds(161, 282, 137, 20);
 		contentPane.add(cbNivelEstudio);
-		
+
 		cbEstadoCivil = new JComboBox();
 		cbEstadoCivil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
@@ -212,7 +211,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstadoCivil.setBounds(161, 307, 137, 20);
 		contentPane.add(cbEstadoCivil);
-		
+
 		cbGenero = new JComboBox();
 		cbGenero.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
@@ -220,7 +219,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbGenero.setBounds(161, 332, 137, 20);
 		contentPane.add(cbGenero);
-		
+
 		lblRegistrarse = new JLabel("REGISTRARSE");
 		lblRegistrarse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
 		lblRegistrarse.setBounds(30, 30, 257, 20);
@@ -249,21 +248,21 @@ public class Inscripcion extends JFrame implements ActionListener {
 			int anioN = Integer.parseInt(txtAnio.getText());
 			Fecha fechaNacimiento = new Fecha(anioN, mesN, diaN);
 			String email = txtMail.getText();
-			// int estrato = Integer.parseInt(mnEstrato.getText());
-			// String nivelEstudio = mnNivelEstudio.getText();
-			// String estadoCivil = mnEstadoCivil.getText();
-			// String genero = mnGenero.getText();
-			// String gene = estrato.getSelectedItem();
+			int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
+			NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
+			EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
+			Genero genero = (Genero) cbGenero.getSelectedItem();
 
 			try {
-				int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
-				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato, null, null, null, null, null);
+
+				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato,
+						nivelEstudio, estadoCivil, genero, null, null);
 				home.agregarClientes(miCliente);
 
 				System.out.println(miCliente.toString());
-				
+
 			} catch (Exception err) {
-				err.printStackTrace();
+				System.out.println(err.getStackTrace());
 			}
 
 			this.setVisible(false);

@@ -38,19 +38,16 @@ public class Estadisticas extends JFrame implements ActionListener {
 	private JButton btnListadoOrdenadoDe;
 	private JButton btnListadoDeAsistentesEstrato;
 
-	/**
-	 * Create the frame.
-	 */
 	public Estadisticas(Home home) {
 
 		this.home = home;
 		setUndecorated(true);
 		setResizable(false);
 		setLocationRelativeTo(null);
-//		contentPane.setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

@@ -83,7 +83,7 @@ public class Home extends JFrame implements ActionListener {
 		lblGestionDeEspectaculos.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		lblGestionDeEspectaculos.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblGestionDeEspectaculos.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 28));
-		lblGestionDeEspectaculos.setForeground(Color.WHITE);
+		lblGestionDeEspectaculos.setForeground(Color.BLACK);
 		lblGestionDeEspectaculos.setBounds(65, 27, 421, 73);
 		contentPane.add(lblGestionDeEspectaculos);
 
