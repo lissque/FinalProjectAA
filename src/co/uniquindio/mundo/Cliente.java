@@ -11,10 +11,10 @@ public class Cliente {
 	private EstadoCivil estadoCivil;
 	private Genero genero;
 	private Tarjeta miTarjeta;
-	private ArrayList<Respuesta> respuestas;
+	private ArrayList<Integer> respuestas;
 	
 	public Cliente(String id, String nombre, String apellido, String direccion, String email, Fecha fechaNacimiento,
-			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta, ArrayList<Respuesta> respuestas) {
+			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta, ArrayList<Integer> respuestas) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -120,11 +120,11 @@ public class Cliente {
 		this.miTarjeta = miTarjeta;
 	}
 
-	public ArrayList<Respuesta> getRespuestas() {
+	public ArrayList<Integer> getRespuestas() {
 		return respuestas;
 	}
 
-	public void setRespuestas(ArrayList<Respuesta> respuestas) {
+	public void setRespuestas(ArrayList<Integer> respuestas) {
 		this.respuestas = respuestas;
 	}
 	
