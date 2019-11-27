@@ -1,39 +1,40 @@
 package co.uniquindio.mundo;
 
 public class Fecha {
-	private int año, mes, dia;
-	
-	public Fecha () {}
-	
-	public Fecha(int año, int mes, int dia) {
+	private String año, mes, dia;
+
+	public Fecha() {
+	}
+
+	public Fecha(String año, String mes, String dia) {
 		super();
 		this.año = año;
 		this.mes = mes;
 		this.dia = dia;
 	}
 
-	public int getAño() {
+	public String getAño() {
 		return año;
 	}
 
-	public void setAño(int año) {
+	public void setAño(String año) {
 		this.año = año;
 	}
 
-	public int getMes() {
+	public String getMes() {
 		return mes;
 	}
 
-	public void setMes(int mes) {
+	public void setMes(String mes) {
 		this.mes = mes;
 	}
 
-	public int getDia() {
+	public String getDia() {
 		return dia;
 	}
 
-	public void setDia(int dia) {
+	public void setDia(String dia) {
 		this.dia = dia;
 	}
-	
+
 }

@@ -160,6 +160,7 @@ public class Home extends JFrame implements ActionListener {
 			Admin admin = new Admin(this);
 			admin.setLocationRelativeTo(null);
 			admin.setVisible(true);
+			System.out.println(miEvento.getMisClientes().get(0).getEstrato());
 		}
 
 		if (e.getSource() == btnIngresar) {

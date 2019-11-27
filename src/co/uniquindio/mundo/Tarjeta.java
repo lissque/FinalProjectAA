@@ -5,8 +5,6 @@ public class Tarjeta {
 	private final double CUPO_DISPONIBLE = 2500000;
 	private Cliente miCliente;
 	
-	public Tarjeta() {}
-
 	public Cliente getMiCliente() {
 		return miCliente;
 	}
@@ -17,6 +15,5 @@ public class Tarjeta {
 
 	public double getCUPO_DISPONIBLE() {
 		return CUPO_DISPONIBLE;
-	}
-	
+	}	
 }

@@ -13,22 +13,21 @@ public class Cliente {
 	private Tarjeta miTarjeta;
 	private ArrayList<Respuesta> respuestas;
 
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, Fecha fechaNacimiento,
-			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta,
-			ArrayList<Respuesta> respuestas) {
+	public Cliente(String id, String nombre, String apellido, String direccion, String email, String anio, String mes,
+			String dia, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
+			Tarjeta mitargeta) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
 		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
 		this.estrato = estrato;
 		this.nivelEstudio = nivelEstudio;
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
-		this.miTarjeta = miTarjeta;
-		this.respuestas = respuestas;
+
+		fechaNacimiento = new Fecha(anio, mes, dia);
 	}
 
 	public Cliente() {
@@ -122,8 +121,15 @@ public class Cliente {
 		this.miTarjeta = miTarjeta;
 	}
 
-	@Override
-	public String toString() {
-		return " Nombre completo: " + nombre + apellido +"\nId:" + id;
+	public boolean validarFecha(String dia, String mes, String anio) {
+
+		int d = Integer.parseInt(dia);
+		int m = Integer.parseInt(mes);
+		int a = Integer.parseInt(anio);
+
+		if ((d > 0 && d < 32) && (m > 0 && m < 13) && (a > 1900 && a < 2001)) {
+			return true;
+		}
+		return false;
 	}
 }

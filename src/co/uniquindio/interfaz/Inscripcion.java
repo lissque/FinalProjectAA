@@ -9,10 +9,12 @@ import co.uniquindio.mundo.Fecha;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -23,6 +25,7 @@ import java.awt.Cursor;
 import javax.swing.border.TitledBorder;
 import co.uniquindio.mundo.NivelEstudio;
 import co.uniquindio.mundo.Respuesta;
+import co.uniquindio.mundo.Tarjeta;
 import co.uniquindio.mundo.EstadoCivil;
 import co.uniquindio.mundo.Genero;
 
@@ -51,9 +54,10 @@ public class Inscripcion extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Inscripcion(Home home) {
-		setBackground(Color.LIGHT_GRAY);
 
 		this.home = home;
+
+		setBackground(Color.LIGHT_GRAY);
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 482);
@@ -239,35 +243,43 @@ public class Inscripcion extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnAgregar) {
 
-			String nombre = txtNombre.getText();
-			String apellido = txtApellido.getText();
-			String id = txtId.getText();
-			String direccion = txtDireccion.getText();
-			int diaN = Integer.parseInt(txtDia.getText());
-			int mesN = Integer.parseInt(txtMes.getText());
-			int anioN = Integer.parseInt(txtAnio.getText());
-			Fecha fechaNacimiento = new Fecha(anioN, mesN, diaN);
-			String email = txtMail.getText();
-			int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
-			NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
-			EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
-			Genero genero = (Genero) cbGenero.getSelectedItem();
+			if (txtId == null || txtNombre == null || txtApellido == null || txtDireccion == null || txtMail == null
+					|| txtDia == null || txtMes == null || txtAnio == null) {
 
-			try {
+				JOptionPane.showMessageDialog(null, "RELLENE TODOS LOS CAMPOS", "ADVERTENCIA!",
+						JOptionPane.WARNING_MESSAGE, null);
 
-				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato,
-						nivelEstudio, estadoCivil, genero, null, null);
+			} else {
+
+				String nombre = txtNombre.getText();
+				String apellido = txtApellido.getText();
+				String id = txtId.getText();
+				String direccion = txtDireccion.getText();
+				String diaN = txtDia.getText();
+				String mesN = txtMes.getText();
+				String anioN = txtAnio.getText();
+				String email = txtMail.getText();
+
+				int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
+				NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
+				EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
+				Genero genero = (Genero) cbGenero.getSelectedItem();
+
+				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, diaN, mesN, anioN, estrato,
+						nivelEstudio, estadoCivil, genero, null);
+
+				System.err.println(miCliente.getApellido());
 				home.agregarClientes(miCliente);
 
-				System.out.println(miCliente.toString());
+				JOptionPane.showMessageDialog(null,
+						"EL CLIENTE: " + miCliente.getNombre().toUpperCase() + ", FUE AGREGADO", "INFORMACIÓN",
+						JOptionPane.INFORMATION_MESSAGE, null);
 
-			} catch (Exception err) {
-				System.out.println(err.getStackTrace());
+				this.setVisible(false);
+				home.setVisible(true);
+				home.setLocationRelativeTo(null);
+
 			}
-
-			this.setVisible(false);
-			home.setVisible(true);
-
 		}
 	}
 }
