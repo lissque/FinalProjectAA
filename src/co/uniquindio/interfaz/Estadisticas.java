@@ -12,6 +12,10 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.border.SoftBevelBorder;
+
+import co.uniquindio.mundo.Cliente;
+import co.uniquindio.mundo.Registro;
+
 import javax.swing.border.BevelBorder;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -36,7 +40,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		setUndecorated(true);
 		setResizable(false);
 		setLocationRelativeTo(null);
-		contentPane.setBackground(Color.LIGHT_GRAY);
+//		contentPane.setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -88,8 +92,21 @@ public class Estadisticas extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
-
+		if (e.getSource()==btnListadoDeAsistentes) {
+			String salida = "Listado de asistentes: \n";
+			for (Registro miRegistro : home.getMiEvento().getMisRegistros()) {
+				
+			}
+		}
+		if (e.getSource()==btnListadoOrdenadoDe) {
+			
+		}
+		if (e.getSource()==btnListadoDeAsistentesEstrato) {
+			
+		}
+		if (e.getSource()==btnListadoDePuestos) {
+			
+		}
 		if (e.getSource() == btnVolver) {
 
 			this.dispose();
