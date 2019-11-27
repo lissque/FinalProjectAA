@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.border.LineBorder;
 
 import co.uniquindio.mundo.Cliente;
+import co.uniquindio.mundo.Escenario;
 import co.uniquindio.mundo.Evento;
 
 import javax.swing.JLabel;
@@ -35,6 +36,7 @@ public class Home extends JFrame implements ActionListener {
 	private JButton btnX;
 	private JButton btnAdministrador;
 	private Evento miEvento;
+	private Escenario miEscenario;
 
 	/**
 	 * Launch the application.
@@ -68,6 +70,8 @@ public class Home extends JFrame implements ActionListener {
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 
 		miEvento = new Evento();
+		miEscenario = new Escenario();
+		
 		setLocationRelativeTo(null);
 		setUndecorated(true);
 		setResizable(false);
@@ -121,6 +125,18 @@ public class Home extends JFrame implements ActionListener {
 		contentPane.add(btnAdministrador);
 		btnAdministrador.addActionListener(this);
 	}
+	
+	public void agregarClientes(Cliente cliente) {
+		miEvento.agregarCliente(cliente);
+	}
+
+	public Escenario getMiEscenario() {
+		return miEscenario;
+	}
+
+	public void setMiEscenario(Escenario miEscenario) {
+		this.miEscenario = miEscenario;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -154,10 +170,5 @@ public class Home extends JFrame implements ActionListener {
 			ingresar.setVisible(true);
 
 		}
-
-	}
-
-	public void agregarClientes(Cliente cliente) {
-		miEvento.agregarCliente(cliente);
-	}
+	}	
 }

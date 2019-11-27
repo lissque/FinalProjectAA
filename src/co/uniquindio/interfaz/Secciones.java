@@ -24,20 +24,19 @@ public class Secciones extends JFrame implements ActionListener {
 	private JButton btnM2;
 	private JButton btnM5;
 	private JButton btnM3;
-	private JButton btnVolver;	
-	private Home home;	
-	private Escenario escenario;
+	private JButton btnVolver;
+	private Ingresar anterior;
 
 	/**
 	 * Create the frame.
 	 */
-	public Secciones(Home home) {
+	public Secciones(Ingresar anterior) {
+
 		setUndecorated(true);
 		setResizable(false);
-		
-		this.home= home;
-		escenario = new Escenario();
-		
+
+		this.anterior = anterior;
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 409, 200);
 		setLocationRelativeTo(null);
@@ -75,12 +74,12 @@ public class Secciones extends JFrame implements ActionListener {
 		btnM5.setBounds(252, 103, 115, 61);
 		btnM5.addActionListener(this);
 		contentPane.add(btnM5);
-		
+
 		btnVolver = new JButton("\u2190");
 		btnVolver.addActionListener(this);
 		btnVolver.setBounds(346, 166, 53, 23);
 		contentPane.add(btnVolver);
-		
+
 		JLabel lblTarima = new JLabel("TARIMA");
 		lblTarima.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		lblTarima.setBackground(Color.WHITE);
@@ -99,41 +98,41 @@ public class Secciones extends JFrame implements ActionListener {
 		if (e.getSource() == btnM1) {
 
 			this.dispose();
-			Platea1 m1 = new Platea1(escenario);
+			Platea1 m1 = new Platea1(anterior.getHome().getMiEscenario());
 			m1.setVisible(true);
 
 		}
 		if (e.getSource() == btnM2) {
 
-			//this.dispose();
+			// this.dispose();
 			ClubFans m2 = new ClubFans(this);
 			m2.setVisible(true);
 
 		}
 		if (e.getSource() == btnM3) {
 
-			//this.dispose();
+			// this.dispose();
 			Platea2 m3 = new Platea2(this);
 			m3.setVisible(true);
 
 		}
 		if (e.getSource() == btnM4) {
 
-			//this.dispose();
+			// this.dispose();
 			Segundo1 m4 = new Segundo1(this);
 			m4.setVisible(true);
 
 		}
 		if (e.getSource() == btnM5) {
 
-			//this.dispose();
+			// this.dispose();
 			Segundo2 m5 = new Segundo2(this);
 			m5.setVisible(true);
 
-		} if (e.getSource() == btnVolver) {
-			
+		}
+		if (e.getSource() == btnVolver) {
 			this.dispose();
-			home.setVisible(true);
+			anterior.setVisible(true);
 		}
 	}
 }

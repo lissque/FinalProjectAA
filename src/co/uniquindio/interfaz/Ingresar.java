@@ -1,17 +1,13 @@
 package co.uniquindio.interfaz;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.accessibility.Accessible;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.DebugGraphics;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -24,11 +20,12 @@ public class Ingresar extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JLabel lblIngresar;
 	private JButton btnAcceder;
 	private JButton btnVolver;
 
 	private Home home;
-	private JLabel lblIngresar;
+	
 
 	/**
 	 * Create the frame.
@@ -80,6 +77,10 @@ public class Ingresar extends JFrame implements ActionListener {
 		lblIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
 		lblIngresar.setBounds(32, 35, 248, 36);
 		contentPane.add(lblIngresar);
+	}	
+
+	public Home getHome() {
+		return home;
 	}
 
 	@Override
@@ -87,7 +88,7 @@ public class Ingresar extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnAcceder) {
 			this.dispose();
-			Secciones ventanaMatrices = new Secciones(home);
+			Secciones ventanaMatrices = new Secciones(this);
 			ventanaMatrices.setLocationRelativeTo(null);
 			ventanaMatrices.setVisible(true);
 		}
