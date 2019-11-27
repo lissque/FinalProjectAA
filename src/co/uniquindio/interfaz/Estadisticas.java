@@ -141,7 +141,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 				for (int i = 0; i < seccion.getPuestos().length; i++) {
 					for (int j = 0; j < seccion.getPuestos()[i].length; j++) {
 						Puesto miP = seccion.getPuestos()[i][j];
-						if (miP.getEstado()==EstadoPuesto.LIBRE) {
+						if (miP.getEstado() == EstadoPuesto.LIBRE) {
 							puestos+=miP.getEstado();
 						}
 					}

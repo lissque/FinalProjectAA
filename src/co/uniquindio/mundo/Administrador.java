@@ -5,8 +5,8 @@ public class Administrador {
 	private String contraseña;
 
 	public Administrador() {
-		id = "admin";
-		contraseña = "1234567";
+		id = "123";
+		contraseña = "123";
 	}
 
 	public String getId() {
