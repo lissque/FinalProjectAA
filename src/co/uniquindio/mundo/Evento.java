@@ -45,8 +45,4 @@ public class Evento {
 	public void setAdmin(Administrador admin) {
 		this.admin = admin;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
