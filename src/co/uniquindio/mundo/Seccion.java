@@ -1,25 +1,87 @@
 package co.uniquindio.mundo;
 
 public class Seccion {
-	
-	private Escenario escenario;
-	private Puesto puestos [][];
-	private String nombre;
-	
-	public Seccion() {}
-	
-	public Seccion(int n, String nombre) {
-		escenario = new Escenario();
-		puestos = new Puesto [n][n];
-		this.nombre = nombre;
+
+	private Puesto puestos[][];
+	private TipoSeccion tipo;
+
+	public Seccion() {
+
 	}
 
-	public Escenario getEscenario() {
-		return escenario;
+	public Seccion(TipoSeccion tipo) {
+
+		puestos = new Puesto[5][5];
+		this.tipo = tipo;
 	}
 
-	public void setEscenario(Escenario escenario) {
-		this.escenario = escenario;
+	public void llenarMatriz() {
+
+		if (this.getTipo().equals(TipoSeccion.CLUB_FANS)) {
+
+			for (int i = 0; i < puestos.length; i++) {
+				for (int j = 0; j < puestos.length; j++) {
+					puestos[i][j] = new Puesto();
+				}
+			}
+		}
+
+		if (this.getTipo().equals(TipoSeccion.PLATEA_1)) {
+
+			for (int i = 0; i < puestos.length; i++) {
+				for (int j = 0; j < puestos.length; j++) {
+					if (i > j) {
+						puestos[i][j] = null;
+					} else {
+						puestos[i][j] = new Puesto();
+
+					}
+				}
+			}
+		}
+
+		if (this.getTipo().equals(TipoSeccion.PLATEA_2)) {
+
+			for (int i = 0; i < puestos.length; i++) {
+				for (int j = 0; j < puestos.length; j++) {
+					if (i + j > puestos.length - 1) {
+						puestos[i][j] = null;
+					} else {
+						puestos[i][j] = new Puesto();
+
+					}
+				}
+			}
+		}
+
+		if (this.getTipo().equals(TipoSeccion.SEGUNDO_PISO_1)) {
+
+			for (int i = 0; i < puestos.length; i++) {
+				for (int j = 0; j < puestos.length; j++) {
+					if (i < j) {
+						puestos[i][j] = null;
+					} else {
+						puestos[i][j] = new Puesto();
+
+					}
+				}
+			}
+		}
+
+		if (this.getTipo().equals(TipoSeccion.SEGUNDO_PISO_2)) {
+
+			for (int i = 0; i < puestos.length; i++) {
+				for (int j = 0; j < puestos.length; j++) {
+					if (i + j < puestos.length - 1) {
+						puestos[i][j] = null;
+					} else {
+						puestos[i][j] = new Puesto();
+
+					}
+				}
+			}
+		}
+
 	}
 
 	public Puesto[][] getPuestos() {
@@ -30,13 +92,11 @@ public class Seccion {
 		this.puestos = puestos;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public TipoSeccion getTipo() {
+		return tipo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setTipo(TipoSeccion tipo) {
+		this.tipo = tipo;
 	}
-	
-	
 }

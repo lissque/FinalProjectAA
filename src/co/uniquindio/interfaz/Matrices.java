@@ -96,35 +96,35 @@ public class Matrices extends JFrame implements ActionListener {
 		if (e.getSource() == btnM1) {
 
 			//this.dispose();
-			M1 m1 = new M1();
+			Platea1 m1 = new Platea1();
 			m1.setVisible(true);
 
 		}
 		if (e.getSource() == btnM2) {
 
 			//this.dispose();
-			M2 m2 = new M2(this);
+			ClubFans m2 = new ClubFans(this);
 			m2.setVisible(true);
 
 		}
 		if (e.getSource() == btnM3) {
 
 			//this.dispose();
-			M3 m3 = new M3(this);
+			Platea2 m3 = new Platea2(this);
 			m3.setVisible(true);
 
 		}
 		if (e.getSource() == btnM4) {
 
 			//this.dispose();
-			M4 m4 = new M4(this);
+			Segundo1 m4 = new Segundo1(this);
 			m4.setVisible(true);
 
 		}
 		if (e.getSource() == btnM5) {
 
 			//this.dispose();
-			M5 m5 = new M5(this);
+			Segundo2 m5 = new Segundo2(this);
 			m5.setVisible(true);
 
 		} if (e.getSource() == btnVolver) {

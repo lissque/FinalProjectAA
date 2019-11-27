@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class M1 extends JFrame implements ActionListener {
+public class Platea2 extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private Matrices inicio;
@@ -18,80 +18,82 @@ public class M1 extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public M1() {
+	public Platea2(Matrices inicio) {
 		setUndecorated(true);
 		setResizable(false);
 		
+		this.inicio = inicio;
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 321, 185);
+		setBounds(100, 100, 320, 200);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btn00 = new JButton("00");
-		btn00.setBounds(10, 11, 53, 23);
-		contentPane.add(btn00);
+		JButton btn04 = new JButton("04");
+		btn04.setBounds(255, 11, 53, 23);
+		contentPane.add(btn04);
 		
-		JButton btn10 = new JButton("10");
-		btn10.setBounds(10, 45, 53, 23);
-		contentPane.add(btn10);
+		JButton btn13 = new JButton("13");
+		btn13.setBounds(193, 45, 52, 23);
+		contentPane.add(btn13);
 		
-		JButton btn11 = new JButton("11");
-		btn11.setBounds(73, 45, 52, 23);
-		contentPane.add(btn11);
-		
-		JButton btn20 = new JButton("20");
-		btn20.setBounds(10, 79, 53, 23);
-		contentPane.add(btn20);
-		
-		JButton btn21 = new JButton("21");
-		btn21.setBounds(73, 79, 52, 23);
-		contentPane.add(btn21);
+		JButton btn14 = new JButton("14");
+		btn14.setBounds(255, 45, 53, 23);
+		contentPane.add(btn14);
 		
 		JButton btn22 = new JButton("22");
-		btn22.setBounds(135, 79, 52, 23);
+		btn22.setBounds(130, 79, 53, 23);
 		contentPane.add(btn22);
 		
-		JButton btn30 = new JButton("30");
-		btn30.setBounds(10, 113, 53, 23);
-		contentPane.add(btn30);
+		JButton btn23 = new JButton("23");
+		btn23.setBounds(193, 79, 52, 23);
+		contentPane.add(btn23);
+		
+		JButton btn24 = new JButton("24");
+		btn24.setBounds(255, 79, 53, 23);
+		contentPane.add(btn24);
 		
 		JButton btn31 = new JButton("31");
-		btn31.setBounds(73, 113, 52, 23);
+		btn31.setBounds(67, 113, 53, 23);
 		contentPane.add(btn31);
 		
 		JButton btn32 = new JButton("32");
-		btn32.setBounds(135, 113, 52, 23);
+		btn32.setBounds(130, 113, 53, 23);
 		contentPane.add(btn32);
 		
 		JButton btn33 = new JButton("33");
-		btn33.setBounds(197, 113, 53, 23);
+		btn33.setBounds(193, 113, 52, 23);
 		contentPane.add(btn33);
+		
+		JButton btn34 = new JButton("34");
+		btn34.setBounds(255, 113, 53, 23);
+		contentPane.add(btn34);
 		
 		JButton btn40 = new JButton("40");
 		btn40.setBounds(10, 147, 53, 23);
 		contentPane.add(btn40);
 		
 		JButton btn41 = new JButton("41");
-		btn41.setBounds(73, 147, 52, 23);
+		btn41.setBounds(67, 147, 53, 23);
 		contentPane.add(btn41);
 		
 		JButton btn42 = new JButton("42");
-		btn42.setBounds(135, 147, 52, 23);
+		btn42.setBounds(130, 147, 53, 23);
 		contentPane.add(btn42);
 		
 		JButton btn43 = new JButton("43");
-		btn43.setBounds(197, 147, 53, 23);
+		btn43.setBounds(193, 147, 52, 23);
 		contentPane.add(btn43);
 		
 		JButton btn44 = new JButton("44");
-		btn44.setBounds(260, 147, 48, 23);
+		btn44.setBounds(255, 147, 53, 23);
 		contentPane.add(btn44);
 		
 		btnVolver = new JButton("\u21A7");
-		btnVolver.setBounds(260, 11, 48, 23);
+		btnVolver.setBounds(10, 11, 48, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
 	}
@@ -103,5 +105,6 @@ public class M1 extends JFrame implements ActionListener {
 		if (e.getSource() == btnVolver) {
 			this.dispose();
 		}
+		
 	}
 }
