@@ -12,13 +12,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
+import javax.swing.JTextArea;
+import javax.swing.JScrollBar;
 
 public class ResultadosEstadisticas extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 
 	private Home home;
+	private JTextArea textArea;
 
 	/**
 	 * Create the frame.
@@ -33,7 +37,7 @@ public class ResultadosEstadisticas extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -42,11 +46,15 @@ public class ResultadosEstadisticas extends JFrame implements ActionListener {
 		button.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		button.setBounds(352, 270, 88, 19);
 		contentPane.add(button);
+		
+		textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setBounds(22, 23, 402, 236);
+		contentPane.add(textArea);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
 	}
-
 }
