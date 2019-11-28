@@ -71,14 +71,14 @@ public class Home extends JFrame implements ActionListener {
 
 		miEvento = new Evento();
 		miEscenario = new Escenario();
-		
+
 		setLocationRelativeTo(null);
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 572, 304);
+		setBounds(100, 100, 700, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -86,46 +86,49 @@ public class Home extends JFrame implements ActionListener {
 		JLabel lblGestionDeEspectaculos = new JLabel("GESTIÓN DE ESPECTÁCULOS");
 		lblGestionDeEspectaculos.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		lblGestionDeEspectaculos.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblGestionDeEspectaculos.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 28));
+		lblGestionDeEspectaculos.setFont(new Font("Gabriola", Font.BOLD, 50));
 		lblGestionDeEspectaculos.setForeground(Color.BLACK);
-		lblGestionDeEspectaculos.setBounds(65, 27, 421, 73);
+		lblGestionDeEspectaculos.setBounds(68, 63, 601, 73);
 		contentPane.add(lblGestionDeEspectaculos);
 
 		btnX = new JButton("X");
 		btnX.setForeground(Color.BLACK);
 		btnX.setBackground(Color.RED);
 		btnX.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnX.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 12));
+		btnX.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnX.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnX.setBounds(532, 11, 30, 26);
+		btnX.setBounds(660, 11, 30, 26);
 		contentPane.add(btnX);
 		btnX.addActionListener(this);
 
 		btnRegistrarse = new JButton("REGISTRARSE");
-		btnRegistrarse.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnRegistrarse.setBackground(new Color(240, 128, 128));
+		btnRegistrarse.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnRegistrarse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRegistrarse.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnRegistrarse.setBounds(201, 111, 138, 37);
+		btnRegistrarse.setBounds(216, 193, 267, 37);
 		contentPane.add(btnRegistrarse);
 		btnRegistrarse.addActionListener(this);
 
 		btnIngresar = new JButton("INGRESAR");
+		btnIngresar.setBackground(new Color(240, 128, 128));
 		btnIngresar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		btnIngresar.setBounds(201, 207, 138, 37);
+		btnIngresar.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnIngresar.setBounds(216, 367, 267, 37);
 		contentPane.add(btnIngresar);
 		btnIngresar.addActionListener(this);
 
 		btnAdministrador = new JButton("ADMINISTRADOR");
+		btnAdministrador.setBackground(new Color(240, 128, 128));
 		btnAdministrador.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnAdministrador.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnAdministrador.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnAdministrador.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAdministrador.setBounds(201, 159, 138, 37);
+		btnAdministrador.setBounds(216, 282, 267, 37);
 		contentPane.add(btnAdministrador);
 		btnAdministrador.addActionListener(this);
 	}
-	
+
 	public void agregarClientes(Cliente cliente) {
 		miEvento.agregarCliente(cliente);
 	}
@@ -160,7 +163,6 @@ public class Home extends JFrame implements ActionListener {
 			Admin admin = new Admin(this);
 			admin.setLocationRelativeTo(null);
 			admin.setVisible(true);
-			System.out.println(miEvento.getMisClientes().get(0).getEstrato());
 		}
 
 		if (e.getSource() == btnIngresar) {
@@ -171,5 +173,5 @@ public class Home extends JFrame implements ActionListener {
 			ingresar.setVisible(true);
 
 		}
-	}	
+	}
 }
