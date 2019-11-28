@@ -2,8 +2,8 @@ package co.uniquindio.mundo;
 
 /**
  * @author Lissette Quebrada
- * @author Lissette Quebrada
- *
+ * @author Luisa Cotte
+ * @author Andres Cotes    
  */
 public class Fecha {
 	private String año, mes, dia;
