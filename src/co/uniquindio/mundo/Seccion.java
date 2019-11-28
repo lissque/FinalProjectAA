@@ -21,7 +21,7 @@ public class Seccion {
 
 			for (int i = 0; i < puestos.length; i++) {
 				for (int j = 0; j < puestos.length; j++) {
-					puestos[i][j] = new Puesto();
+					puestos[i][j] = new Puesto(i,j);
 					puestos[i][j].setTipoSeccion(TipoSeccion.CLUB_FANS);
 				}
 			}
@@ -34,7 +34,7 @@ public class Seccion {
 					if (i > j) {
 						puestos[i][j] = null;
 					} else {
-						puestos[i][j] = new Puesto();
+						puestos[i][j] = new Puesto(i,j);
 						puestos[i][j].setTipoSeccion(TipoSeccion.PLATEA_1);
 					}
 				}
@@ -48,7 +48,7 @@ public class Seccion {
 					if (i + j > puestos.length - 1) {
 						puestos[i][j] = null;
 					} else {
-						puestos[i][j] = new Puesto();
+						puestos[i][j] = new Puesto(i,j);
 						puestos[i][j].setTipoSeccion(TipoSeccion.PLATEA_2);
 					}
 				}
@@ -62,7 +62,7 @@ public class Seccion {
 					if (i < j) {
 						puestos[i][j] = null;
 					} else {
-						puestos[i][j] = new Puesto();
+						puestos[i][j] = new Puesto(i,j);
 						puestos[i][j].setTipoSeccion(TipoSeccion.SEGUNDO_PISO_1);
 					}
 				}
@@ -76,7 +76,7 @@ public class Seccion {
 					if (i + j < puestos.length - 1) {
 						puestos[i][j] = null;
 					} else {
-						puestos[i][j] = new Puesto();
+						puestos[i][j] = new Puesto(i,j);
 						puestos[i][j].setTipoSeccion(TipoSeccion.SEGUNDO_PISO_2);
 					}
 				}

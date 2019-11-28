@@ -2,6 +2,11 @@ package co.uniquindio.mundo;
 
 import java.util.ArrayList;
 
+/**
+ * @author Luisa Cotte
+ * @author Lissette Quebrada
+ * @author Andres Cortes
+ */
 public class Evento {
 
 	private ArrayList<Cliente> misClientes;
@@ -9,23 +14,31 @@ public class Evento {
 	private Administrador admin;
 	private Escenario escenario;
 
+	/**
+	 * Constructor de la clase Evento
+	 */
 	public Evento() {
 		misClientes = new ArrayList<Cliente>();
 		registro = new Registro();
 		admin = new Administrador();
 		escenario = new Escenario();
 	}
+	
+	/**
+	 * Metodo para agregar un cliente al arraylist de cliente
+	 * @param miC
+	 */
+	public void agregarCliente(Cliente miC) {
+		misClientes.add(miC);
+	}
 
+	//--------------------GETTERS AND SETTERS--------------------//
 	public Escenario getEscenario() {
 		return escenario;
 	}
 
 	public void setEscenario(Escenario escenario) {
 		this.escenario = escenario;
-	}
-
-	public void agregarCliente(Cliente miC) {
-		misClientes.add(miC);
 	}
 
 	public ArrayList<Cliente> getMisClientes() {
