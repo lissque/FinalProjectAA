@@ -90,7 +90,7 @@ public class Ingresar extends JFrame implements ActionListener {
 
 			String ingreso = txtIngreso.getText().toUpperCase();
 
-			if (ingreso != null) {
+			if (ingreso.length() > 0) {
 
 				if (home.getMiEvento().getMisClientes().size() != 0) {
 

@@ -243,27 +243,27 @@ public class Inscripcion extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnAgregar) {
 
-			if (txtId == null || txtNombre == null || txtApellido == null || txtDireccion == null || txtMail == null
-					|| txtDia == null || txtMes == null || txtAnio == null) {
+			String nombre = txtNombre.getText();
+			String apellido = txtApellido.getText();
+			String id = txtId.getText();
+			String direccion = txtDireccion.getText();
+			String diaN = txtDia.getText();
+			String mesN = txtMes.getText();
+			String anioN = txtAnio.getText();
+			String email = txtMail.getText();
 
-				JOptionPane.showMessageDialog(null, "RELLENE TODOS LOS CAMPOS", "ADVERTENCIA!",
+			int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
+			NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
+			EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
+			Genero genero = (Genero) cbGenero.getSelectedItem();
+
+			if (nombre.length() < 1 || apellido.length() < 1 || id.length() < 1 || direccion.length() < 1
+					|| email.length() < 1 || diaN.length() < 1 || mesN.length() < 1 || anioN.length() < 4) {
+
+				JOptionPane.showMessageDialog(null, "RELLENE CORRECTAMENTE TODOS LOS CAMPOS", "ADVERTENCIA!",
 						JOptionPane.WARNING_MESSAGE, null);
 
 			} else {
-
-				String nombre = txtNombre.getText();
-				String apellido = txtApellido.getText();
-				String id = txtId.getText();
-				String direccion = txtDireccion.getText();
-				String diaN = txtDia.getText();
-				String mesN = txtMes.getText();
-				String anioN = txtAnio.getText();
-				String email = txtMail.getText();
-
-				int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
-				NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
-				EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
-				Genero genero = (Genero) cbGenero.getSelectedItem();
 
 				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, diaN, mesN, anioN, estrato,
 						nivelEstudio, estadoCivil, genero, null);
