@@ -28,7 +28,7 @@ public class Platea1 extends JFrame implements ActionListener {
 	private Escenario escenario;
 
 	/**
-	+ * Create the frame.
+	 * + * Create the frame.
 	 */
 	public Platea1(Escenario escenario) {
 
@@ -37,7 +37,7 @@ public class Platea1 extends JFrame implements ActionListener {
 
 		matriz = new JButton[5][5];
 		this.escenario = escenario;
-		puestos = escenario.getSecciones().get(0).getPuestos();
+		puestos = escenario.getSecciones().get(2).getPuestos();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 336);
@@ -46,16 +46,6 @@ public class Platea1 extends JFrame implements ActionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
-				JButton newBtn = new JButton();
-
-				newBtn.setSize(53, 23);
-				matriz[i][j] = newBtn;
-				matriz[i][j].addActionListener(this);
-			}
-		}
 
 		btnVolver = new JButton("\u21A7");
 		btnVolver.setBounds(342, 11, 48, 23);
@@ -95,10 +85,11 @@ public class Platea1 extends JFrame implements ActionListener {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 
-				JButton newBtn = new JButton();
+				String codigo = escenario.getSecciones().get(0).codigoSeccion();
 
-				newBtn.setBounds(i + 10, j + 10, 50, 50);
-				// newBtn.setToolTipText(Integer.toString(i) + "," + Integer.toString(j));
+				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
+
+				newBtn.setSize(53, 23);
 				matriz[i][j] = newBtn;
 				matriz[i][j].addActionListener(this);
 				panel.add(matriz[i][j]);

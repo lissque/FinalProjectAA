@@ -84,6 +84,33 @@ public class Seccion {
 		}
 
 	}
+	
+	public String codigoSeccion() {
+		
+		String codigo = "";
+		
+		if (tipo.equals(TipoSeccion.PLATEA_1)) {
+			codigo = "P1";
+		}
+		
+		if (tipo.equals(TipoSeccion.SEGUNDO_PISO_1)) {
+			codigo = "S1";
+		}
+		
+		if (tipo.equals(TipoSeccion.CLUB_FANS)) {
+			codigo = "CF";
+		}
+		
+		if (tipo.equals(TipoSeccion.PLATEA_2)) {
+			codigo = "P2";
+		}
+		
+		if (tipo.equals(TipoSeccion.SEGUNDO_PISO_2)) {
+			codigo = "S2";
+		}
+		
+		return codigo;
+	}
 
 	public Puesto[][] getPuestos() {
 		return puestos;

@@ -17,11 +17,11 @@ import javax.swing.JButton;
 public class ClubFans extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private JButton btnVolver;	
+	private JButton btnVolver;
 	private JButton[][] matriz;
 	private JButton btnComprar;
 	private JPanel panel;
-	
+
 	private Puesto[][] puestos;
 	private Escenario escenario;
 
@@ -45,32 +45,22 @@ public class ClubFans extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
-				JButton newBtn = new JButton();
-
-				newBtn.setSize(53, 23);			
-				matriz[i][j] = newBtn;
-				matriz[i][j].addActionListener(this);
-			}
-		}
-	
 		btnVolver = new JButton("\u21A7");
 		btnVolver.setBounds(342, 11, 48, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
-		
+
 		panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(10, 45, 380, 253);
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
-		
+
 		btnComprar = new JButton("Comprar");
 		btnComprar.setBounds(152, 302, 89, 23);
 		btnComprar.addActionListener(this);
 		contentPane.add(btnComprar);
-		
+
 		crearPuestos();
 		actualizar();
 
@@ -85,7 +75,7 @@ public class ClubFans extends JFrame implements ActionListener {
 				}
 			}
 		}
-		
+
 	}
 
 	private void crearPuestos() {
@@ -93,19 +83,19 @@ public class ClubFans extends JFrame implements ActionListener {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 
-				JButton newBtn = new JButton();
+				String codigo = escenario.getSecciones().get(0).codigoSeccion();
 
-				newBtn.setBounds(i + 10, j + 10, 50, 50);
-				// newBtn.setToolTipText(Integer.toString(i) + "," + Integer.toString(j));
+				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
+
+				newBtn.setSize(53, 23);
 				matriz[i][j] = newBtn;
 				matriz[i][j].addActionListener(this);
 				panel.add(matriz[i][j]);
 				dibujar();
-
 			}
-		}		
+		}
 	}
-	
+
 	private void dibujar() {
 
 		panel.validate();
@@ -119,7 +109,7 @@ public class ClubFans extends JFrame implements ActionListener {
 		if (e.getSource() == btnVolver) {
 			this.dispose();
 		}
-		
+
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {

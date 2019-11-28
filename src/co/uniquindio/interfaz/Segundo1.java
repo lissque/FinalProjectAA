@@ -37,7 +37,7 @@ public class Segundo1 extends JFrame implements ActionListener {
 
 		matriz = new JButton[5][5];
 		this.escenario = escenario;
-		puestos = escenario.getSecciones().get(1).getPuestos();
+		puestos = escenario.getSecciones().get(2).getPuestos();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 336);
@@ -47,32 +47,22 @@ public class Segundo1 extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
-				JButton newBtn = new JButton();
-
-				newBtn.setSize(53, 23);			
-				matriz[i][j] = newBtn;
-				matriz[i][j].addActionListener(this);
-			}
-		}
-	
 		btnVolver = new JButton("\u21A7");
 		btnVolver.setBounds(342, 11, 48, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
-		
+
 		panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(10, 45, 380, 253);
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
-		
+
 		btnComprar = new JButton("Comprar");
 		btnComprar.setBounds(152, 302, 89, 23);
 		btnComprar.addActionListener(this);
 		contentPane.add(btnComprar);
-		
+
 		crearPuestos();
 		actualizar();
 
@@ -94,11 +84,12 @@ public class Segundo1 extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
+				
+				String codigo = escenario.getSecciones().get(1).codigoSeccion();
 
-				JButton newBtn = new JButton();
+				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
 
-				newBtn.setBounds(i + 10, j + 10, 50, 50);
-				// newBtn.setToolTipText(Integer.toString(i) + "," + Integer.toString(j));
+				newBtn.setSize(53, 23);
 				matriz[i][j] = newBtn;
 				matriz[i][j].addActionListener(this);
 				panel.add(matriz[i][j]);
