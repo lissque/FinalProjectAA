@@ -104,6 +104,7 @@ public class Ingresar extends JFrame implements ActionListener {
 							Secciones ventanaMatrices = new Secciones(this);
 							ventanaMatrices.setLocationRelativeTo(null);
 							ventanaMatrices.setVisible(true);
+							txtIngreso.setText("");
 
 						} else {
 							JOptionPane.showMessageDialog(null, "NO ESTA REGISTRADO", "ADVERTENCIA!",
