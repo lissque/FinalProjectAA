@@ -1,13 +1,24 @@
 package co.uniquindio.mundo;
 
+/**
+ * @author Luisa Cotte
+ * @author Lissette Quebrada
+ * @author Andres Cortes
+ */
 public class Puesto {
 	
+	//------------------------ATRIBUTOS-------------------------//
 	private EstadoPuesto estado;
 	private Cliente cliente;
 	private TipoSeccion seccion;
 	private int i;
 	private int j;
 	
+	/**
+	 * Constructor de la clase Puesto
+	 * @param i
+	 * @param j
+	 */
 	public Puesto(int i, int j) {
 		estado = EstadoPuesto.LIBRE;
 		cliente = new Cliente();
@@ -16,6 +27,8 @@ public class Puesto {
 		this.j=j;
 	}
 
+	//------------------------------GETTERS AND SETTERS-------------------------------//
+	
 	public EstadoPuesto getEstado() {
 		return estado;
 	}

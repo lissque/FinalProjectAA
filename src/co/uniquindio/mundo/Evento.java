@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Evento {
 
+	//--------------------------------ATRIBUTOS---------------------------//
 	private ArrayList<Cliente> misClientes;
 	private Registro registro;
 	private Administrador admin;

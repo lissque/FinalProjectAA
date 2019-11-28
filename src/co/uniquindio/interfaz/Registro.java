@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.GregorianCalendar;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -28,8 +29,9 @@ import co.uniquindio.mundo.Respuesta;
 import co.uniquindio.mundo.Tarjeta;
 import co.uniquindio.mundo.EstadoCivil;
 import co.uniquindio.mundo.Genero;
+import com.toedter.calendar.JDateChooser;
 
-public class Inscripcion extends JFrame implements ActionListener {
+public class Registro extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -37,9 +39,6 @@ public class Inscripcion extends JFrame implements ActionListener {
 	private JTextField txtApellido;
 	private JTextField txtId;
 	private JTextField txtDireccion;
-	private JTextField txtDia;
-	private JTextField txtMes;
-	private JTextField txtAnio;
 	private JTextField txtMail;
 	private JButton btnAgregar;
 	private JButton btnVolver;
@@ -49,11 +48,12 @@ public class Inscripcion extends JFrame implements ActionListener {
 	private JComboBox cbEstadoCivil;
 	private JComboBox cbGenero;
 	private JLabel lblRegistrarse;
+	private JDateChooser fechaNacimiento;
 
 	/**
 	 * Create the frame.
 	 */
-	public Inscripcion(Home home) {
+	public Registro(Home home) {
 
 		this.home = home;
 
@@ -90,7 +90,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 
 		JLabel lblFechaNacimiento = new JLabel("FECHA NACIMIENTO:");
 		lblFechaNacimiento.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblFechaNacimiento.setBounds(132, 227, 137, 14);
+		lblFechaNacimiento.setBounds(132, 228, 157, 20);
 		contentPane.add(lblFechaNacimiento);
 
 		JLabel lblEmail = new JLabel("E-MAIL:");
@@ -147,28 +147,6 @@ public class Inscripcion extends JFrame implements ActionListener {
 		contentPane.add(txtDireccion);
 		txtDireccion.setColumns(10);
 
-		txtDia = new JTextField();
-		txtDia.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		txtDia.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtDia.setBounds(275, 225, 65, 20);
-		contentPane.add(txtDia);
-		txtDia.setColumns(10);
-
-		txtMes = new JTextField();
-		txtMes.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		txtMes.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtMes.setText("");
-		txtMes.setBounds(350, 225, 65, 20);
-		contentPane.add(txtMes);
-		txtMes.setColumns(10);
-
-		txtAnio = new JTextField();
-		txtAnio.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		txtAnio.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		txtAnio.setBounds(425, 225, 65, 20);
-		contentPane.add(txtAnio);
-		txtAnio.setColumns(10);
-
 		txtMail = new JTextField();
 		txtMail.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtMail.setFont(new Font("Gabriola", Font.PLAIN, 18));
@@ -201,7 +179,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstrato.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstrato.setFont(new Font("Gabriola", Font.PLAIN, 20));
 		cbEstrato.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3" }));
-		cbEstrato.setBounds(254, 288, 236, 20);
+		cbEstrato.setBounds(254, 288, 236, 25);
 		contentPane.add(cbEstrato);
 
 		cbNivelEstudio = new JComboBox();
@@ -210,7 +188,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbNivelEstudio.setFont(new Font("Gabriola", Font.PLAIN, 17));
 		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbNivelEstudio.setBounds(254, 319, 236, 20);
+		cbNivelEstudio.setBounds(254, 317, 236, 25);
 		contentPane.add(cbNivelEstudio);
 
 		cbEstadoCivil = new JComboBox();
@@ -219,7 +197,7 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
 		cbEstadoCivil.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbEstadoCivil.setBounds(254, 350, 236, 20);
+		cbEstadoCivil.setBounds(254, 350, 236, 25);
 		contentPane.add(cbEstadoCivil);
 
 		cbGenero = new JComboBox();
@@ -228,13 +206,17 @@ public class Inscripcion extends JFrame implements ActionListener {
 		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
 		cbGenero.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbGenero.setBounds(254, 381, 236, 20);
+		cbGenero.setBounds(254, 381, 236, 25);
 		contentPane.add(cbGenero);
 
 		lblRegistrarse = new JLabel("REGISTRARSE");
 		lblRegistrarse.setFont(new Font("Gabriola", Font.BOLD, 30));
 		lblRegistrarse.setBounds(62, 31, 257, 26);
 		contentPane.add(lblRegistrarse);
+		
+		fechaNacimiento = new JDateChooser();
+		fechaNacimiento.setBounds(327, 227, 163, 22);
+		contentPane.add(fechaNacimiento);
 
 	}
 
@@ -254,25 +236,21 @@ public class Inscripcion extends JFrame implements ActionListener {
 			String apellido = txtApellido.getText();
 			String id = txtId.getText();
 			String direccion = txtDireccion.getText();
-			String diaN = txtDia.getText();
-			String mesN = txtMes.getText();
-			String anioN = txtAnio.getText();
 			String email = txtMail.getText();
 
 			int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
 			NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
 			EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
 			Genero genero = (Genero) cbGenero.getSelectedItem();
+			GregorianCalendar fecha = (GregorianCalendar)fechaNacimiento.getCalendar();
 
 			if (nombre.length() < 1 || apellido.length() < 1 || id.length() < 1 || direccion.length() < 1
-					|| email.length() < 1 || diaN.length() < 1 || mesN.length() < 1 || anioN.length() < 4) {
+					|| email.length() < 1 || fecha==null) {
 
-				JOptionPane.showMessageDialog(null, "RELLENE CORRECTAMENTE TODOS LOS CAMPOS", "ADVERTENCIA!",
-						JOptionPane.WARNING_MESSAGE, null);
+				JOptionPane.showMessageDialog(null, "RELLENE CORRECTAMENTE TODOS LOS CAMPOS", "ADVERTENCIA!", JOptionPane.ERROR_MESSAGE);
 
 			} else {
-
-				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, diaN, mesN, anioN, estrato,
+				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fecha, estrato,
 						nivelEstudio, estadoCivil, genero, null);
 
 				home.agregarClientes(miCliente);

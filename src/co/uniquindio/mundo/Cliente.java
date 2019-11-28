@@ -1,6 +1,7 @@
 package co.uniquindio.mundo;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  * @author Luisa Cotte
@@ -11,7 +12,7 @@ public class Cliente {
 
 	//-----------------------ATRIBUTOS--------------------//
 	private String id, nombre, apellido, direccion, email;
-	private Fecha fechaNacimiento;
+	private GregorianCalendar fechaNacimiento;
 	private int estrato;
 	private NivelEstudio nivelEstudio;
 	private EstadoCivil estadoCivil;
@@ -35,10 +36,8 @@ public class Cliente {
 	 * @param genero
 	 * @param mitargeta
 	 */
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, String anio, String mes,
-			String dia, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
+	public Cliente(String id, String nombre, String apellido, String direccion, String email, GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
 			Tarjeta mitargeta) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -48,8 +47,7 @@ public class Cliente {
 		this.nivelEstudio = nivelEstudio;
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
-
-		fechaNacimiento = new Fecha(anio, mes, dia);
+		fechaNacimiento = fechaNacimiento;
 	}
 
 	/**
@@ -58,7 +56,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	//--------------------------------GETTERS AND SETTERS-----------------//
+	//--------------------------------GETTERS AND SETTERS-----------------------------//
 	public String getId() {
 		return id;
 	}
@@ -99,11 +97,11 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Fecha getFechaNacimiento() {
+	public GregorianCalendar getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Fecha fechaNacimiento) {
+	public void setFechaNacimiento(GregorianCalendar fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -147,15 +145,11 @@ public class Cliente {
 		this.miTarjeta = miTarjeta;
 	}
 
-	public boolean validarFecha(String dia, String mes, String anio) {
+	public ArrayList<Respuesta> getRespuestas() {
+		return respuestas;
+	}
 
-		int d = Integer.parseInt(dia);
-		int m = Integer.parseInt(mes);
-		int a = Integer.parseInt(anio);
-
-		if ((d > 0 && d < 32) && (m > 0 && m < 13) && (a > 1900 && a < 2001)) {
-			return true;
-		}
-		return false;
+	public void setRespuestas(ArrayList<Respuesta> respuestas) {
+		this.respuestas = respuestas;
 	}
 }
