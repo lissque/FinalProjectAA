@@ -1,5 +1,10 @@
 package co.uniquindio.mundo;
 
+/**
+ * @author Lissette Quebrada
+ * @author Lissette Quebrada
+ *
+ */
 public class Fecha {
 	private String año, mes, dia;
 
