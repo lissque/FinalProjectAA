@@ -83,7 +83,7 @@ public class ClubFans extends JFrame implements ActionListener {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 
-				String codigo = escenario.getSecciones().get(0).codigoSeccion();
+				String codigo = escenario.getSecciones().get(2).codigoSeccion();
 
 				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
 
