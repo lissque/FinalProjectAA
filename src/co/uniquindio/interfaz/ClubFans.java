@@ -17,13 +17,13 @@ import javax.swing.JButton;
 public class ClubFans extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private Secciones inicio;
-	private JButton btnVolver;
-	private Escenario escenario;
+	private JButton btnVolver;	
 	private JButton[][] matriz;
 	private JButton btnComprar;
 	private JPanel panel;
 	
+	private Escenario escenario;
+	private Secciones inicio;
 	private Puesto[][] puestos;
 
 	/**
@@ -35,6 +35,7 @@ public class ClubFans extends JFrame implements ActionListener {
 		setResizable(false);
 
 		matriz = new JButton[5][5];
+		puestos = escenario.getSecciones().get(2).getPuestos();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 336);

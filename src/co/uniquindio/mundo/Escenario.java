@@ -6,16 +6,41 @@ public class Escenario {
 
 	private ArrayList<Seccion> secciones;
 
-	public Escenario(ArrayList<Seccion> secciones) {
-		super();
-		this.secciones = secciones;
-	}
-
 	public Escenario() {
+		super();
+		agregarPlatea1();
+		agregarSegundo1();
+		agregarClubFans();
+		agregarSegundo2();
+		agregarPlatea2();
 	}
 
-	public void agregarSeccion(TipoSeccion tipo) {
-		Seccion nuevaSeccion = new Seccion(tipo);
+	public void agregarClubFans() {
+		Seccion nuevaSeccion = new Seccion(TipoSeccion.CLUB_FANS);
+		nuevaSeccion.llenarMatriz();
+		secciones.add(nuevaSeccion);
+	}
+	
+	public void agregarPlatea1() {
+		Seccion nuevaSeccion = new Seccion(TipoSeccion.PLATEA_1);
+		nuevaSeccion.llenarMatriz();
+		secciones.add(nuevaSeccion);
+	}
+	
+	public void agregarPlatea2() {
+		Seccion nuevaSeccion = new Seccion(TipoSeccion.PLATEA_2);
+		nuevaSeccion.llenarMatriz();
+		secciones.add(nuevaSeccion);
+	}
+	
+	public void agregarSegundo1() {
+		Seccion nuevaSeccion = new Seccion(TipoSeccion.SEGUNDO_PISO_1);
+		nuevaSeccion.llenarMatriz();
+		secciones.add(nuevaSeccion);
+	}
+	
+	public void agregarSegundo2() {
+		Seccion nuevaSeccion = new Seccion(TipoSeccion.SEGUNDO_PISO_2);
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
