@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Evento {
 
-	//--------------------------------ATRIBUTOS---------------------------//
+	// --------------------------------ATRIBUTOS---------------------------//
 	private ArrayList<Cliente> misClientes;
 	private Registro registro;
 	private Administrador admin;
@@ -23,17 +23,24 @@ public class Evento {
 		registro = new Registro();
 		admin = new Administrador();
 		escenario = new Escenario();
+
+		Cliente cliente = new Cliente("123", "LU", "COTTE", "CASA", "LU@HOTMAIL.COM", null, 1, NivelEstudio.BACHILLER,
+				EstadoCivil.SOLTERO, Genero.MUJER, null);
+
+		misClientes.add(cliente);
+
 	}
-	
+
 	/**
 	 * Metodo para agregar un cliente al arraylist de cliente
+	 * 
 	 * @param miC
 	 */
 	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
 	}
 
-	//--------------------GETTERS AND SETTERS--------------------//
+	// --------------------GETTERS AND SETTERS--------------------//
 	public Escenario getEscenario() {
 		return escenario;
 	}

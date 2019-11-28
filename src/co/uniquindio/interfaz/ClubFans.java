@@ -13,6 +13,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Cursor;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class ClubFans extends JFrame implements ActionListener {
 
@@ -41,23 +45,31 @@ public class ClubFans extends JFrame implements ActionListener {
 		setBounds(100, 100, 403, 336);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(255, 218, 185));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		btnVolver = new JButton("\u21A7");
-		btnVolver.setBounds(342, 11, 48, 23);
+		btnVolver = new JButton("VOLVER");
+		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 15));
+		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVolver.setBounds(294, 11, 96, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
 
 		panel = new JPanel();
+		panel.setForeground(new Color(255, 218, 185));
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(10, 45, 380, 253);
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
 
-		btnComprar = new JButton("Comprar");
-		btnComprar.setBounds(152, 302, 89, 23);
+		btnComprar = new JButton("COMPRAR");
+		btnComprar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnComprar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnComprar.setFont(new Font("Gabriola", Font.BOLD, 18));
+		btnComprar.setBounds(130, 302, 136, 23);
 		btnComprar.addActionListener(this);
 		contentPane.add(btnComprar);
 
@@ -107,7 +119,8 @@ public class ClubFans extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 
 		if (e.getSource() == btnVolver) {
-			this.dispose();
+			this.setVisible(false);
+			
 		}
 
 		for (int i = 0; i < matriz.length; i++) {

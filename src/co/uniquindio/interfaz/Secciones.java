@@ -112,42 +112,48 @@ public class Secciones extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnM1) {
 
-			//this.dispose();
+			// this.setVisible(false);
 			Platea1 m1 = new Platea1(anterior.getHome().getMiEscenario());
 			m1.setVisible(true);
+			m1.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnM2) {
 
-			// this.dispose();
+			// this.setVisible(false);
 			ClubFans m2 = new ClubFans(anterior.getHome().getMiEscenario());
 			m2.setVisible(true);
+			m2.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnM3) {
 
-			// this.dispose();
+			// this.setVisible(false);
 			Platea2 m3 = new Platea2(anterior.getHome().getMiEscenario());
 			m3.setVisible(true);
+			m3.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnM4) {
 
-			// this.dispose();
+			// this.setVisible(false);
 			Segundo1 m4 = new Segundo1(anterior.getHome().getMiEscenario());
 			m4.setVisible(true);
+			m4.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnM5) {
 
-			// this.dispose();
+			// this.setVisible(false);
 			Segundo2 m5 = new Segundo2(anterior.getHome().getMiEscenario());
 			m5.setVisible(true);
+			m5.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnVolver) {
 			this.dispose();
 			anterior.setVisible(true);
+			anterior.setLocationRelativeTo(null);
 		}
 	}
 }

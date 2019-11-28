@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
  */
 public class Cliente {
 
-	//-----------------------ATRIBUTOS--------------------//
+	// -----------------------ATRIBUTOS--------------------//
 	private String id, nombre, apellido, direccion, email;
 	private GregorianCalendar fechaNacimiento;
 	private int estrato;
@@ -22,6 +22,7 @@ public class Cliente {
 
 	/**
 	 * Constructor de la clase Cliente
+	 * 
 	 * @param id
 	 * @param nombre
 	 * @param apellido
@@ -36,8 +37,9 @@ public class Cliente {
 	 * @param genero
 	 * @param mitargeta
 	 */
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
-			Tarjeta mitargeta) {
+	public Cliente(String id, String nombre, String apellido, String direccion, String email,
+			GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil,
+			Genero genero, Tarjeta mitargeta) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -48,6 +50,8 @@ public class Cliente {
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
 		fechaNacimiento = fechaNacimiento;
+		
+		
 	}
 
 	/**
@@ -56,7 +60,8 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	//--------------------------------GETTERS AND SETTERS-----------------------------//
+	// --------------------------------GETTERS AND
+	// SETTERS-----------------------------//
 	public String getId() {
 		return id;
 	}
