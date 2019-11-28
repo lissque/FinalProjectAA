@@ -28,7 +28,7 @@ public class Platea1 extends JFrame implements ActionListener {
 	private Escenario escenario;
 
 	/**
-	 * Create the frame.
+	+ * Create the frame.
 	 */
 	public Platea1(Escenario escenario) {
 

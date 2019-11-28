@@ -2,8 +2,14 @@ package co.uniquindio.mundo;
 
 import java.util.ArrayList;
 
+/**
+ * @author Luisa Cotte
+ * @author Lissette Quebrada
+ * @author Andres Cortes
+ */
 public class Cliente {
 
+	//-----------------------ATRIBUTOS--------------------//
 	private String id, nombre, apellido, direccion, email;
 	private Fecha fechaNacimiento;
 	private int estrato;
@@ -13,6 +19,22 @@ public class Cliente {
 	private Tarjeta miTarjeta;
 	private ArrayList<Respuesta> respuestas;
 
+	/**
+	 * Constructor de la clase Cliente
+	 * @param id
+	 * @param nombre
+	 * @param apellido
+	 * @param direccion
+	 * @param email
+	 * @param anio
+	 * @param mes
+	 * @param dia
+	 * @param estrato
+	 * @param nivelEstudio
+	 * @param estadoCivil
+	 * @param genero
+	 * @param mitargeta
+	 */
 	public Cliente(String id, String nombre, String apellido, String direccion, String email, String anio, String mes,
 			String dia, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
 			Tarjeta mitargeta) {
@@ -30,9 +52,13 @@ public class Cliente {
 		fechaNacimiento = new Fecha(anio, mes, dia);
 	}
 
+	/**
+	 * Constror vacio de la clase Ciente
+	 */
 	public Cliente() {
 	}
 
+	//--------------------------------GETTERS AND SETTERS-----------------//
 	public String getId() {
 		return id;
 	}
