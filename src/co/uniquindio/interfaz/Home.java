@@ -78,7 +78,7 @@ public class Home extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 235, 205));
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

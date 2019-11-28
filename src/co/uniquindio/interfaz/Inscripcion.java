@@ -62,7 +62,8 @@ public class Inscripcion extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setForeground(new Color(233, 150, 122));
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -176,7 +177,8 @@ public class Inscripcion extends JFrame implements ActionListener {
 		txtMail.setColumns(10);
 
 		btnVolver = new JButton("VOLVER");
-		btnVolver.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnVolver.setBackground(new Color(240, 128, 128));
+		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnVolver.setBounds(536, 444, 137, 31);
@@ -184,15 +186,17 @@ public class Inscripcion extends JFrame implements ActionListener {
 		contentPane.add(btnVolver);
 
 		btnAgregar = new JButton("AGERGAR");
+		btnAgregar.setBackground(new Color(240, 128, 128));
 		btnAgregar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAgregar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnAgregar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnAgregar.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnAgregar.setActionCommand("AGREGAR");
 		btnAgregar.addActionListener(this);
 		btnAgregar.setBounds(395, 444, 131, 31);
 		contentPane.add(btnAgregar);
 
 		cbEstrato = new JComboBox();
+		cbEstrato.setBackground(new Color(240, 128, 128));
 		cbEstrato.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbEstrato.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstrato.setFont(new Font("Gabriola", Font.PLAIN, 20));
@@ -201,25 +205,28 @@ public class Inscripcion extends JFrame implements ActionListener {
 		contentPane.add(cbEstrato);
 
 		cbNivelEstudio = new JComboBox();
+		cbNivelEstudio.setBackground(new Color(240, 128, 128));
 		cbNivelEstudio.setModel(new DefaultComboBoxModel(NivelEstudio.values()));
 		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		cbNivelEstudio.setFont(new Font("Gabriola", Font.PLAIN, 18));
+		cbNivelEstudio.setFont(new Font("Gabriola", Font.PLAIN, 17));
 		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbNivelEstudio.setBounds(254, 319, 236, 20);
 		contentPane.add(cbNivelEstudio);
 
 		cbEstadoCivil = new JComboBox();
+		cbEstadoCivil.setBackground(new Color(240, 128, 128));
 		cbEstadoCivil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
-		cbEstadoCivil.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		cbEstadoCivil.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstadoCivil.setBounds(254, 350, 236, 20);
 		contentPane.add(cbEstadoCivil);
 
 		cbGenero = new JComboBox();
+		cbGenero.setBackground(new Color(240, 128, 128));
 		cbGenero.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
-		cbGenero.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		cbGenero.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbGenero.setBounds(254, 381, 236, 20);
 		contentPane.add(cbGenero);
