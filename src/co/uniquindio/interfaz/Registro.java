@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import co.uniquindio.mundo.Cliente;
-import co.uniquindio.mundo.Fecha;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -95,33 +94,33 @@ public class Registro extends JFrame implements ActionListener {
 
 		JLabel lblEmail = new JLabel("E-MAIL:");
 		lblEmail.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblEmail.setBounds(132, 259, 112, 14);
+		lblEmail.setBounds(132, 264, 112, 14);
 		contentPane.add(lblEmail);
 
 		JLabel lblEstrato = new JLabel("ESTRATO:");
 		lblEstrato.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblEstrato.setBounds(132, 290, 112, 14);
+		lblEstrato.setBounds(132, 300, 112, 14);
 		contentPane.add(lblEstrato);
 
 		JLabel lblNivelEstudio = new JLabel("NIVEL ESTUDIO:");
 		lblNivelEstudio.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblNivelEstudio.setBounds(132, 321, 112, 14);
+		lblNivelEstudio.setBounds(132, 335, 112, 14);
 		contentPane.add(lblNivelEstudio);
 
 		JLabel lblEstadoCivil = new JLabel("ESTADO CIVIL:");
 		lblEstadoCivil.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblEstadoCivil.setBounds(132, 352, 118, 14);
+		lblEstadoCivil.setBounds(132, 372, 118, 14);
 		contentPane.add(lblEstadoCivil);
 
 		JLabel lblGenero = new JLabel("GENERO:");
 		lblGenero.setFont(new Font("Gabriola", Font.BOLD, 18));
-		lblGenero.setBounds(132, 383, 112, 14);
+		lblGenero.setBounds(132, 408, 112, 14);
 		contentPane.add(lblGenero);
 
 		txtNombre = new JTextField();
 		txtNombre.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtNombre.setFont(new Font("Gabriola", Font.PLAIN, 18));
-		txtNombre.setBounds(254, 96, 236, 20);
+		txtNombre.setBounds(254, 91, 236, 25);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 
@@ -129,33 +128,32 @@ public class Registro extends JFrame implements ActionListener {
 		txtApellido.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtApellido.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		txtApellido.setText("");
-		txtApellido.setBounds(254, 132, 236, 20);
+		txtApellido.setBounds(254, 127, 236, 25);
 		contentPane.add(txtApellido);
 		txtApellido.setColumns(10);
 
 		txtId = new JTextField();
 		txtId.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtId.setFont(new Font("Gabriola", Font.PLAIN, 18));
-		txtId.setBounds(254, 163, 236, 20);
+		txtId.setBounds(254, 158, 236, 25);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
 
 		txtDireccion = new JTextField();
 		txtDireccion.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtDireccion.setFont(new Font("Gabriola", Font.PLAIN, 18));
-		txtDireccion.setBounds(254, 194, 236, 20);
+		txtDireccion.setBounds(254, 189, 236, 25);
 		contentPane.add(txtDireccion);
 		txtDireccion.setColumns(10);
 
 		txtMail = new JTextField();
 		txtMail.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		txtMail.setFont(new Font("Gabriola", Font.PLAIN, 18));
-		txtMail.setBounds(254, 257, 236, 20);
+		txtMail.setBounds(254, 259, 236, 25);
 		contentPane.add(txtMail);
 		txtMail.setColumns(10);
 
 		btnVolver = new JButton("VOLVER");
-		btnVolver.setBackground(new Color(240, 128, 128));
 		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -164,7 +162,6 @@ public class Registro extends JFrame implements ActionListener {
 		contentPane.add(btnVolver);
 
 		btnAgregar = new JButton("AGERGAR");
-		btnAgregar.setBackground(new Color(240, 128, 128));
 		btnAgregar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAgregar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnAgregar.setFont(new Font("Gabriola", Font.BOLD, 20));
@@ -174,39 +171,35 @@ public class Registro extends JFrame implements ActionListener {
 		contentPane.add(btnAgregar);
 
 		cbEstrato = new JComboBox();
-		cbEstrato.setBackground(new Color(240, 128, 128));
 		cbEstrato.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbEstrato.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbEstrato.setFont(new Font("Gabriola", Font.PLAIN, 20));
 		cbEstrato.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3" }));
-		cbEstrato.setBounds(254, 288, 236, 25);
+		cbEstrato.setBounds(254, 295, 236, 25);
 		contentPane.add(cbEstrato);
 
 		cbNivelEstudio = new JComboBox();
-		cbNivelEstudio.setBackground(new Color(240, 128, 128));
 		cbNivelEstudio.setModel(new DefaultComboBoxModel(NivelEstudio.values()));
 		cbNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbNivelEstudio.setFont(new Font("Gabriola", Font.PLAIN, 17));
 		cbNivelEstudio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbNivelEstudio.setBounds(254, 317, 236, 25);
+		cbNivelEstudio.setBounds(254, 331, 236, 25);
 		contentPane.add(cbNivelEstudio);
 
 		cbEstadoCivil = new JComboBox();
-		cbEstadoCivil.setBackground(new Color(240, 128, 128));
 		cbEstadoCivil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbEstadoCivil.setModel(new DefaultComboBoxModel(EstadoCivil.values()));
 		cbEstadoCivil.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbEstadoCivil.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbEstadoCivil.setBounds(254, 350, 236, 25);
+		cbEstadoCivil.setBounds(254, 367, 236, 25);
 		contentPane.add(cbEstadoCivil);
 
 		cbGenero = new JComboBox();
-		cbGenero.setBackground(new Color(240, 128, 128));
 		cbGenero.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbGenero.setModel(new DefaultComboBoxModel(Genero.values()));
 		cbGenero.setFont(new Font("Gabriola", Font.PLAIN, 18));
 		cbGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		cbGenero.setBounds(254, 381, 236, 25);
+		cbGenero.setBounds(254, 403, 236, 25);
 		contentPane.add(cbGenero);
 
 		lblRegistrarse = new JLabel("REGISTRARSE");
@@ -215,7 +208,7 @@ public class Registro extends JFrame implements ActionListener {
 		contentPane.add(lblRegistrarse);
 		
 		fechaNacimiento = new JDateChooser();
-		fechaNacimiento.setBounds(327, 227, 163, 22);
+		fechaNacimiento.setBounds(327, 223, 163, 25);
 		contentPane.add(fechaNacimiento);
 
 	}

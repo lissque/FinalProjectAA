@@ -102,7 +102,6 @@ public class Home extends JFrame implements ActionListener {
 		btnX.addActionListener(this);
 
 		btnRegistrarse = new JButton("REGISTRARSE");
-		btnRegistrarse.setBackground(new Color(240, 128, 128));
 		btnRegistrarse.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnRegistrarse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRegistrarse.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -111,7 +110,6 @@ public class Home extends JFrame implements ActionListener {
 		btnRegistrarse.addActionListener(this);
 
 		btnIngresar = new JButton("INGRESAR");
-		btnIngresar.setBackground(new Color(240, 128, 128));
 		btnIngresar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnIngresar.setFont(new Font("Gabriola", Font.BOLD, 20));
@@ -120,7 +118,6 @@ public class Home extends JFrame implements ActionListener {
 		btnIngresar.addActionListener(this);
 
 		btnAdministrador = new JButton("ADMINISTRADOR");
-		btnAdministrador.setBackground(new Color(240, 128, 128));
 		btnAdministrador.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnAdministrador.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnAdministrador.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

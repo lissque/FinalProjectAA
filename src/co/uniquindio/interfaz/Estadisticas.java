@@ -26,6 +26,7 @@ import javax.swing.border.BevelBorder;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.awt.Cursor;
 
 public class Estadisticas extends JFrame implements ActionListener {
 
@@ -45,51 +46,56 @@ public class Estadisticas extends JFrame implements ActionListener {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 450);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		btnVolver = new JButton("VOLVER");
-		btnVolver.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.addActionListener(this);
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVolver.setBounds(336, 254, 89, 23);
+		btnVolver.setBounds(411, 376, 113, 29);
 		contentPane.add(btnVolver);
 
 		JLabel Encuesta = new JLabel("ESTAD\u00CDSTICAS");
-		Encuesta.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
-		Encuesta.setBounds(28, 24, 248, 36);
+		Encuesta.setFont(new Font("Gabriola", Font.BOLD, 30));
+		Encuesta.setBounds(70, 46, 248, 36);
 		contentPane.add(Encuesta);
 
 		btnListadoDeAsistentes = new JButton("LISTADO DE ASISTENTES");
+		btnListadoDeAsistentes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnListadoDeAsistentes.addActionListener(this);
-		btnListadoDeAsistentes.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnListadoDeAsistentes.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoDeAsistentes.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoDeAsistentes.setBounds(28, 72, 397, 23);
+		btnListadoDeAsistentes.setBounds(54, 124, 485, 29);
 		contentPane.add(btnListadoDeAsistentes);
 
 		btnListadoOrdenadoDe = new JButton("LISTADO ORDENADO DE ASISTENTES");
+		btnListadoOrdenadoDe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnListadoOrdenadoDe.addActionListener(this);
-		btnListadoOrdenadoDe.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnListadoOrdenadoDe.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoOrdenadoDe.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoOrdenadoDe.setBounds(28, 106, 397, 23);
+		btnListadoOrdenadoDe.setBounds(54, 182, 485, 29);
 		contentPane.add(btnListadoOrdenadoDe);
 
 		btnListadoDePuestos = new JButton("LISTADO DE PUESTOS NO OCUPADOS");
+		btnListadoDePuestos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnListadoDePuestos.addActionListener(this);
-		btnListadoDePuestos.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnListadoDePuestos.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoDePuestos.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoDePuestos.setBounds(28, 140, 397, 23);
+		btnListadoDePuestos.setBounds(54, 236, 485, 29);
 		contentPane.add(btnListadoDePuestos);
 
 		btnListadoDeAsistentesEstrato = new JButton("LISTADO DE ASISTENTES POR SU ESTRATO SOCIOECON\u00D3MICO");
+		btnListadoDeAsistentesEstrato.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnListadoDeAsistentesEstrato.addActionListener(this);
-		btnListadoDeAsistentesEstrato.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnListadoDeAsistentesEstrato.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoDeAsistentesEstrato.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoDeAsistentesEstrato.setBounds(28, 174, 397, 23);
+		btnListadoDeAsistentesEstrato.setBounds(54, 290, 485, 29);
 		contentPane.add(btnListadoDeAsistentesEstrato);
 	}
 

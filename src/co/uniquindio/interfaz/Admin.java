@@ -43,9 +43,9 @@ public class Admin extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		this.home = home;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 407, 211);
+		setBounds(100, 100, 500, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
@@ -53,47 +53,47 @@ public class Admin extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 
 		JLabel lblId = new JLabel("INGRESAR ID:");
-		lblId.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblId.setBounds(64, 72, 92, 19);
+		lblId.setFont(new Font("Gabriola", Font.BOLD, 20));
+		lblId.setBounds(79, 107, 125, 19);
 		contentPane.add(lblId);
 
 		JLabel lblContrasena = new JLabel("CONTRASE\u00D1A:");
-		lblContrasena.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		lblContrasena.setBounds(64, 113, 92, 19);
+		lblContrasena.setFont(new Font("Gabriola", Font.BOLD, 20));
+		lblContrasena.setBounds(79, 164, 125, 19);
 		contentPane.add(lblContrasena);
 
 		password = new JPasswordField();
 		password.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		password.setFont(new Font("Times New Roman", Font.ITALIC, 11));
-		password.setBounds(214, 112, 133, 20);
+		password.setFont(new Font("Gabriola", Font.PLAIN, 20));
+		password.setBounds(214, 159, 196, 29);
 		contentPane.add(password);
 
 		JLabel lblAdministrador = new JLabel("ADMINISTRADOR");
-		lblAdministrador.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 25));
+		lblAdministrador.setFont(new Font("Gabriola", Font.BOLD, 30));
 		lblAdministrador.setLabelFor(lblAdministrador);
-		lblAdministrador.setBounds(30, 22, 248, 36);
+		lblAdministrador.setBounds(45, 43, 286, 36);
 		contentPane.add(lblAdministrador);
 
 		btnIngresar = new JButton("INGRESAR");
 		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnIngresar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnIngresar.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
-		btnIngresar.setBounds(189, 166, 89, 23);
+		btnIngresar.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnIngresar.setBounds(242, 247, 105, 29);
 		contentPane.add(btnIngresar);
 		btnIngresar.addActionListener(this);
 
 		btnVolver = new JButton("VOLVER");
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnVolver.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
+		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVolver.setBounds(308, 166, 89, 23);
+		btnVolver.setBounds(371, 247, 105, 29);
 		contentPane.add(btnVolver);
 		btnVolver.addActionListener(this);
 
 		txtId = new JTextField();
-		txtId.setFont(new Font("Times New Roman", Font.ITALIC, 11));
+		txtId.setFont(new Font("Gabriola", Font.PLAIN, 20));
 		txtId.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		txtId.setBounds(214, 71, 133, 20);
+		txtId.setBounds(214, 102, 196, 29);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
 	}
