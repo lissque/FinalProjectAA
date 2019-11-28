@@ -8,6 +8,7 @@ public class Escenario {
 
 	public Escenario() {
 		super();
+		secciones = new ArrayList<Seccion>();
 		agregarPlatea1();
 		agregarSegundo1();
 		agregarClubFans();
