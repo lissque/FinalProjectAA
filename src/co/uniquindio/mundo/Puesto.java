@@ -4,12 +4,12 @@ public class Puesto {
 	
 	private EstadoPuesto estado;
 	private Cliente cliente;
-	private Seccion seccion;
+	private TipoSeccion seccion;
 	
 	public Puesto() {
 		estado = EstadoPuesto.LIBRE;
 		cliente = new Cliente();
-		seccion = new Seccion();
+		seccion = null;
 	}
 
 	public EstadoPuesto getEstado() {
@@ -28,13 +28,11 @@ public class Puesto {
 		this.cliente = cliente;
 	}
 
-	public Seccion getSeccion() {
+	public TipoSeccion getSeccion() {
 		return seccion;
 	}
 
-	public void setSeccion(Seccion seccion) {
+	public void setTipoSeccion(TipoSeccion seccion) {
 		this.seccion = seccion;
-	}
-	
-	
+	}	
 }

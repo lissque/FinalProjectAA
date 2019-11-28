@@ -22,9 +22,8 @@ public class ClubFans extends JFrame implements ActionListener {
 	private JButton btnComprar;
 	private JPanel panel;
 	
-	private Escenario escenario;
-	private Secciones inicio;
 	private Puesto[][] puestos;
+	private Escenario escenario;
 
 	/**
 	 * Create the frame.
@@ -35,6 +34,7 @@ public class ClubFans extends JFrame implements ActionListener {
 		setResizable(false);
 
 		matriz = new JButton[5][5];
+		this.escenario = escenario;
 		puestos = escenario.getSecciones().get(2).getPuestos();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,7 +72,20 @@ public class ClubFans extends JFrame implements ActionListener {
 		contentPane.add(btnComprar);
 		
 		crearPuestos();
+		actualizar();
 
+	}
+
+	private void actualizar() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < puestos.length; i++) {
+			for (int j = 0; j < puestos.length; j++) {
+				if (puestos[i][j].getEstado().equals(EstadoPuesto.OCUPADO)) {
+					matriz[i][j].setEnabled(false);
+				}
+			}
+		}
+		
 	}
 
 	private void crearPuestos() {
@@ -110,7 +123,8 @@ public class ClubFans extends JFrame implements ActionListener {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {
-					//logica
+					matriz[i][j].setBackground(Color.GREEN);
+					escenario.agregarPuesto(puestos[i][j]);
 				}
 			}
 		}

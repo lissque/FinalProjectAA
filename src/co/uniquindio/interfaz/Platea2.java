@@ -6,6 +6,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import co.uniquindio.mundo.Escenario;
+import co.uniquindio.mundo.EstadoPuesto;
+import co.uniquindio.mundo.Puesto;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -17,12 +19,13 @@ import javax.swing.JButton;
 public class Platea2 extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private Secciones inicio;
-	private JButton btnVolver;
-	private Escenario escenario;
+	private JButton btnVolver;	
 	private JButton[][] matriz;
 	private JButton btnComprar;
 	private JPanel panel;
+	
+	private Puesto[][] puestos;
+	private Escenario escenario;
 
 	/**
 	 * Create the frame.
@@ -33,6 +36,8 @@ public class Platea2 extends JFrame implements ActionListener {
 		setResizable(false);
 
 		matriz = new JButton[5][5];
+		this.escenario = escenario;
+		puestos = escenario.getSecciones().get(3).getPuestos();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 336);
@@ -69,7 +74,20 @@ public class Platea2 extends JFrame implements ActionListener {
 		contentPane.add(btnComprar);
 		
 		crearPuestos();
+		actualizar();
 
+	}
+
+	private void actualizar() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < puestos.length; i++) {
+			for (int j = 0; j < puestos.length; j++) {
+				if (puestos[i][j].getEstado().equals(EstadoPuesto.OCUPADO)) {
+					matriz[i][j].setEnabled(false);
+				}
+			}
+		}
+		
 	}
 
 	private void crearPuestos() {
@@ -110,7 +128,8 @@ public class Platea2 extends JFrame implements ActionListener {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {
-					
+					matriz[i][j].setBackground(Color.GREEN);
+					escenario.agregarPuesto(puestos[i][j]);
 				}
 			}
 		}
