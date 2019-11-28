@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class Escenario {
 
 	private ArrayList<Seccion> secciones;
+	private ArrayList<Puesto> puestosSeleccionados;
 
 	public Escenario() {
 		super();
 		secciones = new ArrayList<Seccion>();
+		puestosSeleccionados = new ArrayList<Puesto>();
 		agregarPlatea1();
 		agregarSegundo1();
 		agregarClubFans();
@@ -44,6 +46,10 @@ public class Escenario {
 		Seccion nuevaSeccion = new Seccion(TipoSeccion.SEGUNDO_PISO_2);
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
+	}
+	
+	public void agregarPuesto(Puesto puesto) {
+		puestosSeleccionados.add(puesto);
 	}
 
 	public ArrayList<Seccion> getSecciones() {
