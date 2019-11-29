@@ -171,4 +171,12 @@ public class Cliente implements Serializable{
 	public void setRespuestas(ArrayList<Respuesta> respuestas) {
 		this.respuestas = respuestas;
 	}
+	
+	/**
+	 * Metodo to String
+	 */
+	@Override
+	public String toString() {
+		return nombre + " " + apellido + " Id: " + id;
+	}
 }

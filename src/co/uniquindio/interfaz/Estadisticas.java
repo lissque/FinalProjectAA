@@ -2,7 +2,6 @@ package co.uniquindio.interfaz;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.IllegalFormatCodePointException;
 import java.util.TreeMap;
 
 import javax.swing.JFrame;
@@ -24,6 +23,7 @@ import co.uniquindio.mundo.EstadoPuesto;
 import co.uniquindio.mundo.Genero;
 import co.uniquindio.mundo.NivelEstudio;
 import co.uniquindio.mundo.Puesto;
+import co.uniquindio.mundo.Registro;
 import co.uniquindio.mundo.Seccion;
 
 import javax.swing.border.BevelBorder;
@@ -142,44 +142,46 @@ public class Estadisticas extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		/**
-		 * if (e.getSource() == btnListadoDeAsistentes) { String salida = "Listado de
-		 * asistentes: \n"; for (Cliente miCliente :
-		 * home.getMiEvento().getRegistro().getClientes()) { salida +=
-		 * miCliente.toString(); salida += "\n"; } JOptionPane.showMessageDialog(null,
-		 * salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE); }
-		 **/
-		/**
-		 * if (e.getSource() == btnListadoOrdenadoDe) { TreeMap<String, String> ordenado
-		 * = new TreeMap<String, String>(); for (Cliente miCliente :
-		 * home.getMiEvento().getRegistro().getClientes()) {
-		 * ordenado.put(miCliente.getNombre() + miCliente.getApellido(),
-		 * miCliente.getId());
-		 * 
-		 * } JOptionPane.showMessageDialog(null, ordenado.values(), "Informacion*",
-		 * JOptionPane.INFORMATION_MESSAGE);
-		 * 
-		 * }
-		 **/
-		/**
-		 * if (e.getSource() == btnListadoDeAsistentesEstrato) {
-		 * 
-		 * String estrato1 = "Listado de asistentes por estrato 1: \n"; String estrato2
-		 * = "Listado de asistentes por estrato 2: \n"; String estrato3 = "Listado de
-		 * asistentes por estrato 3: \n";
-		 * 
-		 * for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) { if
-		 * (miCliente.getEstrato() == 1) { estrato1 += miCliente.toString(); } if
-		 * (miCliente.getEstrato() == 2) { estrato2 += miCliente.toString(); } if
-		 * (miCliente.getEstrato() == 3) { estrato3 += miCliente.toString(); } estrato1
-		 * += "\n"; estrato2 += "\n"; estrato3 += "\n"; }
-		 * 
-		 * JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3,
-		 * "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-		 * 
-		 * }
-		 **/
-		/**if (e.getSource() == btnListadoDePuestos) {
+		if (e.getSource() == btnListadoDeAsistentes) {
+			String salida = "Listado de asistentes: \n";
+			for (Registro registro : home.getMiEvento().getMisRegistros()) {
+				salida += registro.getCliente().toString();
+				salida += "\n";
+			}
+			JOptionPane.showMessageDialog(null, salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (e.getSource() == btnListadoOrdenadoDe) {
+			TreeMap<String, String> ordenado = new TreeMap<String, String>();
+			for (Registro registro : home.getMiEvento().getMisRegistros()) {
+				ordenado.put(registro.getCliente().getId(),
+						registro.getCliente().getApellido() + " " + registro.getCliente().getNombre());
+			}
+			JOptionPane.showMessageDialog(null, "Listado ordenado de asistentes: \n" + ordenado.values(),
+					"Informacion*", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (e.getSource() == btnListadoDeAsistentesEstrato) {
+
+			String estrato1 = "Listado de asistentes por estrato 1: \n";
+			String estrato2 = "Listado de asistentes por estrato 2: \n";
+			String estrato3 = "Listado de asistentes por estrato 3: \n";
+			for (Registro registro : home.getMiEvento().getMisRegistros()) {
+				if (registro.getCliente().getEstrato() == 1) {
+					estrato1 += registro.getCliente().toString() + "\n";
+				}
+				if (registro.getCliente().getEstrato() == 2) {
+					estrato2 += registro.getCliente().toString() + "\n";
+				}
+				if (registro.getCliente().getEstrato() == 3) {
+					estrato3 += registro.getCliente().toString() + "\n";
+				}
+			}
+			JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3, "Informacion*",
+					JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		/*if (e.getSource() == btnListadoDePuestos) {
 
 			String puestos = "Listado de puestos libres \n";
 			for (Seccion seccion : home.getMiEvento().getEscenario().getSecciones()) {
@@ -188,7 +190,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 					for (int j = 0; j < seccion.getPuestos()[i].length; j++) {
 						Puesto miP = seccion.getPuestos()[i][j];
 						if (miP.getEstado() == EstadoPuesto.LIBRE) {
-							puestos += miP.getEstado();
+							puestos += miP;
 						}
 					}
 					puestos += "\n";
@@ -197,7 +199,8 @@ public class Estadisticas extends JFrame implements ActionListener {
 
 			}
 			JOptionPane.showMessageDialog(null, puestos, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-		}**/
+		}*/
+
 		if (e.getSource() == btnResulEncuesta) {
 			this.dispose();
 			GraficasEncuesta graficas = new GraficasEncuesta(home);
@@ -216,28 +219,28 @@ public class Estadisticas extends JFrame implements ActionListener {
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
 		}
-		if (e.getSource()==btnEstadoCivil) {
+		if (e.getSource() == btnEstadoCivil) {
 			DefaultCategoryDataset ds = new DefaultCategoryDataset();
 			ds.addValue(contarEstadoCivil(EstadoCivil.CASADO), "CASADO", "");
 			ds.addValue(contarEstadoCivil(EstadoCivil.SOLTERO), "SOLTERO", "");
 			ds.addValue(contarEstadoCivil(EstadoCivil.DIVORCIADO), "DIVORCIADO", "");
 			ds.addValue(contarEstadoCivil(EstadoCivil.UNION_LIBRE), "UNION LIBRE", "");
-			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "ESTADO CIVIL", "CANTIDAD", ds,
-					PlotOrientation.VERTICAL, true, true, true);
+			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "ESTADO CIVIL", "CANTIDAD",
+					ds, PlotOrientation.VERTICAL, true, true, true);
 			ChartFrame f = new ChartFrame("", jf);
 			f.setSize(700, 600);
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
 		}
-		if (e.getSource()==btnNivelEstudio) {
+		if (e.getSource() == btnNivelEstudio) {
 			DefaultCategoryDataset ds = new DefaultCategoryDataset();
 			ds.addValue(contarNivelEstudio(NivelEstudio.BACHILLER), "BACHILLER", "");
 			ds.addValue(contarNivelEstudio(NivelEstudio.PREGRADO), "PREGRADO", "");
 			ds.addValue(contarNivelEstudio(NivelEstudio.MAESTRIA), "MAESTRIA", "");
 			ds.addValue(contarNivelEstudio(NivelEstudio.DOCTORADO), "DOCTORADO", "");
 			ds.addValue(contarNivelEstudio(NivelEstudio.POSTDOCTORADO), "POSTDOCTORADO", "");
-			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "NIVEL DE ESTUDIO", "CANTIDAD", ds,
-					PlotOrientation.VERTICAL, true, true, true);
+			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "NIVEL DE ESTUDIO",
+					"CANTIDAD", ds, PlotOrientation.VERTICAL, true, true, true);
 			ChartFrame f = new ChartFrame("", jf);
 			f.setSize(700, 600);
 			f.setLocationRelativeTo(null);

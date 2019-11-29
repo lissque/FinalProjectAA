@@ -94,7 +94,7 @@ public class Platea1 extends JFrame implements ActionListener {
 
 		for (int i = 0; i < puestos.length; i++) {
 			for (int j = 0; j < puestos.length; j++) {
-				if (puestos[i][j].getEstado().equals(EstadoPuesto.OCUPADO)) {
+				if (puestos[i][j].getEstado()== EstadoPuesto.OCUPADO) {
 					matriz[i][j].setEnabled(false);
 				}
 			}
