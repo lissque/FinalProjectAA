@@ -41,8 +41,10 @@ public class Estadisticas extends JFrame implements ActionListener {
 	private JButton btnListadoDePuestos;
 	private JButton btnListadoOrdenadoDe;
 	private JButton btnListadoDeAsistentesEstrato;
-	private JButton btnSocioDemografico;
+	private JButton btnGenero;
 	private JButton btnResulEncuesta;
+	private JButton btnEstadoCivil;
+	private JButton btnNivelEstudio;
 
 	public Estadisticas(Home home) {
 
@@ -51,7 +53,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 450);
+		setBounds(100, 100, 600, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
@@ -63,7 +65,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.addActionListener(this);
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVolver.setBounds(411, 386, 113, 29);
+		btnVolver.setBounds(459, 547, 113, 29);
 		contentPane.add(btnVolver);
 
 		JLabel Encuesta = new JLabel("ESTAD\u00CDSTICAS");
@@ -84,7 +86,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		btnListadoOrdenadoDe.addActionListener(this);
 		btnListadoOrdenadoDe.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoOrdenadoDe.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoOrdenadoDe.setBounds(54, 158, 485, 29);
+		btnListadoOrdenadoDe.setBounds(54, 154, 485, 29);
 		contentPane.add(btnListadoOrdenadoDe);
 
 		btnListadoDePuestos = new JButton("LISTADO DE PUESTOS NO OCUPADOS");
@@ -92,7 +94,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		btnListadoDePuestos.addActionListener(this);
 		btnListadoDePuestos.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoDePuestos.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoDePuestos.setBounds(54, 215, 485, 29);
+		btnListadoDePuestos.setBounds(54, 205, 485, 29);
 		contentPane.add(btnListadoDePuestos);
 
 		btnListadoDeAsistentesEstrato = new JButton("LISTADO DE ASISTENTES POR SU ESTRATO SOCIOECON\u00D3MICO");
@@ -100,24 +102,36 @@ public class Estadisticas extends JFrame implements ActionListener {
 		btnListadoDeAsistentesEstrato.addActionListener(this);
 		btnListadoDeAsistentesEstrato.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnListadoDeAsistentesEstrato.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnListadoDeAsistentesEstrato.setBounds(54, 273, 485, 29);
+		btnListadoDeAsistentesEstrato.setBounds(54, 258, 485, 29);
 		contentPane.add(btnListadoDeAsistentesEstrato);
 
 		btnResulEncuesta = new JButton("GRAFICAS ENCUESTAS");
 		btnResulEncuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnResulEncuesta.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnResulEncuesta.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnResulEncuesta.setBounds(54, 335, 196, 29);
+		btnResulEncuesta.setBounds(54, 483, 485, 29);
 		btnResulEncuesta.addActionListener(this);
 		contentPane.add(btnResulEncuesta);
 
-		btnSocioDemografico = new JButton("GRAFICAS SOCIODEMOGRAFICAS");
-		btnSocioDemografico.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnSocioDemografico.addActionListener(this);
-		btnSocioDemografico.setFont(new Font("Gabriola", Font.BOLD, 20));
-		btnSocioDemografico.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnSocioDemografico.setBounds(260, 336, 279, 29);
-		contentPane.add(btnSocioDemografico);
+		btnGenero = new JButton("GR\u00C1FICA SOCIODEMOGR\u00C1FICA DE G\u00C9NERO");
+		btnGenero.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGenero.addActionListener(this);
+		btnGenero.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnGenero.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnGenero.setBounds(54, 311, 485, 29);
+		contentPane.add(btnGenero);
+		
+		btnEstadoCivil = new JButton("GR\u00C1FICA SOCIODEMOGR\u00C1FICA DE ESTADO CIVIL");
+		btnEstadoCivil.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnEstadoCivil.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnEstadoCivil.setBounds(54, 367, 485, 29);
+		contentPane.add(btnEstadoCivil);
+		
+		btnNivelEstudio = new JButton("GR\u00C1FICA SOCIODEMOGR\u00C1FICA DEL NIVEL DE ESTUDIO");
+		btnNivelEstudio.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnNivelEstudio.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNivelEstudio.setBounds(54, 427, 485, 29);
+		contentPane.add(btnNivelEstudio);
 	}
 
 	@Override
@@ -203,7 +217,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
 		}
-		if (e.getSource() == btnSocioDemografico) {
+		if (e.getSource() == btnGenero) {
 			DefaultCategoryDataset ds = new DefaultCategoryDataset();
 			ds.addValue(contarGenero(Genero.HOMBRE), "Hombre", "");
 			ds.addValue(contarGenero(Genero.MUJER), "Mujer", "");
