@@ -18,6 +18,13 @@ import java.awt.Cursor;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 
+/**
+ * Ventana de la matriz del club de fans
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
+ */
 public class ClubFans extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
@@ -78,8 +85,11 @@ public class ClubFans extends JFrame implements ActionListener {
 
 	}
 
+	/**
+	 * Metodo que actualiza el estado del puesto
+	 */
 	private void actualizar() {
-		// TODO Auto-generated method stub
+
 		for (int i = 0; i < puestos.length; i++) {
 			for (int j = 0; j < puestos.length; j++) {
 				if (puestos[i][j].getEstado().equals(EstadoPuesto.OCUPADO)) {
@@ -90,8 +100,11 @@ public class ClubFans extends JFrame implements ActionListener {
 
 	}
 
+	/**
+	 * Metodo que crea la matriz de puestos
+	 */
 	private void crearPuestos() {
-		// TODO Auto-generated method stub
+
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 
@@ -120,7 +133,7 @@ public class ClubFans extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnVolver) {
 			this.setVisible(false);
-			
+
 		}
 
 		for (int i = 0; i < matriz.length; i++) {
