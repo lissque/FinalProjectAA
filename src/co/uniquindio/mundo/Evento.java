@@ -34,7 +34,7 @@ public class Evento implements Serializable{
 		Cliente cliente = new Cliente("123", "LU", "COTTE", "CASA", "LU@HOTMAIL.COM", null, 1, NivelEstudio.BACHILLER,
 				EstadoCivil.SOLTERO, Genero.MUJER, null);
 
-		misClientes.add(cliente);
+//		misClientes.add(0, cliente);
 
 	}
 

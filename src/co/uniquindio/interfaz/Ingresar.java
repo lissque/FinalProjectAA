@@ -14,6 +14,9 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.SoftBevelBorder;
+
+import co.uniquindio.mundo.Cliente;
+
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
@@ -95,23 +98,19 @@ public class Ingresar extends JFrame implements ActionListener {
 
 				if (home.getMiEvento().getMisClientes().size() != 0) {
 
-					for (int i = 0; i < home.getMiEvento().getMisClientes().size(); i++) {
+					if (isCliente(ingreso)) {
 
-						String cliente = home.getMiEvento().getMisClientes().get(i).getId().toUpperCase();
+						this.dispose();
+						Secciones ventanaMatrices = new Secciones(this);
+						ventanaMatrices.setLocationRelativeTo(null);
+						ventanaMatrices.setVisible(true);
+						txtIngreso.setText("");
 
-						if (ingreso.equals(cliente)) {
-
-							this.dispose();
-							Secciones ventanaMatrices = new Secciones(this);
-							ventanaMatrices.setLocationRelativeTo(null);
-							ventanaMatrices.setVisible(true);
-							txtIngreso.setText("");
-
-						} else {
-							JOptionPane.showMessageDialog(null, "NO ESTA REGISTRADO", "ADVERTENCIA!",
-									JOptionPane.WARNING_MESSAGE, null);
-						}
+					} else {
+						JOptionPane.showMessageDialog(null, "NO ESTA REGISTRADO", "ADVERTENCIA!",
+								JOptionPane.WARNING_MESSAGE, null);
 					}
+
 				} else {
 					JOptionPane.showMessageDialog(null, "NO HAY CLIENTES REGISTRADOS", "ADVERTENCIA!",
 							JOptionPane.WARNING_MESSAGE, null);
@@ -128,5 +127,28 @@ public class Ingresar extends JFrame implements ActionListener {
 			home.setVisible(true);
 		}
 
+	}
+
+	/**
+	 * Metodo que verifica que el cliente si este registrado
+	 * 
+	 * @param ingreso
+	 *            Información del textField que se verificará en el ArrayList de
+	 *            clientes
+	 * @return Retorna true si el ingreso existe, y false en caso contrario
+	 */
+	public boolean isCliente(String ingreso) {
+
+		String cliente;
+
+		for (int i = 0; i < home.getMiEvento().getMisClientes().size(); i++) {
+			cliente = home.getMiEvento().getMisClientes().get(i).getId().toUpperCase();
+
+			if (ingreso.equals(cliente)) {
+
+				return true;
+			}
+		}
+		return false;
 	}
 }

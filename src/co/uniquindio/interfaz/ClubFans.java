@@ -121,6 +121,9 @@ public class ClubFans extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
+	 * Metodo que vuelve a pintar la matriz
+	 */
 	private void dibujar() {
 
 		panel.validate();
@@ -129,7 +132,6 @@ public class ClubFans extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 
 		if (e.getSource() == btnVolver) {
 			this.setVisible(false);
