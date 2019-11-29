@@ -16,6 +16,7 @@ import co.uniquindio.mundo.Registro;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,8 +62,11 @@ public class Platea1 extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		btnVolver = new JButton("\u21A7");
-		btnVolver.setBounds(342, 11, 48, 23);
+		btnVolver = new JButton("VOLVER");
+		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 15));
+		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVolver.setBounds(294, 11, 96, 23);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
 
@@ -73,8 +77,11 @@ public class Platea1 extends JFrame implements ActionListener {
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
 
-		btnComprar = new JButton("Comprar");
-		btnComprar.setBounds(152, 302, 89, 23);
+		btnComprar = new JButton("COMPRAR");
+		btnComprar.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnComprar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnComprar.setFont(new Font("Gabriola", Font.BOLD, 18));
+		btnComprar.setBounds(130, 302, 136, 23);
 		btnComprar.addActionListener(this);
 		contentPane.add(btnComprar);
 
