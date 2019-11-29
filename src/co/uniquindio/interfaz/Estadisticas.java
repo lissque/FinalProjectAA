@@ -120,15 +120,19 @@ public class Estadisticas extends JFrame implements ActionListener {
 		btnGenero.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnGenero.setBounds(54, 311, 485, 29);
 		contentPane.add(btnGenero);
-		
+
 		btnEstadoCivil = new JButton("GR\u00C1FICA SOCIODEMOGR\u00C1FICA DE ESTADO CIVIL");
+		btnEstadoCivil.addActionListener(this);
+		btnEstadoCivil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnEstadoCivil.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnEstadoCivil.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnEstadoCivil.setBounds(54, 367, 485, 29);
 		contentPane.add(btnEstadoCivil);
-		
+
 		btnNivelEstudio = new JButton("GR\u00C1FICA SOCIODEMOGR\u00C1FICA DEL NIVEL DE ESTUDIO");
+		btnNivelEstudio.addActionListener(this);
 		btnNivelEstudio.setFont(new Font("Gabriola", Font.BOLD, 20));
+		btnNivelEstudio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNivelEstudio.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNivelEstudio.setBounds(54, 427, 485, 29);
 		contentPane.add(btnNivelEstudio);
@@ -137,48 +141,43 @@ public class Estadisticas extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		/**if (e.getSource() == btnListadoDeAsistentes) {
-			String salida = "Listado de asistentes: \n";
-			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
-				salida += miCliente.toString();
-				salida += "\n";
-			}
-			JOptionPane.showMessageDialog(null, salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-		}**/
-		/**if (e.getSource() == btnListadoOrdenadoDe) {
-			TreeMap<String, String> ordenado = new TreeMap<String, String>();
-			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
-				ordenado.put(miCliente.getNombre() + miCliente.getApellido(), miCliente.getId());
-
-			}
-			JOptionPane.showMessageDialog(null, ordenado.values(), "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-
-		}**/
-		/**if (e.getSource() == btnListadoDeAsistentesEstrato) {
-
-			String estrato1 = "Listado de asistentes por estrato 1: \n";
-			String estrato2 = "Listado de asistentes por estrato 2: \n";
-			String estrato3 = "Listado de asistentes por estrato 3: \n";
-
-			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
-				if (miCliente.getEstrato() == 1) {
-					estrato1 += miCliente.toString();
-				}
-				if (miCliente.getEstrato() == 2) {
-					estrato2 += miCliente.toString();
-				}
-				if (miCliente.getEstrato() == 3) {
-					estrato3 += miCliente.toString();
-				}
-				estrato1 += "\n";
-				estrato2 += "\n";
-				estrato3 += "\n";
-			}
-
-			JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3, "Informacion*",
-					JOptionPane.INFORMATION_MESSAGE);
-
-		}**/
+		/**
+		 * if (e.getSource() == btnListadoDeAsistentes) { String salida = "Listado de
+		 * asistentes: \n"; for (Cliente miCliente :
+		 * home.getMiEvento().getRegistro().getClientes()) { salida +=
+		 * miCliente.toString(); salida += "\n"; } JOptionPane.showMessageDialog(null,
+		 * salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE); }
+		 **/
+		/**
+		 * if (e.getSource() == btnListadoOrdenadoDe) { TreeMap<String, String> ordenado
+		 * = new TreeMap<String, String>(); for (Cliente miCliente :
+		 * home.getMiEvento().getRegistro().getClientes()) {
+		 * ordenado.put(miCliente.getNombre() + miCliente.getApellido(),
+		 * miCliente.getId());
+		 * 
+		 * } JOptionPane.showMessageDialog(null, ordenado.values(), "Informacion*",
+		 * JOptionPane.INFORMATION_MESSAGE);
+		 * 
+		 * }
+		 **/
+		/**
+		 * if (e.getSource() == btnListadoDeAsistentesEstrato) {
+		 * 
+		 * String estrato1 = "Listado de asistentes por estrato 1: \n"; String estrato2
+		 * = "Listado de asistentes por estrato 2: \n"; String estrato3 = "Listado de
+		 * asistentes por estrato 3: \n";
+		 * 
+		 * for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) { if
+		 * (miCliente.getEstrato() == 1) { estrato1 += miCliente.toString(); } if
+		 * (miCliente.getEstrato() == 2) { estrato2 += miCliente.toString(); } if
+		 * (miCliente.getEstrato() == 3) { estrato3 += miCliente.toString(); } estrato1
+		 * += "\n"; estrato2 += "\n"; estrato3 += "\n"; }
+		 * 
+		 * JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3,
+		 * "Informacion*", JOptionPane.INFORMATION_MESSAGE);
+		 * 
+		 * }
+		 **/
 		if (e.getSource() == btnListadoDePuestos) {
 
 			String puestos = "Listado de puestos libres \n";
@@ -230,31 +229,31 @@ public class Estadisticas extends JFrame implements ActionListener {
 			f.setVisible(true);
 		}
 	}
-	
-	public int contarGenero (Genero genero) {
+
+	public int contarGenero(Genero genero) {
 		int cont = 0;
 		for (Cliente cliente : home.getMiEvento().getMisClientes()) {
-			if (cliente.getGenero()==genero) {
+			if (cliente.getGenero() == genero) {
 				cont++;
 			}
 		}
 		return cont;
 	}
-	
-	public int contarEstadoCivil (EstadoCivil estado) {
+
+	public int contarEstadoCivil(EstadoCivil estado) {
 		int contador = 0;
 		for (Cliente cliente : home.getMiEvento().getMisClientes()) {
-			if (cliente.getEstadoCivil()==estado) {
+			if (cliente.getEstadoCivil() == estado) {
 				contador++;
 			}
 		}
 		return contador;
 	}
-	
-	public int contarNivelEstudio (NivelEstudio estudio) {
+
+	public int contarNivelEstudio(NivelEstudio estudio) {
 		int contador = 0;
 		for (Cliente cliente : home.getMiEvento().getMisClientes()) {
-			if (cliente.getNivelEstudio()==estudio) {
+			if (cliente.getNivelEstudio() == estudio) {
 				contador++;
 			}
 		}
