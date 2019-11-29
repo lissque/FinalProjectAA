@@ -1,34 +1,39 @@
 package co.uniquindio.mundo;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Puesto
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Puesto {
-	
-	//------------------------ATRIBUTOS-------------------------//
+
+	// ------------------------ATRIBUTOS-------------------------//
 	private EstadoPuesto estado;
 	private Cliente cliente;
 	private TipoSeccion seccion;
 	private int i;
 	private int j;
-	
+
 	/**
 	 * Constructor de la clase Puesto
+	 * 
 	 * @param i
+	 *            Para dar numeración al puesto
 	 * @param j
+	 *            Para dar numeración al puesto
 	 */
 	public Puesto(int i, int j) {
 		estado = EstadoPuesto.LIBRE;
 		cliente = new Cliente();
 		seccion = null;
-		this.i=i;
-		this.j=j;
+		this.i = i;
+		this.j = j;
 	}
 
-	//------------------------------GETTERS AND SETTERS-------------------------------//
-	
+	// --------------------GETTERS AND SETTERS-------------------------//
+
 	public EstadoPuesto getEstado() {
 		return estado;
 	}
@@ -71,7 +76,6 @@ public class Puesto {
 
 	public void setSeccion(TipoSeccion seccion) {
 		this.seccion = seccion;
-	}	
-	
-	
+	}
+
 }

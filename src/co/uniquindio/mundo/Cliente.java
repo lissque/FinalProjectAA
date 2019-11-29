@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Cliente
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Cliente {
 
 	// -----------------------ATRIBUTOS--------------------//
+
 	private String id, nombre, apellido, direccion, email;
 	private GregorianCalendar fechaNacimiento;
 	private int estrato;
@@ -24,22 +27,29 @@ public class Cliente {
 	 * Constructor de la clase Cliente
 	 * 
 	 * @param id
+	 *            Id del cliente
 	 * @param nombre
+	 *            Nombre del cliente
 	 * @param apellido
+	 *            Apellido del cliente
 	 * @param direccion
+	 *            Dirección del cliente
 	 * @param email
-	 * @param anio
-	 * @param mes
-	 * @param dia
+	 *            Email del cliente
 	 * @param estrato
+	 *            Estrato del cliente
 	 * @param nivelEstudio
+	 *            Nivel de estudio del cliente
 	 * @param estadoCivil
+	 *            Estado civil del cliente
 	 * @param genero
-	 * @param mitargeta
+	 *            Genero del cliente
+	 * @param mitarjeta
+	 *            Tarjeta del cliente
 	 */
 	public Cliente(String id, String nombre, String apellido, String direccion, String email,
 			GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil,
-			Genero genero, Tarjeta mitargeta) {
+			Genero genero, Tarjeta mitarjeta) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -50,8 +60,7 @@ public class Cliente {
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
 		fechaNacimiento = fechaNacimiento;
-		
-		
+
 	}
 
 	/**
@@ -60,8 +69,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	// --------------------------------GETTERS AND
-	// SETTERS-----------------------------//
+	// -------------------------GETTERS AND SETTERS--------------------------//
 	public String getId() {
 		return id;
 	}

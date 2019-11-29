@@ -3,9 +3,11 @@ package co.uniquindio.mundo;
 import java.util.ArrayList;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Evento
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Evento {
 
@@ -35,6 +37,7 @@ public class Evento {
 	 * Metodo para agregar un cliente al arraylist de cliente
 	 * 
 	 * @param miC
+	 *            Cliente que se agregará al ArrayList de clientes
 	 */
 	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
