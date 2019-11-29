@@ -1,4 +1,4 @@
-package co.uniquindio.interfaz;
+  package co.uniquindio.interfaz;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

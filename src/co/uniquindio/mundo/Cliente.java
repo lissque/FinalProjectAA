@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Cliente
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE S�NCHEZ
+ * @author ANDR�S FELIPE CORT�S RODR�GUEZ
  */
 public class Cliente {
 
-	//-----------------------ATRIBUTOS--------------------//
+	// -----------------------ATRIBUTOS--------------------//
+
 	private String id, nombre, apellido, direccion, email;
 	private GregorianCalendar fechaNacimiento;
 	private int estrato;
@@ -22,18 +25,31 @@ public class Cliente {
 
 	/**
 	 * Constructor de la clase Cliente
+	 * 
 	 * @param id
+	 *            Id del cliente
 	 * @param nombre
+	 *            Nombre del cliente
 	 * @param apellido
+	 *            Apellido del cliente
 	 * @param direccion
+	 *            Direcci�n del cliente
+	 * @param email
+	 *            Email del cliente
 	 * @param estrato
+	 *            Estrato del cliente
 	 * @param nivelEstudio
+	 *            Nivel de estudio del cliente
 	 * @param estadoCivil
+	 *            Estado civil del cliente
 	 * @param genero
+	 *            Genero del cliente
 	 * @param mitarjeta
+	 *            Tarjeta del cliente
 	 */
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
-			Tarjeta mitarjeta) {
+	public Cliente(String id, String nombre, String apellido, String direccion, String email,
+			GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil,
+			Genero genero, Tarjeta mitarjeta) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -45,6 +61,7 @@ public class Cliente {
 		this.genero = genero;
 		this.miTarjeta=mitarjeta;
 		fechaNacimiento = fechaNacimiento;
+
 	}
 
 	/**
@@ -53,7 +70,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	//--------------------------------GETTERS AND SETTERS-----------------------------//
+	// -------------------------GETTERS AND SETTERS--------------------------//
 	public String getId() {
 		return id;
 	}

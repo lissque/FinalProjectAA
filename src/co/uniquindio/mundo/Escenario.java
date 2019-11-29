@@ -3,13 +3,15 @@ package co.uniquindio.mundo;
 import java.util.ArrayList;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Escenario
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Escenario {
 
-	//------------------------ATRIBUTOS-----------------//
+	// ------------------------ATRIBUTOS-----------------//
 	private ArrayList<Seccion> secciones;
 	private ArrayList<Puesto> puestosSeleccionados;
 
@@ -35,7 +37,7 @@ public class Escenario {
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
-	
+
 	/**
 	 * Metodo para agregar la seccion platea 1 al escenario
 	 */
@@ -44,7 +46,7 @@ public class Escenario {
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
-	
+
 	/**
 	 * Metodo para agregar la seccion platea 2 al escenario
 	 */
@@ -53,7 +55,7 @@ public class Escenario {
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
-	
+
 	/**
 	 * Metodo para agregar la seccion el segundo piso 1 al escenario
 	 */
@@ -62,7 +64,7 @@ public class Escenario {
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
-	
+
 	/**
 	 * Metodo para agregar la seccion el segundo piso 2 al escenario
 	 */
@@ -71,13 +73,15 @@ public class Escenario {
 		nuevaSeccion.llenarMatriz();
 		secciones.add(nuevaSeccion);
 	}
-	
-	//OJO CON ESTO
+
+	/**
+	 * Metodo para agregar puestos seleccionados
+	 */
 	public void agregarPuesto(Puesto puesto) {
 		puestosSeleccionados.add(puesto);
 	}
 
-	//------------------------GETTERS AND SETTERS-----------------------//
+	// ------------------------GETTERS AND SETTERS-----------------------//
 	public ArrayList<Seccion> getSecciones() {
 		return secciones;
 	}

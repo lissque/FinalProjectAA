@@ -1,13 +1,15 @@
 package co.uniquindio.mundo;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes 
+ * Clase Administrador
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Administrador {
-	
-	//------------------ ATRIBUTOS -----------------------//
+
+	// ------------------ ATRIBUTOS -----------------------//
 	private String id;
 	private String contraseña;
 
@@ -19,7 +21,7 @@ public class Administrador {
 		contraseña = "123";
 	}
 
-	//------------------------GETTERS AND SETTERS---------------------//
+	// ------------------------GETTERS AND SETTERS---------------------//
 	public String getId() {
 		return id;
 	}

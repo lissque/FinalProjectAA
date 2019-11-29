@@ -3,13 +3,15 @@ package co.uniquindio.mundo;
 import java.util.ArrayList;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase Evento
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Evento {
 
-	//--------------------------------ATRIBUTOS---------------------------//
+	// --------------------------------ATRIBUTOS---------------------------//
 	private ArrayList<Cliente> misClientes;
 	private Registro registro;
 	private Administrador admin;
@@ -23,17 +25,25 @@ public class Evento {
 		registro = new Registro();
 		admin = new Administrador();
 		escenario = new Escenario();
+
+		Cliente cliente = new Cliente("123", "LU", "COTTE", "CASA", "LU@HOTMAIL.COM", null, 1, NivelEstudio.BACHILLER,
+				EstadoCivil.SOLTERO, Genero.MUJER, null);
+
+		misClientes.add(cliente);
+
 	}
-	
+
 	/**
 	 * Metodo para agregar un cliente al arraylist de cliente
+	 * 
 	 * @param miC
+	 *            Cliente que se agregará al ArrayList de clientes
 	 */
 	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
 	}
 
-	//--------------------GETTERS AND SETTERS--------------------//
+	// --------------------GETTERS AND SETTERS--------------------//
 	public Escenario getEscenario() {
 		return escenario;
 	}

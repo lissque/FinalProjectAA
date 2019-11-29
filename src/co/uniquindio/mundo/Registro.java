@@ -3,16 +3,18 @@ package co.uniquindio.mundo;
 import java.util.ArrayList;
 
 /**
- * @author Luisa Cotte
- * @author Lissette Quebrada
- * @author Andres Cortes
+ * Clase registro
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 public class Registro {
-	
-	//------------------------------------ATRIBUTOS--------------------------------//
+
+	// ------------------------------------ATRIBUTOS--------------------------------//
 	private ArrayList<Cliente> clientes;
 	private ArrayList<Puesto> puestos;
-		
+
 	/**
 	 * Constructor de la clase Registro
 	 */
@@ -20,34 +22,41 @@ public class Registro {
 		clientes = new ArrayList<>();
 		puestos = new ArrayList<>();
 	}
-	
+
 	/**
-	 * Metodo para agregar un cliente al array list 
-	 * @param mic cliente
+	 * Metodo para agregar un cliente al array list
+	 * 
+	 * @param mic
+	 *            Cliente que se agregará al ArrayList de clientes
 	 */
-	public void agregarCliente (Cliente mic) {
+	public void agregarCliente(Cliente mic) {
 		clientes.add(mic);
 	}
-	
+
 	/**
 	 * Metodo para agregar un puesto al array list de puesto
-	 * @param miP puesto
+	 * 
+	 * @param miP
+	 *            Puesto que se agregará al ArrayList de puestos
 	 */
-	public void agregarPuesto (Puesto miP) {
+	public void agregarPuesto(Puesto miP) {
 		puestos.add(miP);
 	}
-	
-	//-------------------------GETTERS AND SETTERS------------------------//
-	
+
+	// -------------------------GETTERS AND SETTERS------------------------//
+
 	public ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
+
 	public void setClientes(ArrayList<Cliente> clientes) {
 		this.clientes = clientes;
 	}
+
 	public ArrayList<Puesto> getPuestos() {
 		return puestos;
 	}
+
 	public void setPuestos(ArrayList<Puesto> puestos) {
 		this.puestos = puestos;
 	}

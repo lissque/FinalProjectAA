@@ -24,6 +24,13 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 
+/**
+ * Ventana del administrador
+ * 
+ * @author LISSETTE QUEBRADA LANCHEROS
+ * @author LUISA FERNANDA COTTE SÁNCHEZ
+ * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
+ */
 public class Admin extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
@@ -105,6 +112,10 @@ public class Admin extends JFrame implements ActionListener {
 		String pass = password.getText();
 
 		if (e.getSource() == btnIngresar) {
+
+			/**
+			 * Permite el ingreso del administrador
+			 */
 			if (home.getMiEvento().getAdmin().getId().equals(id)
 					&& home.getMiEvento().getAdmin().getContraseña().equals(pass)) {
 
