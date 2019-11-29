@@ -18,7 +18,7 @@ public class Evento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	// --------------------------------ATRIBUTOS---------------------------//
 	private ArrayList<Cliente> misClientes;
-	private Registro registro;
+	private ArrayList<Registro> misRegistros;
 	private Administrador admin;
 	private Escenario escenario;
 
@@ -27,7 +27,7 @@ public class Evento implements Serializable{
 	 */
 	public Evento() {
 		misClientes = new ArrayList<Cliente>();
-		registro = new Registro();
+		misRegistros = new ArrayList<Registro>();
 		admin = new Administrador();
 		escenario = new Escenario();
 
@@ -65,12 +65,12 @@ public class Evento implements Serializable{
 		this.misClientes = misClientes;
 	}
 
-	public Registro getRegistro() {
-		return registro;
+	public ArrayList<Registro> getMisRegistros() {
+		return misRegistros;
 	}
 
-	public void setRegistro(Registro registro) {
-		this.registro = registro;
+	public void setMisRegistros(ArrayList<Registro> misRegistros) {
+		this.misRegistros = misRegistros;
 	}
 
 	public Administrador getAdmin() {
