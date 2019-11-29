@@ -26,18 +26,14 @@ public class Cliente {
 	 * @param nombre
 	 * @param apellido
 	 * @param direccion
-	 * @param email
-	 * @param anio
-	 * @param mes
-	 * @param dia
 	 * @param estrato
 	 * @param nivelEstudio
 	 * @param estadoCivil
 	 * @param genero
-	 * @param mitargeta
+	 * @param mitarjeta
 	 */
 	public Cliente(String id, String nombre, String apellido, String direccion, String email, GregorianCalendar fechaNacimiento, int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero,
-			Tarjeta mitargeta) {
+			Tarjeta mitarjeta) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -47,6 +43,7 @@ public class Cliente {
 		this.nivelEstudio = nivelEstudio;
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
+		this.miTarjeta=mitarjeta;
 		fechaNacimiento = fechaNacimiento;
 	}
 

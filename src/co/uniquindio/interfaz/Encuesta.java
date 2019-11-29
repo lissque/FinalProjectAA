@@ -71,39 +71,38 @@ public class Encuesta extends JFrame implements ActionListener {
 
 		JLabel lblcalifiqueSuExperiencia = new JLabel();
 		lblcalifiqueSuExperiencia.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblcalifiqueSuExperiencia.setText("\u00BFCalifique su experiencia en el proceso de compra de boletas?");
-		lblcalifiqueSuExperiencia.setBounds(28, 195, 532, 24);
+		lblcalifiqueSuExperiencia.setText("La experiencia de compra fue excelente.");
+		lblcalifiqueSuExperiencia.setBounds(28, 195, 443, 24);
 		contentPane.add(lblcalifiqueSuExperiencia);
 
 		JLabel lblqueTanProbable = new JLabel();
-		lblqueTanProbable.setText("\u00BFQue tan probable seria que usted siga comprando con nosotros?");
+		lblqueTanProbable.setText("Seguire comprando boletos por medio de esta herramienta.");
 		lblqueTanProbable.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblqueTanProbable.setBounds(28, 230, 532, 24);
+		lblqueTanProbable.setBounds(28, 230, 443, 24);
 		contentPane.add(lblqueTanProbable);
 
 		JLabel lblqueTanRapido = new JLabel();
-		lblqueTanRapido.setText("\u00BFConsidera que el servicio fue r\u00E1pido?");
+		lblqueTanRapido.setText("Considero que el servicio fue rapido.");
 		lblqueTanRapido.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblqueTanRapido.setBounds(28, 269, 532, 24);
+		lblqueTanRapido.setBounds(28, 269, 443, 24);
 		contentPane.add(lblqueTanRapido);
 
 		JLabel lblqueTanVersatil = new JLabel();
-		lblqueTanVersatil.setText("\u00BFQue tan versatil considera el manejo de la aplicacion?");
+		lblqueTanVersatil.setText("Considero que el manejo de la aplicacion es versatil.");
 		lblqueTanVersatil.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblqueTanVersatil.setBounds(28, 308, 532, 22);
+		lblqueTanVersatil.setBounds(28, 308, 443, 22);
 		contentPane.add(lblqueTanVersatil);
 
 		JLabel lblqueTanProbable_1 = new JLabel();
-		lblqueTanProbable_1.setText("\u00BFQue tan probable seria que recomendara esta aplicacion?");
+		lblqueTanProbable_1.setText("Probablemente recomendare esta aplicacion.");
 		lblqueTanProbable_1.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblqueTanProbable_1.setBounds(28, 348, 532, 24);
+		lblqueTanProbable_1.setBounds(28, 348, 443, 24);
 		contentPane.add(lblqueTanProbable_1);
 
 		JLabel lblqueTanSeguro = new JLabel();
-		lblqueTanSeguro
-				.setText("\u00BFQue tan seguro se sintio con el manejo sus datos y usando nuestras formas de pago?");
+		lblqueTanSeguro.setText("Senti que el manejo de mis datos y formas de pago fue seguro.");
 		lblqueTanSeguro.setFont(new Font("Gabriola", Font.PLAIN, 20));
-		lblqueTanSeguro.setBounds(28, 383, 532, 24);
+		lblqueTanSeguro.setBounds(28, 383, 443, 24);
 		contentPane.add(lblqueTanSeguro);
 
 		cbPregunta1 = new JComboBox();
@@ -111,7 +110,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbPregunta1.setFont(new Font("Gabriola", Font.BOLD, 18));
 		cbPregunta1.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta1.setBounds(570, 191, 207, 26);
+		cbPregunta1.setBounds(481, 191, 296, 26);
 		contentPane.add(cbPregunta1);
 
 		cbPregunta2 = new JComboBox();
@@ -119,7 +118,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta2.setFont(new Font("Gabriola", Font.BOLD, 18));
 		cbPregunta2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbPregunta2.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta2.setBounds(570, 228, 207, 26);
+		cbPregunta2.setBounds(481, 228, 296, 26);
 		contentPane.add(cbPregunta2);
 
 		cbPregunta3 = new JComboBox();
@@ -127,7 +126,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbPregunta3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbPregunta3.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta3.setBounds(570, 265, 207, 26);
+		cbPregunta3.setBounds(481, 265, 296, 26);
 		contentPane.add(cbPregunta3);
 
 		cbPregunta4 = new JComboBox();
@@ -135,7 +134,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbPregunta4.setFont(new Font("Gabriola", Font.BOLD, 18));
 		cbPregunta4.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta4.setBounds(570, 304, 207, 26);
+		cbPregunta4.setBounds(481, 304, 296, 26);
 		contentPane.add(cbPregunta4);
 
 		cbPregunta5 = new JComboBox();
@@ -143,7 +142,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cbPregunta5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbPregunta5.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta5.setBounds(570, 344, 207, 26);
+		cbPregunta5.setBounds(481, 344, 296, 26);
 		contentPane.add(cbPregunta5);
 
 		cbPregunta6 = new JComboBox();
@@ -151,7 +150,7 @@ public class Encuesta extends JFrame implements ActionListener {
 		cbPregunta6.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		cbPregunta6.setFont(new Font("Gabriola", Font.BOLD, 18));
 		cbPregunta6.setModel(new DefaultComboBoxModel(Respuesta.values()));
-		cbPregunta6.setBounds(570, 381, 207, 26);
+		cbPregunta6.setBounds(481, 381, 296, 26);
 		contentPane.add(cbPregunta6);
 
 		JLabel lblText = new JLabel(
@@ -199,9 +198,6 @@ public class Encuesta extends JFrame implements ActionListener {
 			respuestas.add((Respuesta) cbPregunta4.getSelectedItem());
 			respuestas.add((Respuesta) cbPregunta5.getSelectedItem());
 			respuestas.add((Respuesta) cbPregunta6.getSelectedItem());
-			
-			
-
 			this.dispose();
 			home.setVisible(true);
 			home.setLocationRelativeTo(null);
