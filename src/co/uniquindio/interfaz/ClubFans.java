@@ -1,6 +1,7 @@
 package co.uniquindio.interfaz;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -35,12 +36,16 @@ public class ClubFans extends JFrame implements ActionListener {
 
 	private Puesto[][] puestos;
 	private Escenario escenario;
+	private Home home;
+	private Cliente cliente;
 
 	/**
 	 * Create the frame.
 	 */
-	public ClubFans(Escenario escenario) {
+	public ClubFans(Escenario escenario, Home home, Cliente cliente) {
 
+		this.home = home;
+		this.cliente = cliente;
 		setUndecorated(true);
 		setResizable(false);
 
@@ -135,6 +140,18 @@ public class ClubFans extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnVolver) {
 			this.setVisible(false);
+		}
+
+		if (e.getSource() == btnComprar) {
+
+			JOptionPane.showMessageDialog(null,
+					"COMPRA EXITOSA, SALDO DE TARJETA: " + cliente.getMiTarjeta().getCUPO_DISPONIBLE(),
+					"INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE, null);
+
+			this.setVisible(false);
+			Encuesta encuesta = new Encuesta(home, cliente);
+			encuesta.setVisible(true);
+			encuesta.setLocationRelativeTo(null);
 
 		}
 

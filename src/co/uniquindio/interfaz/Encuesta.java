@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
+import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Respuesta;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
@@ -44,11 +45,14 @@ public class Encuesta extends JFrame implements ActionListener {
 	private JComboBox cbPregunta4;
 	private JComboBox cbPregunta3;
 	private JButton btnOk;
+	private Cliente cliente;
 
 	/**
 	 * Create the frame.
 	 */
-	public Encuesta(Home home) {
+	public Encuesta(Home home, Cliente cliente) {
+
+		this.cliente = cliente;
 		this.home = home;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
@@ -201,6 +205,8 @@ public class Encuesta extends JFrame implements ActionListener {
 			this.dispose();
 			home.setVisible(true);
 			home.setLocationRelativeTo(null);
+
+			cliente.setRespuestas(respuestas);
 		}
 	}
 }

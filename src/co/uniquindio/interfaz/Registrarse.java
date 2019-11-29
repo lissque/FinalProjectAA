@@ -1,4 +1,4 @@
-  package co.uniquindio.interfaz;
+package co.uniquindio.interfaz;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -48,6 +48,7 @@ public class Registrarse extends JFrame implements ActionListener {
 	private JComboBox cbGenero;
 	private JLabel lblRegistrarse;
 	private JDateChooser fechaNacimiento;
+	private JTextField txtTarjeta;
 
 	/**
 	 * Create the frame.
@@ -59,7 +60,7 @@ public class Registrarse extends JFrame implements ActionListener {
 		setBackground(Color.LIGHT_GRAY);
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 500);
+		setBounds(100, 100, 700, 600);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(233, 150, 122));
 		contentPane.setBackground(new Color(255, 218, 185));
@@ -157,7 +158,7 @@ public class Registrarse extends JFrame implements ActionListener {
 		btnVolver.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVolver.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVolver.setBounds(536, 444, 137, 31);
+		btnVolver.setBounds(533, 535, 137, 31);
 		btnVolver.addActionListener(this);
 		contentPane.add(btnVolver);
 
@@ -167,7 +168,7 @@ public class Registrarse extends JFrame implements ActionListener {
 		btnAgregar.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnAgregar.setActionCommand("AGREGAR");
 		btnAgregar.addActionListener(this);
-		btnAgregar.setBounds(395, 444, 131, 31);
+		btnAgregar.setBounds(381, 535, 131, 31);
 		contentPane.add(btnAgregar);
 
 		cbEstrato = new JComboBox();
@@ -206,10 +207,22 @@ public class Registrarse extends JFrame implements ActionListener {
 		lblRegistrarse.setFont(new Font("Gabriola", Font.BOLD, 30));
 		lblRegistrarse.setBounds(62, 31, 257, 26);
 		contentPane.add(lblRegistrarse);
-		
+
 		fechaNacimiento = new JDateChooser();
 		fechaNacimiento.setBounds(327, 223, 163, 25);
 		contentPane.add(fechaNacimiento);
+
+		JLabel lblTargeta = new JLabel("N\u00B0 TARJETA:");
+		lblTargeta.setFont(new Font("Gabriola", Font.BOLD, 18));
+		lblTargeta.setBounds(132, 442, 112, 14);
+		contentPane.add(lblTargeta);
+
+		txtTarjeta = new JTextField();
+		txtTarjeta.setFont(new Font("Gabriola", Font.PLAIN, 18));
+		txtTarjeta.setColumns(10);
+		txtTarjeta.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		txtTarjeta.setBounds(254, 439, 236, 25);
+		contentPane.add(txtTarjeta);
 
 	}
 
@@ -235,16 +248,20 @@ public class Registrarse extends JFrame implements ActionListener {
 			NivelEstudio nivelEstudio = (NivelEstudio) cbNivelEstudio.getSelectedItem();
 			EstadoCivil estadoCivil = (EstadoCivil) cbEstadoCivil.getSelectedItem();
 			Genero genero = (Genero) cbGenero.getSelectedItem();
-			GregorianCalendar fecha = (GregorianCalendar)fechaNacimiento.getCalendar();
+			GregorianCalendar fecha = (GregorianCalendar) fechaNacimiento.getCalendar();
 
 			if (nombre.length() < 1 || apellido.length() < 1 || id.length() < 1 || direccion.length() < 1
-					|| email.length() < 1 || fecha==null) {
+					|| email.length() < 1 || txtTarjeta.getText().length() < 1 || fecha == null) {
 
-				JOptionPane.showMessageDialog(null, "RELLENE CORRECTAMENTE TODOS LOS CAMPOS", "ADVERTENCIA!", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "RELLENE CORRECTAMENTE TODOS LOS CAMPOS", "ADVERTENCIA!",
+						JOptionPane.ERROR_MESSAGE);
 
 			} else {
-				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fecha, estrato,
-						nivelEstudio, estadoCivil, genero, null);
+
+				Tarjeta tarjeta = new Tarjeta(txtTarjeta.getText());
+
+				Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fecha, estrato, nivelEstudio,
+						estadoCivil, genero, tarjeta);
 
 				home.agregarClientes(miCliente);
 

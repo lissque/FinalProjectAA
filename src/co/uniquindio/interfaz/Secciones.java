@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 
+import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Escenario;
 
 import java.awt.Color;
@@ -28,16 +29,20 @@ public class Secciones extends JFrame implements ActionListener {
 	private JButton btnM3;
 	private JButton btnVolver;
 	private Ingresar anterior;
+	private Cliente cliente;
+	private Home home;
 
 	/**
 	 * Create the frame.
 	 */
-	public Secciones(Ingresar anterior) {
+	public Secciones(Ingresar anterior, Home home, Cliente cliente) {
 
 		setUndecorated(true);
 		setResizable(false);
-
+		
+		this.cliente = cliente;
 		this.anterior = anterior;
+		this.home = home;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 400);
@@ -121,7 +126,7 @@ public class Secciones extends JFrame implements ActionListener {
 		if (e.getSource() == btnM2) {
 
 			// this.setVisible(false);
-			ClubFans m2 = new ClubFans(anterior.getHome().getMiEscenario());
+			ClubFans m2 = new ClubFans(anterior.getHome().getMiEscenario(), home, cliente);
 			m2.setVisible(true);
 			m2.setLocationRelativeTo(null);
 

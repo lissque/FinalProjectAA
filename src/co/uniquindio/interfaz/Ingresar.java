@@ -28,7 +28,6 @@ public class Ingresar extends JFrame implements ActionListener {
 	private JLabel lblIngresar;
 	private JButton btnAcceder;
 	private JButton btnVolver;
-
 	private Home home;
 
 	/**
@@ -101,7 +100,7 @@ public class Ingresar extends JFrame implements ActionListener {
 					if (isCliente(ingreso)) {
 
 						this.dispose();
-						Secciones ventanaMatrices = new Secciones(this);
+						Secciones ventanaMatrices = new Secciones(this, home, getCliente(ingreso));
 						ventanaMatrices.setLocationRelativeTo(null);
 						ventanaMatrices.setVisible(true);
 						txtIngreso.setText("");
@@ -150,5 +149,21 @@ public class Ingresar extends JFrame implements ActionListener {
 			}
 		}
 		return false;
+	}
+
+	public Cliente getCliente(String ingreso) {
+
+		String cliente;
+
+		for (int i = 0; i < home.getMiEvento().getMisClientes().size(); i++) {
+
+			cliente = home.getMiEvento().getMisClientes().get(i).getId().toUpperCase();
+
+			if (ingreso.equals(cliente)) {
+
+				return home.getMiEvento().getMisClientes().get(i);
+			}
+		}
+		return null;
 	}
 }

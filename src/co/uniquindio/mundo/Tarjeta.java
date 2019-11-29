@@ -18,16 +18,22 @@ public class Tarjeta implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private final double CUPO_DISPONIBLE = 2500000;
-	private Cliente miCliente;
+	private String numero;
+
+	
+	public Tarjeta(String numero) {
+
+		this.numero = numero;
+	}
 
 	// ------------------------GETTERS AND SETTERS---------------------//
 
-	public Cliente getMiCliente() {
-		return miCliente;
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setMiCliente(Cliente miCliente) {
-		this.miCliente = miCliente;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	public double getCUPO_DISPONIBLE() {
