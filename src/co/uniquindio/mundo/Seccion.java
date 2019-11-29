@@ -1,7 +1,13 @@
 package co.uniquindio.mundo;
 
-public class Seccion {
+import java.io.Serializable;
 
+public class Seccion implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Puesto puestos[][];
 	private TipoSeccion tipo;
 

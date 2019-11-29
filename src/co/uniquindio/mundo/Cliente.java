@@ -1,5 +1,6 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -10,8 +11,12 @@ import java.util.GregorianCalendar;
  * @author LUISA FERNANDA COTTE S�NCHEZ
  * @author ANDR�S FELIPE CORT�S RODR�GUEZ
  */
-public class Cliente {
+public class Cliente implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// -----------------------ATRIBUTOS--------------------//
 
 	private String id, nombre, apellido, direccion, email;

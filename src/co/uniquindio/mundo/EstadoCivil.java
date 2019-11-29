@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
+
 /**
  * Clase enum del estado civil
  * 
@@ -7,6 +9,6 @@ package co.uniquindio.mundo;
  * @author LUISA FERNANDA COTTE SÁNCHEZ
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
-public enum EstadoCivil {
+public enum EstadoCivil implements Serializable{
 	SOLTERO, CASADO, UNION_LIBRE, DIVORCIADO;
 }

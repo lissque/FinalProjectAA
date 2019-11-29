@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
+
 /**
  * Clase Puesto
  * 
@@ -7,8 +9,12 @@ package co.uniquindio.mundo;
  * @author LUISA FERNANDA COTTE SÁNCHEZ
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
-public class Puesto {
+public class Puesto implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// ------------------------ATRIBUTOS-------------------------//
 	private EstadoPuesto estado;
 	private Cliente cliente;

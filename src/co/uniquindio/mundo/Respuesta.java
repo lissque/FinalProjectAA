@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
+
 /**
  * Clase enum para Las respuestas a la encuesta
  * 
@@ -9,7 +11,7 @@ package co.uniquindio.mundo;
  *
  */
 
-public enum Respuesta {
+public enum Respuesta implements Serializable{
 
 	MUY_DE_ACUERDO("MUY DE ACUERDO"), ALGO_DE_ACUERDO("ALGO DE ACUERDO"), NI_DE_ACUERDO_NI_DESACUERDO(
 			"NI DE ACUERDO, NI DESACUERDO"), ALGO_EN_DESACUERDO(

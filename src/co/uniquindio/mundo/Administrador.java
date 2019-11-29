@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
+
 /**
  * Clase Administrador
  * 
@@ -7,8 +9,12 @@ package co.uniquindio.mundo;
  * @author LUISA FERNANDA COTTE SÁNCHEZ
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
-public class Administrador {
+public class Administrador implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// ------------------ ATRIBUTOS -----------------------//
 	private String id;
 	private String contraseña;

@@ -1,5 +1,7 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
+
 /**
  * Clase tiquete
  * 
@@ -8,10 +10,14 @@ package co.uniquindio.mundo;
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
 
-public class Tiquete {
+public class Tiquete implements Serializable{
 
 	// ------------------ ATRIBUTOS -----------------------//
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Cliente miCliente;
 	private TipoSeccion seccion;
 	private char fila;

@@ -1,5 +1,6 @@
 package co.uniquindio.mundo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -9,8 +10,12 @@ import java.util.ArrayList;
  * @author LUISA FERNANDA COTTE SÁNCHEZ
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
-public class Escenario {
+public class Escenario implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// ------------------------ATRIBUTOS-----------------//
 	private ArrayList<Seccion> secciones;
 	private ArrayList<Puesto> puestosSeleccionados;
