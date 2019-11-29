@@ -10,11 +10,14 @@ import javax.swing.border.LineBorder;
 import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Escenario;
 import co.uniquindio.mundo.Evento;
+import co.uniquindio.persistencia.Persistencia;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
 import javax.swing.border.BevelBorder;
@@ -42,6 +45,7 @@ public class Home extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -68,8 +72,10 @@ public class Home extends JFrame implements ActionListener {
 	 */
 	public Home() {
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-
-		miEvento = new Evento();
+		cargarDatos();
+		if (miEvento==null) {
+			miEvento=new Evento();
+		}
 		miEscenario = new Escenario();
 
 		setLocationRelativeTo(null);
@@ -142,7 +148,7 @@ public class Home extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == btnX) {
-
+			guardarDatos();
 			System.exit(0);
 		}
 
@@ -169,6 +175,28 @@ public class Home extends JFrame implements ActionListener {
 			ingresar.setLocationRelativeTo(null);
 			ingresar.setVisible(true);
 
+		}
+	}
+	public void cargarDatos () {
+		Evento aux = null;
+		File f = new File("src/co/uniquindio/resource/evento.dat");
+		if (f.exists()) {
+			try {
+				aux = (Evento)Persistencia.deserializar("src/co/uniquindio/resource/evento.dat");
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			setMiEvento(aux);
+		}
+	}
+	
+	public void guardarDatos () {
+		try {
+			Persistencia.serializar("src/co/uniquindio/resource/evento.dat", getMiEvento());
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
