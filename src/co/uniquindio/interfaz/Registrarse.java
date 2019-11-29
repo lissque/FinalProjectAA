@@ -30,7 +30,7 @@ import co.uniquindio.mundo.EstadoCivil;
 import co.uniquindio.mundo.Genero;
 import com.toedter.calendar.JDateChooser;
 
-public class Registro extends JFrame implements ActionListener {
+public class Registrarse extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -52,7 +52,7 @@ public class Registro extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public Registro(Home home) {
+	public Registrarse(Home home) {
 
 		this.home = home;
 

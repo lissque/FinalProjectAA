@@ -17,13 +17,15 @@ public class Registro implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	// ------------------------------------ATRIBUTOS--------------------------------//
-	private ArrayList<Registro> registros;
+	private Cliente cliente;
+	private ArrayList<Puesto> puestos;
 
 	/**
 	 * Constructor de la clase Registro
 	 */
-	public Registro() {
-		registros = new ArrayList<Registro>();
+	public Registro(Cliente cliente) {
+		this.cliente=cliente;
+		puestos = new ArrayList<Puesto>();
 	}
 
 	/**
@@ -32,18 +34,34 @@ public class Registro implements Serializable{
 	 * @param mic
 	 *            Cliente que se agregará al ArrayList de clientes
 	 */
-	public void agregarRegistro(Registro miR) {
-		registros.add(miR);
+	public void agregar(Puesto miP) {
+		puestos.add(miP);
 	}
 
 	// -------------------------GETTERS AND SETTERS------------------------//
 	
-	public ArrayList<Registro> getRegistros() {
-		return registros;
+	public ArrayList<Puesto> getRegistros() {
+		return puestos;
 	}
 
-	public void setRegistros(ArrayList<Registro> registros) {
-		this.registros = registros;
+	public void setRegistros(ArrayList<Puesto> puestos) {
+		this.puestos = puestos;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public ArrayList<Puesto> getPuestos() {
+		return puestos;
+	}
+
+	public void setPuestos(ArrayList<Puesto> puestos) {
+		this.puestos = puestos;
 	}
 
 	

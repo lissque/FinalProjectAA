@@ -155,7 +155,7 @@ public class Home extends JFrame implements ActionListener {
 		if (e.getSource() == btnRegistrarse) {
 
 			this.dispose();
-			Registro inscripcion = new Registro(this);
+			Registrarse inscripcion = new Registrarse(this);
 			inscripcion.setLocationRelativeTo(null);
 			inscripcion.setVisible(true);
 		}
