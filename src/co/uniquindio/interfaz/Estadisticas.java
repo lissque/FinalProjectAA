@@ -104,6 +104,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		contentPane.add(btnListadoDeAsistentesEstrato);
 
 		btnResulEncuesta = new JButton("GRAFICAS ENCUESTAS");
+		btnResulEncuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnResulEncuesta.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnResulEncuesta.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnResulEncuesta.setBounds(54, 335, 196, 29);
@@ -111,6 +112,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		contentPane.add(btnResulEncuesta);
 
 		btnSocioDemografico = new JButton("GRAFICAS SOCIODEMOGRAFICAS");
+		btnSocioDemografico.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSocioDemografico.addActionListener(this);
 		btnSocioDemografico.setFont(new Font("Gabriola", Font.BOLD, 20));
 		btnSocioDemografico.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -121,15 +123,15 @@ public class Estadisticas extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource() == btnListadoDeAsistentes) {
+		/**if (e.getSource() == btnListadoDeAsistentes) {
 			String salida = "Listado de asistentes: \n";
 			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
 				salida += miCliente.toString();
 				salida += "\n";
 			}
 			JOptionPane.showMessageDialog(null, salida, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-		}
-		if (e.getSource() == btnListadoOrdenadoDe) {
+		}**/
+		/**if (e.getSource() == btnListadoOrdenadoDe) {
 			TreeMap<String, String> ordenado = new TreeMap<String, String>();
 			for (Cliente miCliente : home.getMiEvento().getRegistro().getClientes()) {
 				ordenado.put(miCliente.getNombre() + miCliente.getApellido(), miCliente.getId());
@@ -137,8 +139,8 @@ public class Estadisticas extends JFrame implements ActionListener {
 			}
 			JOptionPane.showMessageDialog(null, ordenado.values(), "Informacion*", JOptionPane.INFORMATION_MESSAGE);
 
-		}
-		if (e.getSource() == btnListadoDeAsistentesEstrato) {
+		}**/
+		/**if (e.getSource() == btnListadoDeAsistentesEstrato) {
 
 			String estrato1 = "Listado de asistentes por estrato 1: \n";
 			String estrato2 = "Listado de asistentes por estrato 2: \n";
@@ -162,7 +164,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(null, estrato1 + estrato2 + estrato3, "Informacion*",
 					JOptionPane.INFORMATION_MESSAGE);
 
-		}
+		}**/
 		if (e.getSource() == btnListadoDePuestos) {
 
 			String puestos = "Listado de puestos libres \n";
@@ -206,9 +208,9 @@ public class Estadisticas extends JFrame implements ActionListener {
 			ds.addValue(contarGenero(Genero.HOMBRE), "Hombre", "");
 			ds.addValue(contarGenero(Genero.MUJER), "Mujer", "");
 			ds.addValue(contarGenero(Genero.OTRO), "Otro", "");
-			JFreeChart jf = ChartFactory.createBarChart3D("Alumnos", "Nombres", "Edades", ds,
+			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "GENERO", "CANTIDAD", ds,
 					PlotOrientation.VERTICAL, true, true, true);
-			ChartFrame f = new ChartFrame("GENERO", jf);
+			ChartFrame f = new ChartFrame("", jf);
 			f.setSize(1000, 600);
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
