@@ -179,7 +179,7 @@ public class Estadisticas extends JFrame implements ActionListener {
 		 * 
 		 * }
 		 **/
-		if (e.getSource() == btnListadoDePuestos) {
+		/**if (e.getSource() == btnListadoDePuestos) {
 
 			String puestos = "Listado de puestos libres \n";
 			for (Seccion seccion : home.getMiEvento().getEscenario().getSecciones()) {
@@ -197,15 +197,12 @@ public class Estadisticas extends JFrame implements ActionListener {
 
 			}
 			JOptionPane.showMessageDialog(null, puestos, "Informacion*", JOptionPane.INFORMATION_MESSAGE);
-		}
-		if (e.getSource() == btnVolver) {
-			this.dispose();
-			home.setLocationRelativeTo(null);
-			home.setVisible(true);
-		}
-
+		}**/
 		if (e.getSource() == btnResulEncuesta) {
-			
+			this.dispose();
+			GraficasEncuesta graficas = new GraficasEncuesta(home);
+			graficas.setVisible(true);
+			graficas.setLocationRelativeTo(null);
 		}
 		if (e.getSource() == btnGenero) {
 			DefaultCategoryDataset ds = new DefaultCategoryDataset();
@@ -245,6 +242,11 @@ public class Estadisticas extends JFrame implements ActionListener {
 			f.setSize(700, 600);
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
+		}
+		if (e.getSource() == btnVolver) {
+			this.dispose();
+			home.setLocationRelativeTo(null);
+			home.setVisible(true);
 		}
 	}
 

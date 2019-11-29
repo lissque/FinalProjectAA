@@ -205,7 +205,6 @@ public class Encuesta extends JFrame implements ActionListener {
 			this.dispose();
 			home.setVisible(true);
 			home.setLocationRelativeTo(null);
-
 			cliente.setRespuestas(respuestas);
 		}
 	}

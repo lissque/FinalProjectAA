@@ -143,6 +143,7 @@ public class Segundo1 extends JFrame implements ActionListener {
 		if (e.getSource() == btnComprar) {
 
 			Registro registro = new Registro(cliente, puestoSelec);
+			home.getMiEvento().agregarRegistro(registro);
 
 			if (puestoSelec.isEmpty()) {
 

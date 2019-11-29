@@ -47,6 +47,16 @@ public class Evento implements Serializable{
 	public void agregarCliente(Cliente miC) {
 		misClientes.add(miC);
 	}
+	
+	/**
+	 * Metodo para agregar un registro al arraylist de registro
+	 * 
+	 * @param miR
+	 *            Registro que se agregará al ArrayList de registro
+	 */
+	public void agregarRegistro(Registro miR) {
+		misRegistros.add(miR);
+	}
 
 	// --------------------GETTERS AND SETTERS--------------------//
 	public Escenario getEscenario() {

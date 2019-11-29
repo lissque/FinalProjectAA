@@ -143,7 +143,7 @@ public class Platea2 extends JFrame implements ActionListener {
 		if (e.getSource() == btnComprar) {
 
 			Registro registro = new Registro(cliente, puestoSelec);
-
+			home.getMiEvento().agregarRegistro(registro);
 			if (puestoSelec.isEmpty()) {
 
 				JOptionPane.showMessageDialog(null, "NO HA SELECCIONADO NINGÚN PUESTO", "INFORMACIÓN",
