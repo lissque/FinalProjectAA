@@ -39,7 +39,7 @@ public class Secciones extends JFrame implements ActionListener {
 
 		setUndecorated(true);
 		setResizable(false);
-		
+
 		this.cliente = cliente;
 		this.anterior = anterior;
 		this.home = home;
@@ -125,7 +125,7 @@ public class Secciones extends JFrame implements ActionListener {
 		}
 		if (e.getSource() == btnM2) {
 
-			// this.setVisible(false);
+			this.setVisible(false);
 			ClubFans m2 = new ClubFans(anterior.getHome().getMiEscenario(), home, cliente);
 			m2.setVisible(true);
 			m2.setLocationRelativeTo(null);

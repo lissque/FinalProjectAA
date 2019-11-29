@@ -142,6 +142,9 @@ public class ClubFans extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnVolver) {
 			this.setVisible(false);
+			Secciones seccion = new Secciones(new Ingresar(home), home, cliente);
+			seccion.setVisible(true);
+			seccion.setLocationRelativeTo(null);
 		}
 
 		if (e.getSource() == btnComprar) {
@@ -155,13 +158,12 @@ public class ClubFans extends JFrame implements ActionListener {
 
 			} else {
 
-				JOptionPane.showMessageDialog(null,
-						"COMPRA EXITOSA, SALDO DE TARJETA",
-						"INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE, null);
+				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA, SALDO DE TARJETA", "INFORMACIÓN",
+						JOptionPane.INFORMATION_MESSAGE, null);
 
 				this.setVisible(false);
 				Encuesta encuesta = new Encuesta(home, cliente);
-	
+
 				encuesta.setVisible(true);
 				encuesta.setLocationRelativeTo(null);
 			}
