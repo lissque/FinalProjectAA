@@ -141,16 +141,16 @@ public class Secciones extends JFrame implements ActionListener {
 		}
 		if (e.getSource() == btnM4) {
 
-			// this.setVisible(false);
-			Segundo1 m4 = new Segundo1(anterior.getHome().getMiEscenario());
+			this.setVisible(false);
+			Segundo1 m4 = new Segundo1(anterior.getHome().getMiEscenario(), home, cliente);
 			m4.setVisible(true);
 			m4.setLocationRelativeTo(null);
 
 		}
 		if (e.getSource() == btnM5) {
 
-			// this.setVisible(false);
-			Segundo2 m5 = new Segundo2(anterior.getHome().getMiEscenario());
+			this.setVisible(false);
+			Segundo2 m5 = new Segundo2(anterior.getHome().getMiEscenario(), home, cliente);
 			m5.setVisible(true);
 			m5.setLocationRelativeTo(null);
 

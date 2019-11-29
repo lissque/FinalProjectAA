@@ -1,18 +1,22 @@
 package co.uniquindio.interfaz;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Escenario;
 import co.uniquindio.mundo.EstadoPuesto;
 import co.uniquindio.mundo.Puesto;
+import co.uniquindio.mundo.Registro;
 
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 
@@ -27,11 +31,17 @@ public class Segundo1 extends JFrame implements ActionListener {
 	private Puesto[][] puestos;
 	private Escenario escenario;
 
+	private Home home;
+	private Cliente cliente;
+	private ArrayList<Puesto> puestoSelec = new ArrayList<>();
+	
 	/**
 	 * Create the frame.
 	 */
-	public Segundo1(Escenario escenario) {
+	public Segundo1(Escenario escenario, Home home, Cliente cliente) {
 
+		this.home = home;
+		this.cliente = cliente;
 		setUndecorated(true);
 		setResizable(false);
 
@@ -69,7 +79,6 @@ public class Segundo1 extends JFrame implements ActionListener {
 	}
 
 	private void actualizar() {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < puestos.length; i++) {
 			for (int j = 0; j < puestos.length; j++) {
 				if (puestos[i][j].getEstado().equals(EstadoPuesto.OCUPADO)) {
@@ -81,7 +90,6 @@ public class Segundo1 extends JFrame implements ActionListener {
 	}
 
 	private void crearPuestos() {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				
@@ -110,17 +118,41 @@ public class Segundo1 extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 
 		if (e.getSource() == btnVolver) {
-			this.dispose();
+			this.setVisible(false);
+			Secciones seccion = new Secciones(new Ingresar(home), home, cliente);
+			seccion.setVisible(true);
+			seccion.setLocationRelativeTo(null);
 		}
-		
+
+		if (e.getSource() == btnComprar) {
+
+			Registro registro = new Registro(cliente, puestoSelec);
+
+			if (puestoSelec.isEmpty()) {
+
+				JOptionPane.showMessageDialog(null, "NO HA SELECCIONADO NINGÚN PUESTO", "INFORMACIÓN",
+						JOptionPane.INFORMATION_MESSAGE, null);
+
+			} else {
+
+				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE,
+						null);
+
+				this.setVisible(false);
+				Encuesta encuesta = new Encuesta(home, cliente);
+
+				encuesta.setVisible(true);
+				encuesta.setLocationRelativeTo(null);
+			}
+		}
+
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {
 					matriz[i][j].setBackground(Color.GREEN);
-					escenario.agregarPuesto(puestos[i][j]);
+					puestoSelec.add(puestos[i][j]);
 				}
 			}
 		}
