@@ -3,8 +3,10 @@ package co.uniquindio.interfaz;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.border.SoftBevelBorder;
 
 import co.uniquindio.mundo.Cliente;
 import co.uniquindio.mundo.Escenario;
@@ -13,6 +15,7 @@ import co.uniquindio.mundo.Puesto;
 import co.uniquindio.mundo.Registro;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,7 +56,8 @@ public class Platea1 extends JFrame implements ActionListener {
 		setBounds(100, 100, 403, 336);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(255, 218, 185));
+		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
@@ -63,7 +67,8 @@ public class Platea1 extends JFrame implements ActionListener {
 		contentPane.add(btnVolver);
 
 		panel = new JPanel();
-		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBackground(new Color(255, 218, 185));
+		panel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel.setBounds(10, 45, 380, 253);
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
@@ -98,6 +103,8 @@ public class Platea1 extends JFrame implements ActionListener {
 				String codigo = escenario.getSecciones().get(0).codigoSeccion();
 
 				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
+				newBtn.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+				newBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 				newBtn.setSize(53, 23);
 				matriz[i][j] = newBtn;
@@ -139,8 +146,8 @@ public class Platea1 extends JFrame implements ActionListener {
 
 			} else {
 
-				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA", "INFORMACIÓN",
-						JOptionPane.INFORMATION_MESSAGE, null);
+				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE,
+						null);
 
 				this.setVisible(false);
 				Encuesta encuesta = new Encuesta(home, cliente);

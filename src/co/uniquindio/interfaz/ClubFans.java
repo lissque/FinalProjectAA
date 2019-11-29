@@ -59,8 +59,8 @@ public class ClubFans extends JFrame implements ActionListener {
 		setBounds(100, 100, 403, 336);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setForeground(new Color(255, 218, 185));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(255, 218, 185));
+		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
@@ -73,8 +73,8 @@ public class ClubFans extends JFrame implements ActionListener {
 		contentPane.add(btnVolver);
 
 		panel = new JPanel();
-		panel.setForeground(new Color(255, 218, 185));
-		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBackground(new Color(255, 218, 185));
+		panel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel.setBounds(10, 45, 380, 253);
 		panel.setLayout(new GridLayout(5, 5));
 		contentPane.add(panel);
@@ -118,6 +118,8 @@ public class ClubFans extends JFrame implements ActionListener {
 				String codigo = escenario.getSecciones().get(2).codigoSeccion();
 
 				JButton newBtn = new JButton(codigo + " " + i + "-" + j);
+				newBtn.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+				newBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 				newBtn.setSize(53, 23);
 				matriz[i][j] = newBtn;
