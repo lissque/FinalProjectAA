@@ -158,8 +158,8 @@ public class ClubFans extends JFrame implements ActionListener {
 
 			} else {
 
-				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA, SALDO DE TARJETA", "INFORMACIÓN",
-						JOptionPane.INFORMATION_MESSAGE, null);
+				JOptionPane.showMessageDialog(null, "COMPRA EXITOSA", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE,
+						null);
 
 				this.setVisible(false);
 				Encuesta encuesta = new Encuesta(home, cliente);
@@ -169,9 +169,7 @@ public class ClubFans extends JFrame implements ActionListener {
 			}
 		}
 
-		for (
-
-				int i = 0; i < matriz.length; i++) {
+		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {
 					matriz[i][j].setBackground(Color.GREEN);

@@ -117,8 +117,8 @@ public class Secciones extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnM1) {
 
-			// this.setVisible(false);
-			Platea1 m1 = new Platea1(anterior.getHome().getMiEscenario());
+			this.setVisible(false);
+			Platea1 m1 = new Platea1(anterior.getHome().getMiEscenario(), home, cliente);
 			m1.setVisible(true);
 			m1.setLocationRelativeTo(null);
 
