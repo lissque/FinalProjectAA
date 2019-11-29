@@ -90,12 +90,12 @@ public class GraficasEncuesta extends JFrame implements ActionListener{
 	}
 	
 	
-	public int contar (int pregunta) {
-		int cont = 0;
-		for (Registro registro : home.getMiEvento().getMisRegistros()) {
-			for (Cliente cliente : registro.get) {
-				
-			}
-		}
-	}
+//	public int contar (int pregunta) {
+//		int cont = 0;
+//		for (Registro registro : home.getMiEvento().getMisRegistros()) {
+////			for (Cliente cliente : registro.get) {
+//				
+////			}
+//		}
+//	}
 }

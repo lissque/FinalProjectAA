@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -38,6 +39,7 @@ public class ClubFans extends JFrame implements ActionListener {
 	private Escenario escenario;
 	private Home home;
 	private Cliente cliente;
+	private ArrayList<Puesto> puestoSelec = new ArrayList<>();
 
 	/**
 	 * Create the frame.
@@ -144,24 +146,37 @@ public class ClubFans extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnComprar) {
 
-			JOptionPane.showMessageDialog(null,
-					"COMPRA EXITOSA, SALDO DE TARJETA: " + cliente.getMiTarjeta().getCUPO_DISPONIBLE(),
-					"INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE, null);
+			Registro registro = new Registro(cliente, puestoSelec);
 
-			this.setVisible(false);
-			Encuesta encuesta = new Encuesta(home, cliente);
-			encuesta.setVisible(true);
-			encuesta.setLocationRelativeTo(null);
+			if (puestoSelec.isEmpty()) {
 
+				JOptionPane.showMessageDialog(null, "NO HA SELECCIONADO NINGÚN PUESTO", "INFORMACIÓN",
+						JOptionPane.INFORMATION_MESSAGE, null);
+
+			} else {
+
+				JOptionPane.showMessageDialog(null,
+						"COMPRA EXITOSA, SALDO DE TARJETA",
+						"INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE, null);
+
+				this.setVisible(false);
+				Encuesta encuesta = new Encuesta(home, cliente);
+	
+				encuesta.setVisible(true);
+				encuesta.setLocationRelativeTo(null);
+			}
 		}
 
-		for (int i = 0; i < matriz.length; i++) {
+		for (
+
+				int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if (e.getSource() == matriz[i][j]) {
 					matriz[i][j].setBackground(Color.GREEN);
-					escenario.agregarPuesto(puestos[i][j]);
+					puestoSelec.add(puestos[i][j]);
 				}
 			}
 		}
+
 	}
 }

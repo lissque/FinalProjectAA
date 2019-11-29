@@ -72,6 +72,29 @@ public class Evento implements Serializable{
 	public void setMisRegistros(ArrayList<Registro> misRegistros) {
 		this.misRegistros = misRegistros;
 	}
+	public int getposCliente(String id)
+	{
+		int pos = -1;
+		int cont = 0;
+		for (Cliente cliente : misClientes) {
+			if(cliente.getId().equals(id))
+			{
+				return cont;
+			}
+			cont++;
+		}
+		return pos;
+	}
+	public Cliente getCliente(String id)
+	{
+		int pos = getposCliente(id);
+		if(pos!=-1)
+		{
+			Cliente miCliente = getMisClientes().get(pos);
+			return miCliente;
+		}
+		return null;
+	}
 
 	public Administrador getAdmin() {
 		return admin;

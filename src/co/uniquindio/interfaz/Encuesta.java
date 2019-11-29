@@ -59,8 +59,8 @@ public class Encuesta extends JFrame implements ActionListener {
 		setResizable(false);
 		setUndecorated(true);
 		setLocationRelativeTo(null);
-		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane = new JPanel();
+		
 		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		contentPane.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));

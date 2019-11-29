@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author LUISA FERNANDA COTTE SÁNCHEZ
  * @author ANDRÉS FELIPE CORTÉS RODRÍGUEZ
  */
-public class Registro implements Serializable{
+public class Registro implements Serializable {
 
 	/**
 	 * 
@@ -23,8 +23,16 @@ public class Registro implements Serializable{
 	/**
 	 * Constructor de la clase Registro
 	 */
+	public Registro(Cliente cliente, ArrayList<Puesto> puestos) {
+		this.cliente = cliente;
+		this.puestos = puestos;
+	}
+
+	/**
+	 * Constructor de la clase Registro
+	 */
 	public Registro(Cliente cliente) {
-		this.cliente=cliente;
+		this.cliente = cliente;
 		puestos = new ArrayList<Puesto>();
 	}
 
@@ -39,7 +47,7 @@ public class Registro implements Serializable{
 	}
 
 	// -------------------------GETTERS AND SETTERS------------------------//
-	
+
 	public ArrayList<Puesto> getRegistros() {
 		return puestos;
 	}
@@ -64,5 +72,4 @@ public class Registro implements Serializable{
 		this.puestos = puestos;
 	}
 
-	
 }

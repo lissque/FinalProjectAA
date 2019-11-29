@@ -100,7 +100,7 @@ public class Ingresar extends JFrame implements ActionListener {
 					if (isCliente(ingreso)) {
 
 						this.dispose();
-						Secciones ventanaMatrices = new Secciones(this, home, getCliente(ingreso));
+						Secciones ventanaMatrices = new Secciones(this, home, home.getMiEvento().getCliente(ingreso));
 						ventanaMatrices.setLocationRelativeTo(null);
 						ventanaMatrices.setVisible(true);
 						txtIngreso.setText("");
@@ -160,8 +160,8 @@ public class Ingresar extends JFrame implements ActionListener {
 			cliente = home.getMiEvento().getMisClientes().get(i).getId().toUpperCase();
 
 			if (ingreso.equals(cliente)) {
-
-				return home.getMiEvento().getMisClientes().get(i);
+				Cliente miCliente =  home.getMiEvento().getMisClientes().get(i);
+				
 			}
 		}
 		return null;
