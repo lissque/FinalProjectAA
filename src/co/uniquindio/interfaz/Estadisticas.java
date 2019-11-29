@@ -2,6 +2,7 @@ package co.uniquindio.interfaz;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.IllegalFormatCodePointException;
 import java.util.TreeMap;
 
 import javax.swing.JFrame;
@@ -204,27 +205,44 @@ public class Estadisticas extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == btnResulEncuesta) {
-			DefaultCategoryDataset ds = new DefaultCategoryDataset();
-			ds.addValue(20, "Gabriel", "");
-			ds.addValue(30, "Jennifer", "");
-			ds.addValue(35, "Lu", "");
-			ds.addValue(35, "AMBAR", "");
-			JFreeChart jf = ChartFactory.createBarChart3D("Alumnos", "Nombres", "Edades", ds,
-					PlotOrientation.HORIZONTAL, true, true, true);
-			ChartFrame f = new ChartFrame("Edades", jf);
-			f.setSize(1000, 600);
-			f.setLocationRelativeTo(null);
-			f.setVisible(true);
+			
 		}
 		if (e.getSource() == btnGenero) {
 			DefaultCategoryDataset ds = new DefaultCategoryDataset();
-			ds.addValue(contarGenero(Genero.HOMBRE), "Hombre", "");
-			ds.addValue(contarGenero(Genero.MUJER), "Mujer", "");
-			ds.addValue(contarGenero(Genero.OTRO), "Otro", "");
+			ds.addValue(contarGenero(Genero.HOMBRE), "HOMBRE", "");
+			ds.addValue(contarGenero(Genero.MUJER), "MUJER", "");
+			ds.addValue(contarGenero(Genero.OTRO), "OTRO", "");
 			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "GENERO", "CANTIDAD", ds,
 					PlotOrientation.VERTICAL, true, true, true);
 			ChartFrame f = new ChartFrame("", jf);
-			f.setSize(1000, 600);
+			f.setSize(700, 600);
+			f.setLocationRelativeTo(null);
+			f.setVisible(true);
+		}
+		if (e.getSource()==btnEstadoCivil) {
+			DefaultCategoryDataset ds = new DefaultCategoryDataset();
+			ds.addValue(contarEstadoCivil(EstadoCivil.CASADO), "CASADO", "");
+			ds.addValue(contarEstadoCivil(EstadoCivil.SOLTERO), "SOLTERO", "");
+			ds.addValue(contarEstadoCivil(EstadoCivil.DIVORCIADO), "DIVORCIADO", "");
+			ds.addValue(contarEstadoCivil(EstadoCivil.UNION_LIBRE), "UNION LIBRE", "");
+			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "ESTADO CIVIL", "CANTIDAD", ds,
+					PlotOrientation.VERTICAL, true, true, true);
+			ChartFrame f = new ChartFrame("", jf);
+			f.setSize(700, 600);
+			f.setLocationRelativeTo(null);
+			f.setVisible(true);
+		}
+		if (e.getSource()==btnNivelEstudio) {
+			DefaultCategoryDataset ds = new DefaultCategoryDataset();
+			ds.addValue(contarNivelEstudio(NivelEstudio.BACHILLER), "BACHILLER", "");
+			ds.addValue(contarNivelEstudio(NivelEstudio.PREGRADO), "PREGRADO", "");
+			ds.addValue(contarNivelEstudio(NivelEstudio.MAESTRIA), "MAESTRIA", "");
+			ds.addValue(contarNivelEstudio(NivelEstudio.DOCTORADO), "DOCTORADO", "");
+			ds.addValue(contarNivelEstudio(NivelEstudio.POSTDOCTORADO), "POSTDOCTORADO", "");
+			JFreeChart jf = ChartFactory.createBarChart3D("INFORMACION SOCIO-DEMOGRAFICA", "NIVEL DE ESTUDIO", "CANTIDAD", ds,
+					PlotOrientation.VERTICAL, true, true, true);
+			ChartFrame f = new ChartFrame("", jf);
+			f.setSize(700, 600);
 			f.setLocationRelativeTo(null);
 			f.setVisible(true);
 		}
